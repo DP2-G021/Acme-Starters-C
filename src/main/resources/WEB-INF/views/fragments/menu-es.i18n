@@ -10,32 +10,32 @@
 
 # master.menu.anonymous #######################################################
 
-master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous = Acme Starters
+master.menu.anonymous.about = Sobre nosotros
 
 # master.menu.administrator ###################################################
 
-master.menu.administrator = Administrador
-master.menu.administrator.list-user-accounts = Ver cuentas de usuario
-master.menu.administrator.populate-db-initial = Poblar BD (inicial)
-master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
-master.menu.administrator.shut-system-down = Parar el sistema
+master.menu.administrator = Sistema
+master.menu.administrator.list-user-accounts = Gestionar usuarios
+master.menu.administrator.populate-db-initial = Reiniciar B.D.
+master.menu.administrator.populate-db-sample = Cargar datos de prueba
+master.menu.administrator.shut-system-down = Mantenimiento / Apagar
 
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
+master.menu.provider.dashboard = Mi Panel 
 
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
+master.menu.consumer.dashboard = Mi Panel 
 
 # master.menu.user-account ####################################################
 
-master.menu.user-account = Cuenta
-master.menu.user-account.general-profile = Perfil general
-master.menu.user-account.become-provider = Hacerse proveedor
-master.menu.user-account.provider-profile = Perfil de proveedor
-master.menu.user-account.become-consumer = Hazte consumidor
-master.menu.user-account.consumer-profile = Perfil de consumidor
+master.menu.user-account = Mi Perfil
+master.menu.user-account.general-profile = Editar datos personales
+master.menu.user-account.become-provider = Registrarse como Proveedor
+master.menu.user-account.provider-profile = Editar perfil de Proveedor
+master.menu.user-account.become-consumer = Registrarse como Consumidor
+master.menu.user-account.consumer-profile = Editar perfil de Consumidor
