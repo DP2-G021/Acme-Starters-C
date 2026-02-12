@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                                                                                                                                                                                                                                                                                                                    
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">                                                                                                                                                                                                                                                                                                           
     
     
     
@@ -73,11 +72,15 @@
     
     
     
-    
+<<<<<<< HEAD
     
     <wb-module deploy-name="Acme-Starters-C">
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         
+=======
+    <wb-module deploy-name="Acme-Starters-C">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+>>>>>>> branch 'develop' of https://github.com/DP2-G021/Acme-Starters-C-26.1.0.git
         
         
         
@@ -152,8 +155,12 @@
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+<<<<<<< HEAD
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         
+=======
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+>>>>>>> branch 'develop' of https://github.com/DP2-G021/Acme-Starters-C-26.1.0.git
         
         
         
@@ -228,8 +235,12 @@
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+<<<<<<< HEAD
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
         
+=======
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+>>>>>>> branch 'develop' of https://github.com/DP2-G021/Acme-Starters-C-26.1.0.git
         
         
         
@@ -291,8 +302,12 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+<<<<<<< HEAD
                                                                                                                                                                                                                                 
         
+=======
+                                                                                                                                                                                                                        
+>>>>>>> branch 'develop' of https://github.com/DP2-G021/Acme-Starters-C-26.1.0.git
         
         
         
@@ -320,8 +335,12 @@
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+<<<<<<< HEAD
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         
+=======
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+>>>>>>> branch 'develop' of https://github.com/DP2-G021/Acme-Starters-C-26.1.0.git
         
         
         
@@ -396,10 +415,15 @@
         
         
         <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
+<<<<<<< HEAD
                 
         <property name="context-root" value="Acme-Starters"/>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
     
+=======
+        <property name="context-root" value="Acme-Starters"/>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+>>>>>>> branch 'develop' of https://github.com/DP2-G021/Acme-Starters-C-26.1.0.git
     
     
     
@@ -475,8 +499,12 @@
     
     
     </wb-module>
+<<<<<<< HEAD
                                                                                                                                                                                                                                                                                                                 
 
+=======
+                                                                                                                                                                                                                                                                                                            
+>>>>>>> branch 'develop' of https://github.com/DP2-G021/Acme-Starters-C-26.1.0.git
 
 
 
