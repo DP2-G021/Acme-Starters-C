@@ -1,5 +1,5 @@
 
-package acme.entities.strategies;
+package acme.entities.auditReports;
 
 public enum SectionKind {
 	PRELIMINARY, EVALUATION, CONCLUSION
