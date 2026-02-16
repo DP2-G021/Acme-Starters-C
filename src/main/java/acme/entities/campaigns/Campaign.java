@@ -63,9 +63,9 @@ public class Campaign extends AbstractEntity {
 	private String				moreInfo;
 
 	@Mandatory
-	// HINT: @Valid by default.
+	@Valid
 	@Column
-	private boolean				draftMode;
+	private Boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 

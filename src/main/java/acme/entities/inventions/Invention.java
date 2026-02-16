@@ -14,6 +14,8 @@ import acme.client.components.datatypes.Moment;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidMoney;
 import acme.realms.Inventor;
 import lombok.Getter;
 import lombok.Setter;
@@ -45,12 +47,12 @@ public class Invention extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	//@ValidMoment(constraint = ValidMoment.Constraint.ENFORCE_FUTURE)
+	@ValidMoment(constraint = ValidMoment.Constraint.ENFORCE_FUTURE)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Moment				startMoment;
 
 	@Mandatory
-	//@ValidMoment(constraint = ValidMoment.Constraint.ENFORCE_FUTURE)
+	@ValidMoment(constraint = ValidMoment.Constraint.ENFORCE_FUTURE)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Moment				endMoment;
 
@@ -65,7 +67,7 @@ public class Invention extends AbstractEntity {
 	private Double				monthsActive;
 
 	@Mandatory
-	//@ValidMoney(positive=true)
+	@ValidMoney(min = 0.0)
 	@Transient
 	private Money				cost;
 
@@ -76,7 +78,7 @@ public class Invention extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Inventor			inventor;
 
 }
