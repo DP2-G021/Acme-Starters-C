@@ -76,7 +76,7 @@ public class Invention extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne
 	private Inventor			inventor;
 
 }
