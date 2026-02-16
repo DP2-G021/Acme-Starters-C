@@ -3,8 +3,6 @@ package acme.entities.campaigns;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
@@ -41,7 +39,7 @@ public class Milestone extends AbstractEntity {
 	private double				effort;
 
 	@Mandatory
-	@Enumerated(EnumType.STRING)
+	@Valid
 	@Column
 	private MilestoneKind		kind;
 
@@ -51,7 +49,7 @@ public class Milestone extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Campaign			campaign;
 
 }
