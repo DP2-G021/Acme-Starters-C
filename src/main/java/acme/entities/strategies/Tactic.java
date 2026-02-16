@@ -3,16 +3,12 @@ package acme.entities.strategies;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidScore;
-import acme.constraints.ValidLongText;
-import acme.constraints.ValidShortText;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,12 +24,12 @@ public class Tactic extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidShortText
+	//@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
-	@ValidLongText
+	//@ValidText
 	@Column
 	private String				notes;
 
@@ -43,7 +39,7 @@ public class Tactic extends AbstractEntity {
 	private double				expectedPercentage;
 
 	@Mandatory
-	@Enumerated(EnumType.STRING)
+	@Valid
 	@Column
 	private TacticKind			kind;
 
@@ -53,7 +49,7 @@ public class Tactic extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Strategy			strategy;
 
 }

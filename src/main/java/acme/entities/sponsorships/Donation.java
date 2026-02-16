@@ -12,8 +12,8 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoney;
-import acme.constraints.ValidLongText;
-import acme.constraints.ValidShortText;
+import acme.constraints.ValidText;
+import acme.constraints.ValidHeader;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,12 +29,12 @@ public class Donation extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidShortText
+	@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
-	@ValidLongText
+	@ValidText
 	@Column
 	private String				notes;
 

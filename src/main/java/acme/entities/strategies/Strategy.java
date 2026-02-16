@@ -16,8 +16,6 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidLongText;
-import acme.constraints.ValidShortText;
 import acme.constraints.ValidTicker;
 import acme.realms.Fundraiser;
 import lombok.Getter;
@@ -35,22 +33,22 @@ public class Strategy extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidTicker
+	@ValidTicker // modificar valid ticker
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
-	@ValidShortText
+	//@ValidHeader //mod 
 	@Column
 	private String				name;
 
 	@Mandatory
-	@ValidLongText
+	//@ValidText
 	@Column
 	private String				description;
 
 	@Mandatory
-	@ValidMoment
+	@ValidMoment() //future?
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				startMoment;
 
@@ -66,15 +64,20 @@ public class Strategy extends AbstractEntity {
 
 	@Mandatory
 	@Column
-	private boolean				draftMode;
+	@Valid
+	private Boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
 	@Transient
+	@Mandatory
+	@Valid
 	// Computed attribute (S1: not implemented yet)
 	private Double				monthsActive;
 
 	@Transient
+	@Mandatory
+	//@ValidScore
 	// Computed attribute (S1: not implemented yet)
 	private Double				expectedPercentage;
 
@@ -82,7 +85,7 @@ public class Strategy extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Fundraiser			fundraiser;
 
 	// Additional constraints (not implementable in S1):

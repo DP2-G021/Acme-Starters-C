@@ -17,7 +17,7 @@ import org.hibernate.validator.constraints.Length;
 @Constraint(validatedBy = {})
 @ReportAsSingleViolation
 @Length(min = 1, max = 255)
-public @interface ValidLongText {
+public @interface ValidText {
 
 	String message() default "{acme.validation.text.message}";
 

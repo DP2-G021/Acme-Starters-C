@@ -3,10 +3,10 @@ package acme.realms;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,16 +22,17 @@ public class Fundraiser extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString
+	//@ValidHeader
 	@Column
 	private String				bank;
 
 	@Mandatory
-	@ValidString
+	//@ValidText
 	@Column
 	private String				statement;
 
 	@Mandatory
+	@Valid
 	@Column
 	private Boolean				agent;
 

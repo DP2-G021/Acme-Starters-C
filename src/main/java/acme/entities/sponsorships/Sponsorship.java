@@ -18,8 +18,8 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidLongText;
-import acme.constraints.ValidShortText;
+import acme.constraints.ValidText;
+import acme.constraints.ValidHeader;
 import acme.constraints.ValidTicker;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,12 +40,12 @@ public class Sponsorship extends AbstractEntity {
 	private String				ticker;
 
 	@Mandatory
-	@ValidShortText
+	@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
-	@ValidLongText
+	@ValidText
 	@Column
 	private String				description;
 
