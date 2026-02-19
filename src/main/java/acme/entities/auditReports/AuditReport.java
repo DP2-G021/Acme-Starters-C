@@ -16,8 +16,6 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidLongText;
-import acme.constraints.ValidShortText;
 import acme.constraints.ValidTicker;
 import acme.realms.Auditor;
 import lombok.Getter;
@@ -40,12 +38,12 @@ public class AuditReport extends AbstractEntity {
 	private String				ticker;
 
 	@Mandatory
-	@ValidShortText
+	//@ValidShortText
 	@Column
 	private String				name;
 
 	@Mandatory
-	@ValidLongText
+	//@ValidLongText
 	@Column
 	private String				description;
 
