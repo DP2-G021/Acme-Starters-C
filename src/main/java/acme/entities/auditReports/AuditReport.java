@@ -7,7 +7,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -68,7 +67,7 @@ public class AuditReport extends AbstractEntity {
 	@ManyToOne
 	private Auditor				auditor;
 
-	@OneToMany(mappedBy = "auditReport")
+	@ManyToOne
 	private List<AuditSection>	auditSections;
 
 
