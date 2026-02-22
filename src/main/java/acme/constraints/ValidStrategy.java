@@ -8,19 +8,15 @@ import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import javax.validation.ReportAsSingleViolation;
-import javax.validation.constraints.Pattern;
 
-@Target(ElementType.FIELD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = {})
-@ReportAsSingleViolation
+@Constraint(validatedBy = ValidStrategyValidator.class)
+public @interface ValidStrategy {
 
-@Pattern(regexp = "^[\\w\\-]{5,15}$")
-public @interface ValidTicker {
-
-	String message() default "{acme.validation.ticker.message}";
+	String message() default "{acme.validation.strategy.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
+
 }
