@@ -44,7 +44,7 @@ public class ValidStrategyValidator implements ConstraintValidator<ValidStrategy
 		}
 
 		// 3) reglas SOLO si se publica (draftMode=false)
-		boolean published = Boolean.FALSE.equals(strategy.getDraftMode()); // draftMode es Boolean en tu Strategy
+		boolean published = Boolean.FALSE.equals(strategy.getDraftMode());
 
 		if (published) {
 			// 3.1) Debe tener al menos una tactic
@@ -55,7 +55,7 @@ public class ValidStrategyValidator implements ConstraintValidator<ValidStrategy
 				ok = false;
 			}
 
-			// 3.2) start/end deben ser futuros con reloj virtual (MomentHelper)
+			// 3.2) start/end deben ser futuros
 			if (strategy.getStartMoment() != null && !MomentHelper.isFuture(strategy.getStartMoment())) {
 				context.disableDefaultConstraintViolation();
 				context.buildConstraintViolationWithTemplate("startMoment must be in the future when published").addPropertyNode("startMoment").addConstraintViolation();
