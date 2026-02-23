@@ -10,6 +10,9 @@ import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidNumber;
+import acme.constraints.ValidHeader;
+import acme.constraints.ValidText;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,21 +28,23 @@ public class AuditSection extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	//@ValidShortText
+	@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
-	//@ValidLongText
+	@ValidText
 	@Column
 	private String				notes;
 
 	@Mandatory
+	@ValidNumber(min = 0)
 	@Column
 	private Integer				hours;
 
 	@Mandatory
 	@Enumerated(EnumType.STRING)
+	@Valid
 	@Column
 	private SectionKind			kind;
 
