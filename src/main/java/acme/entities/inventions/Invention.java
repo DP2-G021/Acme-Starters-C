@@ -16,6 +16,7 @@ import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidHeader;
@@ -65,7 +66,7 @@ public class Invention extends AbstractEntity {
 	private Date				endMoment;
 
 	@Optional
-	//@ValidUrl
+	@ValidUrl
 	@Column
 	private String				moreInfo;
 
