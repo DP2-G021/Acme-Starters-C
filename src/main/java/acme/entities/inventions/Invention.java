@@ -1,7 +1,6 @@
 
 package acme.entities.inventions;
 
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -71,22 +70,33 @@ public class Invention extends AbstractEntity {
 	private String				moreInfo;
 
 
-	@Valid
+	@Valid //ask manuel jesus about the use of the valid in here
 	@Transient
 	public Double getMonthsActive() {
-		return (double) MomentHelper.computeDuration(this.startMoment, this.endMoment).get(ChronoUnit.MONTHS); //esto va a dar una excepción, lo traigo en segudos y hago la conversión
+
+		if (this.startMoment == null || this.endMoment == null)
+			return 0.0; //ask manuel jesus about if this is a great politic
+
+		double seconds = MomentHelper.computeDuration(this.startMoment, this.endMoment).getSeconds(); //esto va a dar una excepción, lo traigo en segudos y hago la conversión
+		double months = seconds / (60.0 * 60.0 * 24.0 * 30.0);
+
+		return Math.round(months * 10.0) / 10.0;
+
 	}
 
-	@Valid //iterar por todos los tipo parts para comprobar que no haya algún error
+	@Valid
 	@Transient
 	public Money getCost() {
 		Money result = new Money();
 
-		PartRepository repo;
-		repo = SpringHelper.getBean(PartRepository.class);
+		PartRepository repo = SpringHelper.getBean(PartRepository.class);
 		Double total = repo.getInventionCost(this.getId());
 
+		if (total == null)
+			total = 0.0; //ask about this politic
+
 		result.setAmount(total);
+		result.setCurrency("EURO");
 		return result;
 
 	}

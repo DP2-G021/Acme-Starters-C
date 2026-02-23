@@ -2,6 +2,7 @@
 package acme.constraints;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.validation.ConstraintValidatorContext;
 
@@ -12,6 +13,7 @@ import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
 import acme.entities.inventions.Invention;
 import acme.entities.inventions.InventionRepository;
+import acme.entities.parts.PartRepository;
 
 @Validator
 public class InventionValidator extends AbstractValidator<ValidInvention, Invention> {
@@ -19,7 +21,9 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private InventionRepository repository;
+	private InventionRepository	repository;
+	@Autowired
+	private PartRepository		partRepository;
 
 	// ConstraintValidator interface ------------------------------------------
 
@@ -70,16 +74,25 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 				if (start != null && end != null) {
 
 					boolean positiveInterval = MomentHelper.isBefore(start, end);
-					boolean futureStart = MomentHelper.isAfter(start, MomentHelper.getCurrentMoment()); //it returns the current moment of the framework in develop and also in testing, but not in the deploy when it returns the time of system.now()
+					boolean futureStart = MomentHelper.isAfter(start, MomentHelper.getCurrentMoment()); //it returns the current moment of the framework in develop and also in testing, but not in the deploy since it returns the time of system.now()
 
-					validInterval = positiveInterval && futureStart;
+					validInterval = positiveInterval && futureStart; //futureStart redundant because of ValidMoment in the entity?
 				}
 
 				super.state(context, validInterval, "startMoment", "acme.validation.invention.invalid-interval.message");
 			}
 			{
 				boolean onlyEuros;
-				onlyEuros = invention.getCost().getCurrency().equals("EUR");
+
+				if (invention.getId() == 0)
+					onlyEuros = true;
+
+				else {
+					Set<String> currencies = this.partRepository.getCurrencyOfAllCost(invention.getId());
+
+					onlyEuros = currencies.isEmpty() || currencies.size() == 1 && currencies.contains("EURO");
+
+				}
 
 				super.state(context, onlyEuros, "cost", "acme.validation.invention.only-euros.message");
 			}
