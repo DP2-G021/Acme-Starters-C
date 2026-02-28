@@ -1,5 +1,0 @@
-# Fundraiser sample data
-key,bank,statement,agent
-fundraiser-01,BBVA Bank,Valid statement about growth,true
-fundraiser-02,Santander Group,Another valid description,false
-fundraiser-03,Banco Ñ,Unicode test,true

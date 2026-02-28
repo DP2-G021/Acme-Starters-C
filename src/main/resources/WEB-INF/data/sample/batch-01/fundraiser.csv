@@ -1,4 +1,37 @@
 key,bank,statement,agent
-fundraiser-01,BBVA Bank,Valid statement about growth,true
-fundraiser-02,Santander Group,Another valid description,false
-fundraiser-03,Banco Ñ,Unicode test,true
+# base entity
+fundraiser-00,BBVA Bank,"Investment strategy focused on sustainable growth",TRUE
+
+# bank - standard variations
+fundraiser-01,A,"Investment strategy focused on sustainable growth",TRUE
+fundraiser-02,AB,"Investment strategy focused on sustainable growth",TRUE
+fundraiser-03,Global Finance Group,"Investment strategy focused on sustainable growth",TRUE
+fundraiser-04,Capital Markets Institution,"Investment strategy focused on sustainable growth",TRUE
+fundraiser-05,Banco Ñ,"Investment strategy focused on sustainable growth",TRUE
+fundraiser-06,<marquee>Hacked</marquee>,"Investment strategy focused on sustainable growth",TRUE
+fundraiser-07,<script>alert('Hacked');</script>,"Investment strategy focused on sustainable growth",TRUE
+fundraiser-08,' OR '1'='1,"Investment strategy focused on sustainable growth",TRUE
+
+# bank - no singular values
+fundraiser-09,,"Investment strategy focused on sustainable growth",TRUE
+
+# statement - standard variations
+fundraiser-10,BBVA Bank,L,TRUE
+fundraiser-11,BBVA Bank,Lo,TRUE
+fundraiser-12,BBVA Bank,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",TRUE
+fundraiser-13,BBVA Bank,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",TRUE
+fundraiser-14,BBVA Bank,โลเร็ม อิปซัม,TRUE
+fundraiser-15,BBVA Bank,لوريم إيبسوم,TRUE
+fundraiser-16,BBVA Bank,洛伦·伊普森,TRUE
+fundraiser-17,BBVA Bank,<marquee>Hacked</marquee>,TRUE
+fundraiser-18,BBVA Bank,<script>alert('Hacked');</script>,TRUE
+fundraiser-19,BBVA Bank,' or 'A' = 'A,TRUE
+
+# statement - no singular values
+fundraiser-20,BBVA Bank,,TRUE
+
+# agent - standard variations
+fundraiser-21,BBVA Bank,"Investment strategy focused on sustainable growth",FALSE
+
+# agent - no singular values
+fundraiser-22,BBVA Bank,"Investment strategy focused on sustainable growth",

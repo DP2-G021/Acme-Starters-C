@@ -1,0 +1,125 @@
+key,ticker,name,description,start-moment,end-moment,more-info,draft-mode,key:fundraiser
+
+# base entity
+strategy-00,ES25-STRAT01,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# ticker - standard variations
+strategy-01,FR30-ABCDE,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-02,DE40-INVEST1,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-03,IT55-ABCDE1234,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# ticker - invalid variations
+strategy-04,E25-STRAT01,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-05,ES2-STRAT01,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-06,ES25STRAT01,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-07,es25-STRAT01,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# ticker - boundary variations
+strategy-08,ES25-ABCDE,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-09,ES25-ABCDE1234,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# ticker - additional invalid variations
+strategy-10,ES25-ABCD,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-11,ES25-ABCDE12345,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-12,ES25-AB@DE,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-13,ES25-ABC_DE,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# ticker - no singular values
+strategy-14,,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-15, ,Green Growth Plan,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# name - standard variations
+strategy-16,ES25-STRAT02,L,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-17,ES25-STRAT03,Lo,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-18,ES25-STRAT04,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod te","Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-19,ES25-STRAT05,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tem","Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-20,ES25-STRAT06,โลเร็ม อิปซัม,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-21,ES25-STRAT07,لوريم إيبسوم,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-22,ES25-STRAT08,洛伦·伊普森,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-23,ES25-STRAT09,<marquee>Hacked</marquee>,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-24,ES25-STRAT10,<script>alert('Hacked');</script>,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-25,ES25-STRAT11,' or 'A' = 'A,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# name - no singular values
+strategy-26,ES25-STRAT12,,"Long term sustainable investment strategy for infrastructure development",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# description - standard variations
+strategy-27,ES25-STRAT13,Green Growth Plan,L,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-28,ES25-STRAT14,Green Growth Plan,Lo,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-29,ES25-STRAT15,Green Growth Plan,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-30,ES25-STRAT16,Green Growth Plan,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-31,ES25-STRAT17,Green Growth Plan,โลเร็ม อิปซัม,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-32,ES25-STRAT18,Green Growth Plan,لوريم إيبسوم,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-33,ES25-STRAT19,Green Growth Plan,洛伦·伊普森,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-34,ES25-STRAT20,Green Growth Plan,<marquee>Hacked</marquee>,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-35,ES25-STRAT21,Green Growth Plan,<script>alert('Hacked');</script>,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-36,ES25-STRAT22,Green Growth Plan,' or 'A' = 'A,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# description - no singular values
+strategy-37,ES25-STRAT23,Green Growth Plan,,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# start-moment - standard variations
+strategy-38,ES25-STRAT24,Green Growth Plan,"Valid description",2025/01/02 00:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-39,ES25-STRAT25,Green Growth Plan,"Valid description",2025/01/01 00:01,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# start-moment - boundary variations
+strategy-40,ES25-STRAT26,Green Growth Plan,"Valid description",2025/01/01 00:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-41,ES25-STRAT27,Green Growth Plan,"Valid description",2024/12/31 23:59,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# start-moment - no singular values
+strategy-42,ES25-STRAT28,Green Growth Plan,"Valid description",,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# cross-field validation
+strategy-43,ES25-STRAT29,Green Growth Plan,"Valid description",2026/07/01 10:00,2026/06/01 10:00,http://example.com,TRUE,fundraiser-00
+
+# end-moment - standard variations
+strategy-44,ES25-STRAT30,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-45,ES25-STRAT31,Green Growth Plan,"Valid description",2025/01/02 00:00,2025/01/03 00:00,http://example.com,TRUE,fundraiser-00
+
+# end-moment - boundary variations
+strategy-46,ES25-STRAT32,Green Growth Plan,"Valid description",2025/01/02 00:00,2025/01/01 00:01,http://example.com,TRUE,fundraiser-00
+strategy-47,ES25-STRAT33,Green Growth Plan,"Valid description",2025/01/02 00:00,2025/01/01 00:00,http://example.com,TRUE,fundraiser-00
+strategy-48,ES25-STRAT34,Green Growth Plan,"Valid description",2025/01/02 00:00,2024/12/31 23:59,http://example.com,TRUE,fundraiser-00
+
+# end-moment - cross-field validation
+strategy-49,ES25-STRAT35,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/01/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# end-moment - no singular values
+strategy-50,ES25-STRAT36,Green Growth Plan,"Valid description",2025/01/02 00:00,,http://example.com,TRUE,fundraiser-00
+
+# more-info - standard variations
+strategy-51,ES25-STRAT37,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,,TRUE,fundraiser-00
+strategy-52,ES25-STRAT38,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-53,ES25-STRAT39,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,https://a.org,TRUE,fundraiser-00
+strategy-54,ES25-STRAT40,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://a.b,TRUE,fundraiser-00
+strategy-55,ES25-STRAT41,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://www.example.org/path/to/resource,TRUE,fundraiser-00
+strategy-56,ES25-STRAT42,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://www.example.org/file.html#section,TRUE,fundraiser-00
+strategy-57,ES25-STRAT43,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.org?a=1&b=2,TRUE,fundraiser-00
+strategy-58,ES25-STRAT44,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.org/,TRUE,fundraiser-00
+strategy-59,ES25-STRAT45,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.org/a/b,TRUE,fundraiser-00
+
+# more-info - invalid variations
+strategy-60,ES25-STRAT46,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,not-a-url,TRUE,fundraiser-00
+strategy-61,ES25-STRAT47,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http:/example.com,TRUE,fundraiser-00
+strategy-62,ES25-STRAT48,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,www.example.com,TRUE,fundraiser-00
+strategy-63,ES25-STRAT49,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://,TRUE,fundraiser-00
+
+# draft-mode - standard variations
+strategy-64,ES25-STRAT50,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,FALSE,fundraiser-00
+
+# draft-mode - no singular values
+strategy-65,ES25-STRAT51,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,,fundraiser-00
+
+# draft-mode - invalid variations
+strategy-66,ES25-STRAT52,Green Growth Plan,"Valid description",2024/01/01 10:00,2024/06/01 10:00,http://example.com,FALSE,fundraiser-00
+strategy-67,ES25-STRAT53,Green Growth Plan,"Valid description",2024/01/01 10:00,2026/06/01 10:00,http://example.com,FALSE,fundraiser-00
+strategy-68,ES25-STRAT54,Green Growth Plan,"Valid description",2026/01/01 10:00,2024/06/01 10:00,http://example.com,FALSE,fundraiser-00
+
+# key:fundraiser - standard variations
+strategy-69,ES25-STRAT55,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-01
+
+# key:fundraiser - invalid variations
+strategy-70,ES25-STRAT56,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-99
+
+# key:fundraiser - no singular values
+strategy-71,ES25-STRAT57,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,
