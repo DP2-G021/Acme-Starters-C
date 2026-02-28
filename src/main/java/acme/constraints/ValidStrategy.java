@@ -1,3 +1,6 @@
+/*
+ * ValidStrategy.java
+ */
 
 package acme.constraints;
 
@@ -11,12 +14,14 @@ import javax.validation.Payload;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidStrategyValidator.class)
+@Constraint(validatedBy = StrategyValidator.class)
+
 public @interface ValidStrategy {
 
-	String message() default "{acme.validation.strategy.message}";
+	// Standard validation properties -----------------------------------------
+
+	String message() default "";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
-
 }
