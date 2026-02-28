@@ -8,21 +8,17 @@ import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import javax.validation.ReportAsSingleViolation;
-import javax.validation.constraints.NotBlank;
 
-import org.hibernate.validator.constraints.Length;
-
-@Target(ElementType.FIELD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = {})
-@ReportAsSingleViolation
-@NotBlank
-@Length(min = 1, max = 75)
-public @interface ValidHeader {
+@Constraint(validatedBy = CampaignValidator.class)
+public @interface ValidCampaign {
 
-	String message() default "{acme.validation.header.message}";
+	// Standard validation properties -----------------------------------------
+
+	String message() default "{acme.validation.campaign.invalid}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
+
 }
