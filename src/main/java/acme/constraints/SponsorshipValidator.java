@@ -1,14 +1,11 @@
 
 package acme.constraints;
 
-import java.util.List;
-
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.validation.AbstractValidator;
-import acme.entities.sponsorships.Donation;
 import acme.entities.sponsorships.Sponsorship;
 import acme.entities.sponsorships.SponsorshipRepository;
 
@@ -25,25 +22,29 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 		if (sponsorship == null)
 			return true;
 
+		boolean ok = true;
+
 		if (!sponsorship.getDraftMode()) {
-			// 1. Validamos intervalo: startMoment/endMoment must be a valid time interval
-			boolean intervalValid = false;
+
+			// 1. Validación de intervalo temporal
+			boolean datesAreCorrect = false;
+
 			if (sponsorship.getStartMoment() != null && sponsorship.getEndMoment() != null)
-				intervalValid = sponsorship.getEndMoment().after(sponsorship.getStartMoment());
+				datesAreCorrect = sponsorship.getEndMoment().compareTo(sponsorship.getStartMoment()) > 0;
 
-			super.state(context, intervalValid, "endMoment", "startMoment/endMoment must be a valid time interval");
+			super.state(context, datesAreCorrect, "endMoment", "startMoment/endMoment must be a valid time interval");
 
-			// 2. Validamos donaciones: Sponsorships cannot be published unless they have at least one donation
-			boolean hasDonation = false;
-			if (sponsorship.getId() != 0) {
-				List<Donation> donations = this.repository.findDonationBySponsorshipId(sponsorship.getId());
-				hasDonation = donations != null && !donations.isEmpty();
-			}
+			// 2. Validación de existencia de donaciones
+			int totalDonations = this.repository.findDonationsSizeBySponsorshipId(sponsorship.getId());
 
-			super.state(context, hasDonation, "donations", "Sponsorships cannot be published unless they have at least one donation");
+			boolean hasAtLeastOne = totalDonations > 0;
+
+			super.state(context, hasAtLeastOne, "donations", "Sponsorships cannot be published unless they have at least one donation");
 		}
 
-		return !super.hasErrors(context);
+		ok = !super.hasErrors(context);
+		return ok;
+
 	}
 
 }

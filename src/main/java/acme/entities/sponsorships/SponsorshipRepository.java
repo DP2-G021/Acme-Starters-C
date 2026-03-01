@@ -12,11 +12,13 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface SponsorshipRepository extends AbstractRepository {
 
-	//CONSTRAINT Sponsorships cannot be published unless they have at least one donation.
 	@Query("SELECT SUM(d.money.amount) from Donation d where d.sponsorship.id = :id")
 	Double getSumTotalMoneyBySponsorship(@Param("id") int sponsorshipId);
 
 	@Query("SELECT d FROM Donation d WHERE d.sponsorship.id = :sponsorshipId")
 	List<Donation> findDonationBySponsorshipId(int sponsorshipId);
+
+	@Query("SELECT COUNT(d) from Donation d where d.sponsorship.id = :sponsorshipId")
+	int findDonationsSizeBySponsorshipId(int sponsorshipId);
 
 }

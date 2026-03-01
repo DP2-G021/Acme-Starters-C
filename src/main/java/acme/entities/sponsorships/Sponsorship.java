@@ -85,7 +85,7 @@ public class Sponsorship extends AbstractEntity {
 	//CONSTRAINT:monthsActive is computed as the number of months in interval startMoment/endMoment rounded to the nearest decimal.
 	@Valid
 	@Transient
-	private Double getMonthsActive() {
+	private Double getMonthsActive() { // cambiar
 		if (this.startMoment != null && this.endMoment != null) {
 			long diffInMillies = this.endMoment.getTime() - this.startMoment.getTime();
 			double months = diffInMillies / (1000.0 * 60 * 60 * 24 * 30);
@@ -97,9 +97,11 @@ public class Sponsorship extends AbstractEntity {
 	//CONSTRAINT: The total money of a sponsorship is the sum of money in the corresponding donations. Only Euros are accepted.
 	//@Mandatory
 	//@ValidMoney(min = 0.0)
+
 	@Transient
 	private Money getTotalMoney() {
 		Double sum = this.repository.getSumTotalMoneyBySponsorship(this.getId());
+		double total = sum != null ? sum : 0.0;
 		Money result = new Money();
 		result.setAmount(sum);
 		result.setCurrency("EUR");
