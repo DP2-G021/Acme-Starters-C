@@ -76,7 +76,7 @@ public class Campaign extends AbstractEntity {
 
 
 	@Transient
-	public double getMonthsActive() {
+	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
 			return 0.0;
 		long diffMillis = this.endMoment.getTime() - this.startMoment.getTime();
