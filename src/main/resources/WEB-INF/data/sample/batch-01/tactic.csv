@@ -1,6 +1,6 @@
 key,name,notes,expected-percentage,kind,key:strategy
 # base entity
-tactic-00,Initial Plan,"Structured execution plan",25.0,SUBTLE,strategy-64
+tactic-00,Initial Plan,"Structured execution plan",25.0,SUBTLE,strategy-45
 
 # name - standard variations
 tactic-01,L,"Valid notes",25.0,SUBTLE,strategy-00
@@ -14,59 +14,30 @@ tactic-08,<marquee>Hacked</marquee>,"Valid notes",25.0,SUBTLE,strategy-00
 tactic-09,<script>alert('Hacked');</script>,"Valid notes",25.0,SUBTLE,strategy-00
 tactic-10,' or 'A' = 'A,"Valid notes",25.0,SUBTLE,strategy-00
 
-# name - no singular values
-tactic-11,,"Valid notes",25.0,SUBTLE,strategy-00
-
 # notes - standard variations
-tactic-12,Valid Name,L,25.0,SUBTLE,strategy-00
-tactic-13,Valid Name,Lo,25.0,SUBTLE,strategy-00
-tactic-14,Valid Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",25.0,SUBTLE,strategy-00
-tactic-15,Valid Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",25.0,SUBTLE,strategy-00
-tactic-16,Valid Name,โลเร็ม อิปซัม,25.0,SUBTLE,strategy-00
-tactic-17,Valid Name,لوريم إيبسوم,25.0,SUBTLE,strategy-00
-tactic-18,Valid Name,洛伦·伊普森,25.0,SUBTLE,strategy-00
-tactic-19,Valid Name,<marquee>Hacked</marquee>,25.0,SUBTLE,strategy-00
-tactic-20,Valid Name,<script>alert('Hacked');</script>,25.0,SUBTLE,strategy-00
-tactic-21,Valid Name,' or 'A' = 'A,25.0,SUBTLE,strategy-00
-
-# notes - no singular values
-tactic-22,Valid Name,,25.0,SUBTLE,strategy-00
+tactic-11,Valid Name,L,25.0,SUBTLE,strategy-00
+tactic-12,Valid Name,Lo,25.0,SUBTLE,strategy-00
+tactic-13,Valid Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",25.0,SUBTLE,strategy-00
+tactic-14,Valid Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",25.0,SUBTLE,strategy-00
+tactic-15,Valid Name,โลเร็ม อิปซัม,25.0,SUBTLE,strategy-00
+tactic-16,Valid Name,لوريم إيبسوم,25.0,SUBTLE,strategy-00
+tactic-17,Valid Name,洛伦·伊普森,25.0,SUBTLE,strategy-00
+tactic-18,Valid Name,<marquee>Hacked</marquee>,25.0,SUBTLE,strategy-00
+tactic-19,Valid Name,<script>alert('Hacked');</script>,25.0,SUBTLE,strategy-00
+tactic-20,Valid Name,' or 'A' = 'A,25.0,SUBTLE,strategy-00
 
 # expected-percentage - valid boundary variations
-tactic-23,Valid Name,"Valid notes",0.0,SUBTLE,strategy-00
-tactic-24,Valid Name,"Valid notes",0.01,SUBTLE,strategy-00
-tactic-25,Valid Name,"Valid notes",50.0,SUBTLE,strategy-00
-tactic-26,Valid Name,"Valid notes",99.99,SUBTLE,strategy-00
-tactic-27,Valid Name,"Valid notes",100.0,SUBTLE,strategy-00
-
-# expected-percentage - invalid variations
-tactic-28,Valid Name,"Valid notes",-1.0,SUBTLE,strategy-00
-tactic-29,Valid Name,"Valid notes",100.01,SUBTLE,strategy-00
-tactic-30,Valid Name,"Valid notes",101.0,SUBTLE,strategy-00
-
-# expected-percentage - no singular values
-tactic-31,Valid Name,"Valid notes",,SUBTLE,strategy-00
+tactic-21,Valid Name,"Valid notes",0.0,SUBTLE,strategy-00
+tactic-22,Valid Name,"Valid notes",0.01,SUBTLE,strategy-00
+tactic-23,Valid Name,"Valid notes",50.0,SUBTLE,strategy-00
+tactic-24,Valid Name,"Valid notes",99.99,SUBTLE,strategy-00
+tactic-25,Valid Name,"Valid notes",100.0,SUBTLE,strategy-00
 
 # kind - valid variations
-tactic-32,Valid Name,"Valid notes",25.0,SUBTLE,strategy-00
-tactic-33,Valid Name,"Valid notes",25.0,AGGRESSIVE,strategy-00
-tactic-34,Valid Name,"Valid notes",25.0,TENDER,strategy-00
-
-# kind - invalid variations
-tactic-35,Valid Name,"Valid notes",25.0,EXTREME,strategy-00
-
-# kind - no singular values
-tactic-36,Valid Name,"Valid notes",25.0,,strategy-00
+tactic-26,Valid Name,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-27,Valid Name,"Valid notes",25.0,AGGRESSIVE,strategy-00
+tactic-28,Valid Name,"Valid notes",25.0,TENDER,strategy-00
 
 # key:strategy - valid variations
-tactic-37,Valid Name,"Valid notes",25.0,SUBTLE,strategy-00
-tactic-38,Valid Name,"Valid notes",25.0,SUBTLE,strategy-64
-tactic-39,Valid Name,"Valid notes",25.0,SUBTLE,strategy-66
-tactic-40,Valid Name,"Valid notes",25.0,SUBTLE,strategy-67
-tactic-41,Valid Name,"Valid notes",25.0,SUBTLE,strategy-68
-
-# key:strategy - invalid variations
-tactic-42,Valid Name,"Valid notes",25.0,SUBTLE,strategy-999
-
-# key:strategy - no singular values
-tactic-43,Valid Name,"Valid notes",25.0,SUBTLE,
+tactic-29,Valid Name,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-30,Valid Name,"Valid notes",25.0,SUBTLE,strategy-45
