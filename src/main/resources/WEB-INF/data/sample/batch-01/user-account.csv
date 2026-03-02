@@ -10,3 +10,8 @@ user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטי�
 user-account-fundraiser-01,true,"UserIdentity{name: 'Luis', surname: 'Mejía', email: 'luis@acme.com'}",fundraiser1,fundraiser1
 user-account-fundraiser-02,true,"UserIdentity{name: 'Elena', surname: 'García', email: 'elena@acme.com'}",fundraiser2,fundraiser2
 user-account-fundraiser-03,true,"UserIdentity{name: 'Javier', surname: 'López', email: 'javier@acme.com'}",fundraiser3,fundraiser3
+user-account-sponsor-01,true,"UserIdentity{name: 'Ana', surname: 'Jimenez', email: 'ana@acme.com'}",sponsor1,sponsor1
+user-account-sponsor-02,true,"UserIdentity{name: 'Carmen', surname: 'Ruiz', email: 'carmen@acme.com'}",sponsor2,sponsor2
+user-account-sponsor-03,true,"UserIdentity{name: 'Luis', surname: 'Hernandez', email: 'luis@acme.com'}",sponsor3,sponsor3
+user-account-sponsor-04,true,"UserIdentity{name: 'Carlos', surname: 'Martin', email: 'carlos@acme.com'}",sponsor3,sponsor3
+
