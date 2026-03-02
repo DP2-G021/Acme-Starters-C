@@ -1,0 +1,23 @@
+key,address,im,gold
+sponsor-00,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-01,L,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-02,Lo,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-03,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-04,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-05,โลเร็ม อิปซัม,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-06,لوريم إيبسوم,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-07,洛伦·伊普森,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-08,<marquee>Hacked</marquee>,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-09,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-10,' or 'A' = 'A,Lorem ipsum dolor sit amet  consectetu,FALSE
+sponsor-11,Lorem ipsum dolor sit amet  consectetu,L,FALSE
+sponsor-12,Lorem ipsum dolor sit amet  consectetu,Lo,FALSE
+sponsor-13,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,FALSE
+sponsor-14,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,FALSE
+sponsor-15,Lorem ipsum dolor sit amet  consectetu,โลเร็ม อิปซัม,FALSE
+sponsor-16,Lorem ipsum dolor sit amet  consectetu,لوريم إيبسوم,FALSE
+sponsor-17,Lorem ipsum dolor sit amet  consectetu,洛伦·伊普森,FALSE
+sponsor-18,Lorem ipsum dolor sit amet  consectetu,<marquee>Hacked</marquee>,FALSE
+sponsor-19,Lorem ipsum dolor sit amet  consectetu,<script>alert(‘Hacked!’);</script>,FALSE
+sponsor-20,Lorem ipsum dolor sit amet  consectetu,' or 'A' = 'A,FALSE
+sponsor-21,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,TRUE

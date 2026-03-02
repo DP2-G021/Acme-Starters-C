@@ -1,0 +1,41 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:sponsor
+sponsorship-00,SS00-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-01,SS99-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-02,PP00-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-03,SS03-UNDERLINE,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-04,SS04-MAXLENGTH1,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-05,SS05-PRUEBAA,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-06,SS06-TICKER,L,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-07,SS07-TICKER,Lo,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-08,SS08-TICKER,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-09,SS09-TICKER,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-10,SS10-TICKER,โลเร็ม อิปซัม,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-11,SS11-TICKER,لوريم إيبسوم,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-12,SS12-TICKER,洛伦·伊普森,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-13,SS13-TICKER,<marquee>Hacked</marquee>,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-14,SS14-TICKER,<script>alert(‘Hacked!’);</script>,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-15,SS15-TICKER,' or 'A' = 'A,Lorem ipsum...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-16,SS16-TICKER,Lorem ipsum...,L,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-17,SS17-TICKER,Lorem ipsum...,Lo,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-18,SS18-TICKER,Lorem ipsum...,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-19,SS19-TICKER,Lorem ipsum...,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-20,SS20-TICKER,Lorem ipsum...,โลเร็ม อิปซัม,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-21,SS21-TICKER,Lorem ipsum...,لوريم إيبسوم,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-22,SS22-TICKER,Lorem ipsum...,洛伦·伊普森,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-23,SS23-TICKER,Lorem ipsum...,<marquee>Hacked</marquee>,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-24,SS24-TICKER,Lorem ipsum...,<script>alert(‘Hacked!’);</script>,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-25,SS25-TICKER,Lorem ipsum...,' or 'A' = 'A,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-26,SS26-TICKER,Lorem ipsum...,Descripción...,2026/03/15 00:00,2026/03/15 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-27,SS27-TICKER,Lorem ipsum...,Descripción...,2026/03/15 00:01,2026/03/15 23:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-28,SS28-TICKER,Lorem ipsum...,Descripción...,2200/12/31 23:59,2200/12/31 23:59,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-29,SS29-TICKER,Lorem ipsum...,Descripción...,2026/03/20 00:00,2026/03/20 00:00,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-30,SS30-TICKER,Lorem ipsum...,Descripción...,2026/03/20 00:00,2026/03/20 00:01,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-31,SS31-TICKER,Lorem ipsum...,Descripción...,2026/03/20 00:00,2200/12/31 23:59,http://lorem.com/ipsum,FALSE,sponsor-00
+sponsorship-32,SS32-TICKER,Lorem ipsum...,Descripción...,2026/01/01 00:00,2026/01/01 23:00,http://a.b,FALSE,sponsor-00
+sponsorship-33,SS33-TICKER,Lorem ipsum...,Descripción...,2026/01/01 00:00,2026/01/01 23:00,"http://www.lorem-ipsum.org/a/b/c",FALSE,sponsor-00
+sponsorship-48,SS48-TICKER,Lorem ipsum...,Descripción...,2026/01/01 00:00,2026/01/01 23:00,,FALSE,sponsor-00
+sponsorship-49,SS49-TICKER,Lorem ipsum...,Descripción...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-00
+sponsorship-50,SS50-TICKER,Lorem ipsum...,Descripción...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-01
+sponsorship-51,SS51-TICKER,Lorem ipsum...,Descripción...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-02
+sponsorship-52,SS52-TICKER,Lorem ipsum...,Descripción...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-03
+sponsorship-53,SS53-TICKER,Lorem ipsum...,Descripción...,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,sponsor-04

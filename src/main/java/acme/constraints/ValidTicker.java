@@ -18,7 +18,6 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 @NotBlank
 @Pattern(regexp = "^[A-Z]{2}[0-9]{2}-\\w{5,10}$")
-
 public @interface ValidTicker {
 
 	String message() default "{acme.validation.ticker.message}";
