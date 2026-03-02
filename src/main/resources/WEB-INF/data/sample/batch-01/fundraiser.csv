@@ -1,0 +1,11 @@
+key,bank,statement,agent,key:userAccount
+
+# base entity
+
+fundraiser-00,BBVA Bank,"Investment strategy focused on sustainable growth",TRUE,user-account-fundraiser-01
+
+# combined edge cases - bank variations
+fundraiser-01,<script>alert('Hacked');</script>,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",TRUE,user-account-fundraiser-02
+
+# combined edge cases - statement and agent variations
+fundraiser-02,Banco Ñ,' OR '1'='1,FALSE,user-account-fundraiser-03
