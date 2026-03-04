@@ -1,0 +1,20 @@
+key,name,notes,expected-percentage,kind,key:strategy
+
+# name - no singular values (ValidHeader -> NotBlank)
+tactic-err-01,,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-err-02, , "Valid notes",25.0,SUBTLE,strategy-00
+
+# notes - no singular values (ValidText -> NotBlank)
+tactic-err-03,Valid Name,,25.0,SUBTLE,strategy-00
+tactic-err-04,Valid Name, ,25.0,SUBTLE,strategy-00
+
+# expected-percentage - below minimum (ValidScore -> Min(0))
+tactic-err-05,Valid Name,"Valid notes",-0.01,SUBTLE,strategy-00
+tactic-err-06,Valid Name,"Valid notes",-1.0,SUBTLE,strategy-00
+
+# expected-percentage - above maximum (ValidScore -> Max(100))
+tactic-err-07,Valid Name,"Valid notes",100.01,SUBTLE,strategy-00
+tactic-err-08,Valid Name,"Valid notes",101.0,SUBTLE,strategy-00
+
+# expected-percentage - too many decimals (ValidScore -> Digits fraction=2)
+tactic-err-09,Valid Name,"Valid notes",10.123,SUBTLE,strategy-00

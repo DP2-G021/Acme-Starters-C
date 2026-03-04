@@ -50,7 +50,6 @@ strategy-31,ES25-STRAT31,Green Growth Plan,"Valid description",2025/01/02 00:00,
 
 # end-moment - boundary variations (Corrected Positive)
 strategy-32,ES25-STRAT32,Green Growth Plan,"Valid description",2025/01/01 00:00,2025/01/01 00:01,http://example.com,TRUE,fundraiser-00
-strategy-33,ES25-STRAT33,Green Growth Plan,"Valid description",2025/01/02 00:00,2025/01/02 00:01,http://example.com,TRUE,fundraiser-00
 
 # end-moment - cross-field validation (Corrected Positive)
 strategy-34,ES25-STRAT35,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/01/10 10:05,http://example.com,TRUE,fundraiser-00
