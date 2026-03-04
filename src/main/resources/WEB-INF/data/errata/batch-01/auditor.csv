@@ -1,0 +1,4 @@
+key,key:userAccount,firm,highlights,solicitor
+
+#base - entity (Un auditor válido para usar de FK en los reportes erróneos)
+errata-auditor-base,user-account-auditor-01,"Valid Firm Errata","Valid Highlights",true

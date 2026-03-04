@@ -1,0 +1,71 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:auditor
+#base - entity
+audit-report-sample-01,ES26-a1B2c,"Annual Financial Review 2027","Comprehensive audit of the fiscal year 2027 focusing on domestic revenue streams and internal accounting practices.",2027/01/01 08:00,2027/02/01 17:00,https://example.com/report1,true,auditor-01
+
+#ticker - standar (regex: ^[A-Z]{2}[0-9]{2}-\w{5,10}$)
+audit-report-sample-02,UK99-abcde,"Ticker suffix minimum 5 chars","Testing exactly 5 lowercase characters in the suffix.",2027/03/01 09:00,2027/04/01 09:00,,true,auditor-01
+audit-report-sample-03,US00-abcdefghij,"Ticker suffix maximum 10 chars","Testing exactly 10 lowercase characters in the suffix.",2027/03/01 09:00,2027/04/01 09:00,,true,auditor-02
+audit-report-sample-04,FR12-12345,"Ticker suffix numbers only 5","Testing only numbers in the suffix.",2027/03/01 09:00,2027/04/01 09:00,,true,auditor-03
+audit-report-sample-05,DE34-0123456789,"Ticker suffix numbers only 10","Testing exactly 10 numbers in the suffix.",2027/03/01 09:00,2027/04/01 09:00,,true,auditor-03
+audit-report-sample-06,IT56-a1_B2_c3,"Ticker suffix mixed with underscore","Testing letters, numbers and underscore (valid \w).",2027/03/01 09:00,2027/04/01 09:00,,true,auditor-01
+audit-report-sample-07,JP78-ABCDE,"Ticker suffix uppercase 5","Testing uppercase suffix.",2027/03/01 09:00,2027/04/01 09:00,,true,auditor-02
+
+#name - standar (ValidHeader: 1 to 75 chars)
+audit-report-sample-08,AA01-name1,"A","Shortest possible name (1 char).",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-01
+audit-report-sample-09,AA02-name2,"Ab","Short name (2 chars).",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-02
+audit-report-sample-10,AA03-name3,"This is exactly a seventy five characters long valid header for audit repor","Longest possible name (exactly 75 chars).",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-03
+audit-report-sample-11,AA04-name4,"Audit & Compliance Review (Q1)","Name with common symbols.",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-03
+audit-report-sample-12,AA05-name5,"Revisión Financiera y de Riesgos","Name with Spanish accents.",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-01
+audit-report-sample-13,AA06-name6,"Überprüfung der Sicherheit","Name with German umlauts.",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-02
+audit-report-sample-14,AA07-name7,"財務およびコンプライアンス監査","Name with Japanese characters.",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-03
+audit-report-sample-15,AA08-name8,"مراجعة الامتثال المالي","Name with Arabic characters.",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-03
+audit-report-sample-16,AA09-name9,"<script>console.log('test');</script>","Name attempting basic XSS injection (should be treated as string).",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-01
+audit-report-sample-17,AA10-name10,"Audit_Report_For_Drop_Tables","Name with underscores.",2027/04/01 10:00,2027/04/15 10:00,,true,auditor-02
+
+#description - standar (ValidText: 1 to 255 chars)
+audit-report-sample-18,BB01-desc1,"Description tests 1","A",2027/05/01 10:00,2027/06/01 10:00,,true,auditor-01
+audit-report-sample-19,BB02-desc2,"Description tests 2","This is a medium length description. It provides enough context to understand the scope of the audit without hitting the maximum character limit set by the validation constraint.",2027/05/01 10:00,2027/06/01 10:00,,true,auditor-02
+audit-report-sample-20,BB03-desc3,"Description tests 3","This description is meticulously crafted to be exactly two hundred and fifty-five characters long. We use this to ensure that the database column and the Hibernate validation constraint accept the maximum boundary condition without throwing any exceptions",2027/05/01 10:00,2027/06/01 10:00,,true,auditor-03
+audit-report-sample-21,BB04-desc4,"Description tests 4","1. Scope definition.\n2. Risk assessment.\n3. Final reporting.",2027/05/01 10:00,2027/06/01 10:00,,true,auditor-03
+audit-report-sample-22,BB05-desc5,"Description tests 5","Testing symbols: !@#$%^&*()_+{}|:\"<>?~`-=[]\\;',./",2027/05/01 10:00,2027/06/01 10:00,,true,auditor-01
+audit-report-sample-23,BB06-desc6,"Description tests 6","Description containing single quotes ' and double quotes \" for escape testing.",2027/05/01 10:00,2027/06/01 10:00,,true,auditor-02
+audit-report-sample-24,BB07-desc7,"Description tests 7","Descripción con múltiples eñes (ñÑ) y tildes (áéíóú) para asegurar el correcto encoding de la base de datos.",2027/05/01 10:00,2027/06/01 10:00,,true,auditor-03
+audit-report-sample-25,BB08-desc8,"Description tests 8","HTML injected desc: <b>Bold</b> and <i>Italic</i> text representation.",2027/05/01 10:00,2027/06/01 10:00,,true,auditor-03
+
+#startMoment/endMoment - intervals and bounds
+audit-report-sample-26,CC01-date1,"Date tests 1","One month interval.",2027/01/01 00:00,2027/02/01 00:00,,true,auditor-01
+audit-report-sample-27,CC02-date2,"Date tests 2","Exactly one day interval.",2027/06/15 08:00,2027/06/16 08:00,,true,auditor-02
+audit-report-sample-28,CC03-date3,"Date tests 3","Exactly one hour interval.",2027/07/20 14:00,2027/07/20 15:00,,true,auditor-03
+audit-report-sample-29,CC04-date4,"Date tests 4","Exactly one minute interval (edge case).",2027/08/10 10:00,2027/08/10 10:01,,true,auditor-03
+audit-report-sample-30,CC05-date5,"Date tests 5","Cross-year interval.",2027/12/15 09:00,2028/01/15 18:00,,true,auditor-01
+audit-report-sample-31,CC06-date6,"Date tests 6","Leap year test (Feb 29).",2028/02/28 10:00,2028/02/29 18:00,,true,auditor-02
+audit-report-sample-32,CC07-date7,"Date tests 7","Multi-year long audit.",2027/01/01 00:00,2030/12/31 23:59,,true,auditor-03
+audit-report-sample-33,CC08-date8,"Date tests 8","End of century test.",2099/01/01 00:00,2099/12/31 23:59,,true,auditor-03
+audit-report-sample-34,CC09-date9,"Date tests 9","Start on current year (future month relative to Mar 2026).",2026/10/01 10:00,2026/11/01 10:00,,true,auditor-01
+audit-report-sample-35,CC10-date10,"Date tests 10","Start on 31st of month.",2027/10/31 09:00,2027/11/30 18:00,,true,auditor-02
+
+#startMoment - specific variations
+audit-report-sample-36,DD01-start1,"Start moment tests 1","Midnight start.",2027/05/05 00:00,2027/06/05 12:00,,true,auditor-01
+audit-report-sample-37,DD02-start2,"Start moment tests 2","End of day start.",2027/05/05 23:59,2027/06/05 12:00,,true,auditor-02
+audit-report-sample-38,DD03-start3,"Start moment tests 3","Noon start.",2027/05/05 12:00,2027/06/05 12:00,,true,auditor-03
+
+#endMoment - specific variations
+auditReport-39,EE01-end01,"End moment tests 1","Midnight end.",2027/09/10 10:00,2027/10/10 00:00,,true,auditor-01
+auditReport-40,EE02-end02,"End moment tests 2","End of day end.",2027/09/10 10:00,2027/10/10 23:59,,true,auditor-02
+auditReport-41,EE03-end03,"End moment tests 3","Noon end.",2027/09/10 10:00,2027/10/10 12:00,,true,auditor-03
+
+#moreInfo - standar (ValidUrl)
+audit-report-sample-42,FF01-url01,"URL tests 1","Standard HTTP url.",2027/01/01 00:00,2027/02/01 00:00,http://example.com,true,auditor-01
+audit-report-sample-43,FF02-url02,"URL tests 2","Standard HTTPS url.",2027/01/01 00:00,2027/02/01 00:00,https://secure.example.com,true,auditor-02
+audit-report-sample-44,FF03-url03,"URL tests 3","URL with path.",2027/01/01 00:00,2027/02/01 00:00,http://example.com/reports/2027/audit,true,auditor-03
+audit-report-sample-45,FF04-url04,"URL tests 4","URL with query parameters.",2027/01/01 00:00,2027/02/01 00:00,https://api.example.org?report=123&format=pdf,true,auditor-03
+audit-report-sample-46,FF05-url05,"URL tests 5","URL with anchors/fragments.",2027/01/01 00:00,2027/02/01 00:00,http://docs.com/audit#section3,true,auditor-01
+audit-report-sample-47,FF06-url06,"URL tests 6","URL with subdomains.",2027/01/01 00:00,2027/02/01 00:00,https://audit.sub.domain.company.net,true,auditor-02
+audit-report-sample-48,FF07-url07,"URL tests 7","Very long but valid URL.",2027/01/01 00:00,2027/02/01 00:00,https://www.google.com/search?q=audit+reports+2027+financial+review+compliance,true,auditor-03
+audit-report-sample-49,FF08-url08,"URL tests 8","Empty/Blank URL (it is optional).",2027/01/01 00:00,2027/02/01 00:00,,true,auditor-03
+
+#draftMode - FALSE (PUBLISHED) -> REQUIRE SECTIONS IN audit-section.csv TO PASS VALIDATION
+audit-report-sample-50,GG01-draft1,"Published Report 1","This report is published. It MUST have at least one section linked in the DB.",2027/01/01 00:00,2027/02/01 00:00,https://example.com,false,auditor-01
+audit-report-sample-51,GG02-draft2,"Published Report 2","Another published report. Testing that validation passes with multiple sections.",2027/03/01 00:00,2027/04/01 00:00,,false,auditor-02
+audit-report-sample-52,GG03-draft3,"Published Report 3","Published report with zero hour sections.",2027/05/01 00:00,2027/06/01 00:00,,false,auditor-03
+audit-report-sample-53,GG04-draft4,"Published Report 4","Published report with maximum hour sections.",2027/07/01 00:00,2027/08/01 00:00,,false,auditor-03

@@ -1,0 +1,44 @@
+key,key:auditReport,name,notes,hours,kind
+#base - entity
+audit-section-sample-01,audit-report-sample-01,"Initial Review","Basic preliminary review of documentation.",10,PRELIMINARY
+
+#name - standar (ValidHeader: 1 to 75 chars)
+audit-section-sample-02,audit-report-sample-02,"A","Shortest possible section name.",5,EVALUATION
+audit-section-sample-03,audit-report-sample-02,"Ab","Short section name.",12,EVALUATION
+audit-section-sample-04,audit-report-sample-03,"This is exactly a seventy five characters long valid header for section nam","Longest possible section name.",25,CONCLUSION
+audit-section-sample-05,audit-report-sample-03,"Risk Assessment & Mitigation","Standard naming convention.",8,PRELIMINARY
+audit-section-sample-06,audit-report-sample-04,"Evaluación de Controles Internos","Spanish naming test.",15,EVALUATION
+audit-section-sample-07,audit-report-sample-04,"Systemprüfung","German naming test.",20,CONCLUSION
+audit-section-sample-08,audit-report-sample-05,"Phase 1: Planning","Name with colon.",5,PRELIMINARY
+audit-section-sample-09,audit-report-sample-05,"[CONFIDENTIAL] Final Thoughts","Name with brackets.",4,CONCLUSION
+
+#notes - standar (ValidText: 1 to 255 chars)
+audit-section-sample-10,audit-report-sample-06,"Notes Test 1","A",10,EVALUATION
+audit-section-sample-11,audit-report-sample-06,"Notes Test 2","This is a standard note describing the findings during the evaluation phase of the audit.",15,EVALUATION
+audit-section-sample-12,audit-report-sample-07,"Notes Test 3","This note is meticulously crafted to be exactly two hundred and fifty-five characters long. We use this to ensure that the database column and the Hibernate validation constraint accept the maximum boundary condition without throwing any exceptions at all",20,EVALUATION
+audit-section-sample-13,audit-report-sample-07,"Notes Test 4","Notes with special chars: !@#$%^&*()",5,PRELIMINARY
+audit-section-sample-14,audit-report-sample-08,"Notes Test 5","Multiline notes test.\nLine 2.\nLine 3.",10,CONCLUSION
+audit-section-sample-15,audit-report-sample-08,"Notes Test 6","Notes with Arabic: ملاحظات المراجعة",8,EVALUATION
+audit-section-sample-16,audit-report-sample-09,"Notes Test 7","Notes with Asian characters: 監査ノート",12,PRELIMINARY
+audit-section-sample-17,audit-report-sample-09,"Notes Test 8","Notes testing HTML tags <p>paragraph</p>",5,CONCLUSION
+
+#hours - standar (ValidNumber min=0)
+audit-section-sample-18,audit-report-sample-10,"Hours Test 1","Zero hours allowed.",0,PRELIMINARY
+audit-section-sample-19,audit-report-sample-10,"Hours Test 2","One hour minimum positive.",1,EVALUATION
+audit-section-sample-20,audit-report-sample-11,"Hours Test 3","Standard work week.",40,EVALUATION
+audit-section-sample-21,audit-report-sample-11,"Hours Test 4","High amount of hours.",999,CONCLUSION
+audit-section-sample-22,audit-report-sample-12,"Hours Test 5","Extreme amount of hours.",9999,EVALUATION
+
+#kind - standar (Enum: PRELIMINARY, EVALUATION, CONCLUSION)
+audit-section-sample-23,audit-report-sample-13,"Kind Test 1","Testing PRELIMINARY enum.",10,PRELIMINARY
+audit-section-sample-24,audit-report-sample-13,"Kind Test 2","Testing EVALUATION enum.",15,EVALUATION
+audit-section-sample-25,audit-report-sample-14,"Kind Test 3","Testing CONCLUSION enum.",5,CONCLUSION
+
+#MANDATORY SECTIONS FOR PUBLISHED REPORTS (draftMode=false in audit-report.csv)
+audit-section-sample-26,audit-report-sample-50,"Mandatory Section 1","Required for report 50 to pass publication constraints.",10,PRELIMINARY
+audit-section-sample-27,audit-report-sample-51,"Mandatory Section 2A","Required for report 51 (part A).",20,PRELIMINARY
+audit-section-sample-28,audit-report-sample-51,"Mandatory Section 2B","Required for report 51 (part B).",30,EVALUATION
+audit-section-sample-29,audit-report-sample-51,"Mandatory Section 2C","Required for report 51 (part C).",5,CONCLUSION
+audit-section-sample-30,audit-report-sample-52,"Mandatory Section 3","Required for report 52. Testing zero hours.",0,EVALUATION
+audit-section-sample-31,audit-report-sample-53,"Mandatory Section 4A","Required for report 53. Testing large hours.",999,PRELIMINARY
+audit-section-sample-32,audit-report-sample-53,"Mandatory Section 4B","Required for report 53. Testing large hours.",999,CONCLUSION
