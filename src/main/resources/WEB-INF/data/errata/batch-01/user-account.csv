@@ -1,0 +1,2 @@
+key,enabled,identity,password,username
+user-account-spokesperson-01,true,"UserIdentity{name: 'Spokesperson', surname: 'One', email: 'One@acme.com'}",,

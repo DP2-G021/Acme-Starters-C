@@ -1,0 +1,15 @@
+key,cv,achievements,licensed,key:userAccount
+# base entity (Todo vacío)
+spokesperson-01,,,,
+# cv - standard variations (Vacío y Exceso de caracteres > 255)
+#spokesperson-04,,"Successfully launched 15+ major campaigns",true,user-account-spokesperson-01
+#spokesperson-05,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i","Successfully launched 15+ major campaigns",true,user-account-spokesperson-01
+# achievements - standard variations (Vacío y Exceso de caracteres > 255)
+#spokesperson-06,"Senior Marketing Professional",,true,user-account-spokesperson-01
+#spokesperson-07,"Senior Marketing Professional","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",true,user-account-spokesperson-01
+# licensed - standard variations (Vacío/Nulo)
+#spokesperson-08,"Senior Marketing Professional","Successfully launched 15+ major campaigns",,user-account-spokesperson-01
+#spokesperson-09,"Senior Marketing Professional","Successfully launched 15+ major campaigns",INVALID,user-account-spokesperson-01
+# userAccount - standard variations (Vacío y Referencia a un usuario que no existe)
+#spokesperson-10,"Senior Marketing Professional","Successfully launched 15+ major campaigns",true,
+#spokesperson-11,"Senior Marketing Professional","Successfully launched 15+ major campaigns",true,user-account-99

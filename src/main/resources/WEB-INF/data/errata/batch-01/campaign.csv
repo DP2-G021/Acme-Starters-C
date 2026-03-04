@@ -1,0 +1,42 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson
+# base entity
+campaign-00,,,,,,,,
+# ticker - standard variations
+campaign-01,TICK,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-02,TICKER-123456789,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-03,TICK!,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-04,A&B&C,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-05,TICK DUP,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-06,TICK-00,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+# ticker - no singular values
+# name - standard variations
+campaign-07,AA01-TICKER,,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-08,AA02-TICKER,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+# name - no singular values
+# description - standard variations
+campaign-09,AA03-TICKER,"Lorem ipsum dolor sit amet, consectetu",,2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-10,AA04-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2025/06/01 10:00,2026/06/01 10:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+# description - no singular values
+# startMoment - standard variations (Fuera del rango)
+campaign-11,AA05-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",,2200/12/31 23:59,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-12,AA06-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2024/12/31 23:59,2200/12/31 23:59,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-13,AA07-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2201/01/01 00:00,2200/12/31 23:59,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-23,AA08-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",1999/12/31 23:59,2200/12/31 23:59,http://lorem.com/ipsum,TRUE,spokesperson-01
+# startMoment - no singular values
+# endMoment - standard variations (Fuera del rango)
+campaign-14,AA09-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 00:00,,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-15,AA10-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 00:00,2024/12/31 23:59,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-16,AA11-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 00:00,2201/01/01 00:00,http://lorem.com/ipsum,TRUE,spokesperson-01
+campaign-24,AA12-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 00:00,1999/12/31 23:59,http://lorem.com/ipsum,TRUE,spokesperson-01
+# endMoment - no singular values
+# moreInfo - standard variations
+campaign-18,AA13-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://,TRUE,spokesperson-01
+campaign-19,AA14-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,ftp://,TRUE,spokesperson-01
+campaign-20,AA15-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,http://a,TRUE,spokesperson-01
+campaign-21,AA16-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,ftp://a,TRUE,spokesperson-01
+campaign-22,AA17-TICKER,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/01 10:00,2026/06/01 10:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x",TRUE,spokesperson-01
+# moreInfo - no singular values
+# draftMode - standard variations
+# draftMode - no singular values
+# spokesperson - standard variations
+# spokesperson - no singular values
