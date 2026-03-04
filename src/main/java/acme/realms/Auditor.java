@@ -3,10 +3,11 @@ package acme.realms;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidString;
+import acme.constraints.ValidHeader;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,16 +23,17 @@ public class Auditor extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString
+	@ValidHeader
 	@Column
 	private String				firm;
 
 	@Mandatory
-	@ValidString
+	@ValidHeader
 	@Column
 	private String				highlights;
 
 	@Mandatory
+	@Valid
 	@Column
 	private Boolean				solicitor;
 

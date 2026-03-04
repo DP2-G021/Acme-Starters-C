@@ -1,4 +1,6 @@
 key,enabled,identity,password,username
+user-account-administrator-01,true,"UserIdentity{name: 'Admin', surname: '1', email: 'administrator1@acme.com'}",administrator1,administrator1
+user-account-administrator-02,true,"UserIdentity{name: 'Admin', surname: '2', email: 'administrator2@acme.com'}",administrator2,administrator2
 user-account-consumer-01,true,"UserIdentity{name: 'Peter', surname: 'Consumer', email: 'peter@acme.com'}",consumer1,consumer1
 user-account-consumer-02,true,"UserIdentity{name: 'Mary', surname: '貸んい建濯よ芝弾テソ Λορεμ ιπσθμ', email: 'mary@acme.com'}",consumer2,consumer2
 user-account-consumer-03,true,"UserIdentity{name: 'Manolo', surname: '之乎路可良 ᏥᏲᏎᎭ', email: 'manolo@acme.com'}",consumer3,consumer3
@@ -8,3 +10,10 @@ user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטי�
 user-account-spokesperson-01,true,"UserIdentity{name: 'Spokesperson', surname: 'One', email: 'One@acme.com'}",spokesperson1,spokesperson1
 user-account-spokesperson-02,true,"UserIdentity{name: 'Spokesperson', surname: 'Two', email: 'Two@acme.com'}",spokesperson2,spokesperson2
 user-account-spokesperson-03,true,"UserIdentity{name: 'Spokesperson', surname: 'Three', email: 'Three@acme.com'}",spokesperson3,spokesperson3
+user-account-fundraiser-01,true,"UserIdentity{name: 'Luis', surname: 'Mejía', email: 'luis@acme.com'}",fundraiser1,fundraiser1
+user-account-fundraiser-02,true,"UserIdentity{name: 'Elena', surname: 'García', email: 'elena@acme.com'}",fundraiser2,fundraiser2
+user-account-fundraiser-03,true,"UserIdentity{name: 'Javier', surname: 'López', email: 'javier@acme.com'}",fundraiser3,fundraiser3
+user-account-sponsor-01,true,"UserIdentity{name: 'Ana', surname: 'Jimenez', email: 'ana@acme.com'}",sponsor1,sponsor1
+user-account-sponsor-02,true,"UserIdentity{name: 'Carmen', surname: 'Ruiz', email: 'carmen@acme.com'}",sponsor2,sponsor2
+user-account-sponsor-03,true,"UserIdentity{name: 'Luis', surname: 'Hernandez', email: 'luis@acme.com'}",sponsor3,sponsor3
+user-account-sponsor-04,true,"UserIdentity{name: 'Carlos', surname: 'Martin', email: 'carlos@acme.com'}",sponsor4,sponsor4

@@ -1,0 +1,43 @@
+key,name,notes,expected-percentage,kind,key:strategy
+# base entity
+tactic-00,Initial Plan,"Structured execution plan",25.0,SUBTLE,strategy-45
+
+# name - standard variations
+tactic-01,L,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-02,Lo,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-03,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod te","Valid notes",25.0,SUBTLE,strategy-00
+tactic-04,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tem","Valid notes",25.0,SUBTLE,strategy-00
+tactic-05,โลเร็ม อิปซัม,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-06,لوريم إيبسوم,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-07,洛伦·伊普森,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-08,<marquee>Hacked</marquee>,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-09,<script>alert('Hacked');</script>,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-10,' or 'A' = 'A,"Valid notes",25.0,SUBTLE,strategy-00
+
+# notes - standard variations
+tactic-11,Valid Name,L,25.0,SUBTLE,strategy-00
+tactic-12,Valid Name,Lo,25.0,SUBTLE,strategy-00
+tactic-13,Valid Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",25.0,SUBTLE,strategy-00
+tactic-14,Valid Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",25.0,SUBTLE,strategy-00
+tactic-15,Valid Name,โลเร็ม อิปซัม,25.0,SUBTLE,strategy-00
+tactic-16,Valid Name,لوريم إيبسوم,25.0,SUBTLE,strategy-00
+tactic-17,Valid Name,洛伦·伊普森,25.0,SUBTLE,strategy-00
+tactic-18,Valid Name,<marquee>Hacked</marquee>,25.0,SUBTLE,strategy-00
+tactic-19,Valid Name,<script>alert('Hacked');</script>,25.0,SUBTLE,strategy-00
+tactic-20,Valid Name,' or 'A' = 'A,25.0,SUBTLE,strategy-00
+
+# expected-percentage - valid boundary variations
+tactic-21,Valid Name,"Valid notes",0.0,SUBTLE,strategy-00
+tactic-22,Valid Name,"Valid notes",0.01,SUBTLE,strategy-00
+tactic-23,Valid Name,"Valid notes",50.0,SUBTLE,strategy-00
+tactic-24,Valid Name,"Valid notes",99.99,SUBTLE,strategy-00
+tactic-25,Valid Name,"Valid notes",100.0,SUBTLE,strategy-00
+
+# kind - valid variations
+tactic-26,Valid Name,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-27,Valid Name,"Valid notes",25.0,AGGRESSIVE,strategy-00
+tactic-28,Valid Name,"Valid notes",25.0,TENDER,strategy-00
+
+# key:strategy - valid variations
+tactic-29,Valid Name,"Valid notes",25.0,SUBTLE,strategy-00
+tactic-30,Valid Name,"Valid notes",25.0,SUBTLE,strategy-45
