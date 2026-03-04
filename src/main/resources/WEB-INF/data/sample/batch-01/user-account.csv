@@ -13,5 +13,5 @@ user-account-fundraiser-03,true,"UserIdentity{name: 'Javier', surname: 'López',
 user-account-sponsor-01,true,"UserIdentity{name: 'Ana', surname: 'Jimenez', email: 'ana@acme.com'}",sponsor1,sponsor1
 user-account-sponsor-02,true,"UserIdentity{name: 'Carmen', surname: 'Ruiz', email: 'carmen@acme.com'}",sponsor2,sponsor2
 user-account-sponsor-03,true,"UserIdentity{name: 'Luis', surname: 'Hernandez', email: 'luis@acme.com'}",sponsor3,sponsor3
-user-account-sponsor-04,true,"UserIdentity{name: 'Carlos', surname: 'Martin', email: 'carlos@acme.com'}",sponsor3,sponsor3
+user-account-sponsor-04,true,"UserIdentity{name: 'Carlos', surname: 'Martin', email: 'carlos@acme.com'}",sponsor4,sponsor4
 
