@@ -1,0 +1,48 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:auditor
+
+#base - entity (Un reporte valido para usar de FK en las secciones erroneas)
+errata-report-base,OK99-valid1,"Reporte Valido para FK","Descripcion valida",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+
+#ticker - errata patron invalido... (aqui siguen los que ya tenias)
+#ticker - errata patron invalido (regex: ^[A-Z]{2}[0-9]{2}-\w{5,10}$)
+errata-report-01,aB12-abcde,"Ticker con minusculas al principio","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-02,ABC2-abcde,"Ticker con tres letras","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-03,A123-abcde,"Ticker con una letra y tres numeros","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-04,AB12_abcde,"Ticker sin guion medio","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-05,AB12-abcd,"Ticker con sufijo muy corto (<5)","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-06,AB12-abcdefghijk,"Ticker con sufijo muy largo (>10)","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-07,AB12-abc@#,"Ticker con sufijo con caracteres no alfanumericos","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-08,,"Ticker nulo","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+
+#ticker - errata unicidad (intentamos usar ES26-a1B2c que ya existe en el SAMPLE)
+errata-report-09,ES26-a1B2c,"Ticker duplicado","Debe saltar la constraint de unicidad",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+
+#name - errata (@ValidHeader 1 a 75)
+errata-report-10,ZZ01-error,"","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-11,ZZ02-error,"   ","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-12,ZZ03-error,"Este nombre es ridículamente largo y supera intencionadamente los setenta y cinco caracteres permitidos para que salte la restriccion","Desc",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+
+#description - errata (@ValidText 1 a 255)
+errata-report-13,ZZ04-error,"Name","",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-14,ZZ05-error,"Name","   ",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-15,ZZ06-error,"Name","Esta descripcion es meticulosamente elaborada para superar los doscientos cincuenta y cinco caracteres. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. ESTO EXCEDE EL LIMITE.",2027/05/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+
+#startMoment/endMoment - errata de fechas pasadas (relativas a marzo 2026)
+errata-report-16,ZZ07-error,"Fecha inicio en el pasado","Desc",2025/01/01 10:00,2027/06/01 10:00,,true,errata-auditor-base
+errata-report-17,ZZ08-error,"Fecha fin en el pasado","Desc",2027/01/01 10:00,2025/06/01 10:00,,true,errata-auditor-base
+errata-report-18,ZZ09-error,"Ambas fechas en el pasado","Desc",2025/01/01 10:00,2025/06/01 10:00,,true,errata-auditor-base
+
+#startMoment/endMoment - errata constraint custom (inicio despues de fin)
+errata-report-19,ZZ10-error,"Inicio posterior a fin","Desc",2027/08/01 10:00,2027/07/01 10:00,,true,errata-auditor-base
+errata-report-20,ZZ11-error,"Inicio y fin exactamente iguales","Desc",2027/08/01 10:00,2027/08/01 10:00,,true,errata-auditor-base
+
+#moreInfo - errata (ValidUrl)
+errata-report-21,ZZ12-error,"URL malformada","Desc",2027/05/01 10:00,2027/06/01 10:00,not-a-url,true,errata-auditor-base
+errata-report-22,ZZ13-error,"Protocolo invalido","Desc",2027/05/01 10:00,2027/06/01 10:00,ftp://example.com,true,errata-auditor-base
+errata-report-23,ZZ14-error,"Protocolo mal escrito","Desc",2027/05/01 10:00,2027/06/01 10:00,htp://example.com,true,errata-auditor-base
+
+#draftMode - errata nulo
+errata-report-24,ZZ15-error,"DraftMode nulo","Desc",2027/05/01 10:00,2027/06/01 10:00,http://example.com,,errata-auditor-base
+
+#draftMode - constraint custom de publicación (Publicado SIN SECCIONES)
+errata-report-25,ZZ16-error,"Publicado pero sin secciones","Como este reporte está en el errata, NO le asociaremos secciones en audit-section.csv. El validador custom lo debe rechazar.",2027/05/01 10:00,2027/06/01 10:00,,false,errata-auditor-base

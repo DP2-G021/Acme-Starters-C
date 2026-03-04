@@ -1,0 +1,7 @@
+key,key:userAccount,firm,highlights,solicitor
+
+
+#----------firm/highlights - variations-----------------------
+auditor-02,user-account-auditor-02,"PwC Europe","Risk assessment and international compliance expert",false
+auditor-03,user-account-auditor-03,"Deloitte Touche Tohmatsu Limited","Focus on ESG (Environmental, Social, and Governance) reporting",true
+auditor-01,user-account-auditor-01,"Ernst & Young Global","Cybersecurity and internal controls assessment",false

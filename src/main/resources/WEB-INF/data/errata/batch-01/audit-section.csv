@@ -1,0 +1,23 @@
+key,key:auditReport,name,notes,hours,kind
+
+#base - errata FK (Reporte nulo)
+errata-section-01,,"Falta FK Reporte","Notas",5,PRELIMINARY
+
+#name - errata (@ValidHeader 1 a 75)
+errata-section-03,errata-report-base,"","Notas",5,PRELIMINARY
+errata-section-04,errata-report-base,"   ","Notas",5,PRELIMINARY
+errata-section-05,errata-report-base,"Este nombre es ridículamente largo y supera intencionadamente los setenta y cinco caracteres permitidos para que salte la restriccion de hibernate","Notas",5,PRELIMINARY
+
+#notes - errata (@ValidText 1 a 255)
+errata-section-06,errata-report-base,"Name ok","",5,PRELIMINARY
+errata-section-07,errata-report-base,"Name ok","   ",5,PRELIMINARY
+errata-section-08,errata-report-base,"Name ok","Esta nota es meticulosamente elaborada para superar los doscientos cincuenta y cinco caracteres. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. ESTO EXCEDE EL LIMITE.",5,PRELIMINARY
+
+#hours - errata (@ValidNumber min=0)
+errata-section-09,errata-report-base,"Horas negativas","Las horas no pueden ser menores que cero",-1,PRELIMINARY
+errata-section-10,errata-report-base,"Horas muy negativas","Las horas no pueden ser menores que cero",-50,CONCLUSION
+errata-section-11,errata-report-base,"Horas nulas","Mandatory error",,EVALUATION
+
+#kind - errata (Enum y @Mandatory)
+errata-section-12,errata-report-base,"Kind nulo","Notas",5,
+errata-section-13,errata-report-base,"Kind vacio","Notas",5,null
