@@ -1,4 +1,17 @@
 key,key:userAccount,firm,highlights,solicitor
 
-#base - entity (Un auditor válido para usar de FK en los reportes erróneos)
-errata-auditor-base,user-account-auditor-01,"Valid Firm Errata","Valid Highlights",true
+# base - entity (Un auditor valido para usar de FK en las secciones erroneas)
+auditor-01,user-account-auditor-01,"Ernst & Young Global","Cybersecurity and internal controls assessment",false
+
+# firm - errata (@ValidHeader 1 a 75)
+auditor-02,user-account-auditor-02,"","Lorem ipsum highlight for testing purposes",true
+auditor-03,user-account-auditor-03," ","Lorem ipsum highlight for testing purposes",true
+auditor-04,user-account-auditor-04,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i","Lorem ipsum highlight for testing purposes",true
+
+# highlights - errata (@ValidHeader 1 a 75)
+auditor-05,user-account-auditor-05,"Ernst & Young Global","",false
+auditor-06,user-account-auditor-06,"Ernst & Young Global"," ",false
+auditor-07,user-account-auditor-07,"Ernst & Young Global","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",false
+
+# solicitor - errata (mandatory)
+auditor-08,user-account-auditor-08,"Ernst & Young Global","Cybersecurity and internal controls assessment",
