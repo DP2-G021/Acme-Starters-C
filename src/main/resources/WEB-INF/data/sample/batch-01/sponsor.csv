@@ -1,4 +1,4 @@
 key,address,im,gold,key:userAccount
-sponsor-00,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,FALSE,user-account-sponsor-01
-sponsor-01,L,Lorem ipsum dolor sit amet  consectetu,FALSE,user-account-sponsor-02
-sponsor-02,Lo,Lorem ipsum dolor sit amet  consectetu,FALSE,user-account-sponsor-03
+sponsor-01,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,user-account-sponsor-01
+sponsor-02,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,user-account-sponsor-02
+sponsor-03,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,user-account-sponsor-03
