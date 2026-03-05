@@ -1,0 +1,55 @@
+===========================================================
+                GUIA DE CONTRIBUCIÓN
+===========================================================
+
+Para mantener nuestro flujo de trabajo organizado y el 
+historial de codigo limpio, seguimos estas normas. Por 
+favor, leelas antes de empezar cualquier tarea.
+
+-----------------------------------------------------------
+1. GESTION DE RAMAS (BRANCHING)
+-----------------------------------------------------------
+No trabajamos directamente sobre las ramas principales. 
+Cada vez que inicies una tarea, debes crear una RAMA NUEVA 
+partiendo de 'develop'.
+
+Utilizamos estos prefijos para el nombre de la rama:
+* feature/   : Para nuevas funcionalidades (features).
+* fix/    : Para corrección de errores (bugs).
+* document/   : Para cambios solo en la documentacion.
+
+-----------------------------------------------------------
+2. MENSAJES DE COMMIT (CONVENTIONAL COMMITS)
+-----------------------------------------------------------
+Los commits deben seguir este formato:
+TIPO: descripcion breve en minusculas
+
+Ejemplos:
+- feat: agregar validacion de login
+- fix: corregir error en el calculo del total
+- docs: actualizar el manual de usuario
+
+-----------------------------------------------------------
+3. FLUJO DE TRABAJO (WORKFLOW)
+-----------------------------------------------------------
+
+TAREAS INDIVIDUALES:
+1. Crea tu rama (ej: feat/mi-tarea) desde 'develop'.
+2. Realiza tus cambios y haz los commits.
+3. Al terminar, haz el MERGE directamente a 'develop'.
+
+TAREAS GRUPALES:
+1. Al terminar la tarea, abre una PULL REQUEST (PR).
+2. Un COMPAÑERO debe revisar tu codigo y aprobarlo.
+3. Tras la aprobacion, se realiza el MERGE a 'develop'.
+
+-----------------------------------------------------------
+4. RAMA PRINCIPAL (MAIN)
+-----------------------------------------------------------
+La rama 'main' es la principal y solo contiene versiones 
+estables. 
+
+* Solo se hace merge de 'develop' a 'main' cuando tenemos 
+  una VERSION CONSISTENTE y funcional.
+
+===========================================================
