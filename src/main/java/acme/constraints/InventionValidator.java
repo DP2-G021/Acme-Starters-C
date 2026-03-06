@@ -52,21 +52,23 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 				super.state(context, uniqueTicker, "ticker", "acme.validation.invention.duplicated-ticker.message");
 			}
 			{
-				boolean hasAtLeastOnePart;
+				boolean hasAtLeastOnePart = true;
+				Boolean draftMode = invention.getDraftMode();
 
-				//getDraftMode means if it is going to be submit or not
-				if (invention.getDraftMode())
-					hasAtLeastOnePart = true;
-				else {
-					Long partsCount = this.repository.countPartsByInventionId(invention.getId());
-					hasAtLeastOnePart = partsCount != null && partsCount >= 1;
-				}
+				if (draftMode != null)
+					if (Boolean.TRUE.equals(draftMode))
+						hasAtLeastOnePart = true;
+					else {
+						Long partsCount = this.repository.countPartsByInventionId(invention.getId());
+						hasAtLeastOnePart = partsCount != null && partsCount >= 1;
+					}
 
 				super.state(context, hasAtLeastOnePart, "*", "acme.validation.invention.at-least-one-part.message");
 			}
 
 			// If it is not a draft
 			{
+				//comprobar lo del draft mode, esta validacion cuando se publique, a la hora de publicarlo y nada, y solo se puede hacer en el servicio, solo se valida al publicarse
 				boolean validInterval = true;
 				Date start = invention.getStartMoment();
 				Date end = invention.getEndMoment();
@@ -90,7 +92,7 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 				else {
 					Set<String> currencies = this.partRepository.getCurrencyOfAllCost(invention.getId());
 
-					onlyEuros = currencies.isEmpty() || currencies.size() == 1 && currencies.contains("EURO");
+					onlyEuros = currencies.isEmpty() || currencies.size() == 1 && currencies.contains("EUR");
 
 				}
 
