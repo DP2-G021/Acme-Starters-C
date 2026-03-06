@@ -70,6 +70,7 @@ public class Strategy extends AbstractEntity {
 
 	@Mandatory
 	@Column
+	// Poner @Valid comentado y que sea tipo boolean?
 	@Valid
 	private Boolean				draftMode;
 
@@ -85,7 +86,7 @@ public class Strategy extends AbstractEntity {
 	public Double getMonthsActive() {
 		if (this.startMoment != null && this.endMoment != null) {
 			long diffInMillies = this.endMoment.getTime() - this.startMoment.getTime();
-			double months = diffInMillies / (1000.0 * 60 * 60 * 24 * 30.44);
+			double months = diffInMillies / (1000.0 * 60 * 60 * 24 * 30);
 			return Math.round(months * 10.0) / 10.0;
 		}
 		return 0.0;
