@@ -36,23 +36,18 @@ strategy-23,ES25-STRAT20,Green Growth Plan,<marquee>Hacked</marquee>,2026/01/10 
 strategy-24,ES25-STRAT21,Green Growth Plan,<script>alert('Hacked');</script>,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-25,ES25-STRAT22,Green Growth Plan,' or 'A' = 'A,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 
-# start-moment - boundary variations (Positive)
+# start-moment - boundary variations
 strategy-26,ES25-STRAT24,Green Growth Plan,"Valid description",2025/01/02 00:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-27,ES25-STRAT25,Green Growth Plan,"Valid description",2025/01/01 00:01,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-28,ES25-STRAT26,Green Growth Plan,"Valid description",2025/01/01 00:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
-
-# cross-field validation (Corrected Positive)
 strategy-29,ES25-STRAT29,Green Growth Plan,"Valid description",2026/06/01 10:00,2026/07/01 10:00,http://example.com,TRUE,fundraiser-00
 
 # end-moment - standard variations
 strategy-30,ES25-STRAT30,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-31,ES25-STRAT31,Green Growth Plan,"Valid description",2025/01/02 00:00,2025/01/03 00:00,http://example.com,TRUE,fundraiser-00
-
-# end-moment - boundary variations (Corrected Positive)
 strategy-32,ES25-STRAT32,Green Growth Plan,"Valid description",2025/01/01 00:00,2025/01/01 00:01,http://example.com,TRUE,fundraiser-00
-
-# end-moment - cross-field validation (Corrected Positive)
 strategy-34,ES25-STRAT35,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/01/10 10:05,http://example.com,TRUE,fundraiser-00
+strategy-47,ES25-STRAT47,Green Growth Plan,"Valid description",2026/01/10 10:00,2200/01/10 10:05,http://example.com,TRUE,fundraiser-00
 
 # more-info - standard variations
 strategy-35,ES25-STRAT37,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,,TRUE,fundraiser-00
