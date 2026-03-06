@@ -1,0 +1,7 @@
+key,key:userAccount,firm,highlights,solicitor
+
+auditor-01,user-account-auditor-01,"Ernst & Young Global","Cybersecurity and internal controls assessment",false
+
+auditor-02,user-account-auditor-02,"Firm name exactly seventy five characters long test example","Lorem ipsum highlight for testing purposes",true
+
+auditor-03,user-account-auditor-03,"' or 'A' = 'A","Highlight exactly seventy five characters long test example",false

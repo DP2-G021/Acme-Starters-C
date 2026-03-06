@@ -1,0 +1,41 @@
+key,ticker,name,description,start-moment,end-moment,more-info,draft-mode,key:fundraiser
+
+# base entity  - MUST be invalid
+# invalid because name is blank (ValidHeader)
+strategy-00,ES25-BASE01,,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# ticker - invalid format (ValidTicker)
+strategy-err-01,E25-STRAT0100,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-02,ES2-STRAT01,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-03,ES25STRAT01,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-04,es25-STRAT0101,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-05,ES25-ABCD,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-07,ES25-AB@DE,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# ticker - no singular values (Mandatory)
+strategy-err-09,,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-10, ,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# name - no singular values (Mandatory)
+strategy-err-12,ES25-ERR12,,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-13,ES25-ERR13, , "Valid description",2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# description - no singular values (Mandatory)
+strategy-err-14,ES25-ERR14,Green Growth Plan,,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-15,ES25-ERR15,Green Growth Plan, ,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# start-moment - not future
+strategy-err-16,ES25-ERR16,Green Growth Plan,"Valid description",2024/12/31 23:59,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# end-moment - not future
+strategy-err-18,ES25-ERR18,Green Growth Plan,"Valid description",2026/01/10 10:00,2024/12/31 23:59,http://example.com,TRUE,fundraiser-00
+
+# cross-field validation - invalid interval
+strategy-err-20,ES25-ERR20,Green Growth Plan,"Valid description",2026/07/01 10:00,2026/06/01 10:00,http://example.com,TRUE,fundraiser-00
+strategy-err-21,ES25-ERR21,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/01/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# more-info - invalid URL
+strategy-err-22,ES25-ERR22,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,not-a-url,TRUE,fundraiser-00
+strategy-err-23,ES25-ERR23,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http:/example.com,TRUE,fundraiser-00
+strategy-err-24,ES25-ERR24,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,www.example.com,TRUE,fundraiser-00
+strategy-err-25,ES25-ERR25,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://,TRUE,fundraiser-00
