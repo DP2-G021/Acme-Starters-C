@@ -1,0 +1,4 @@
+key,enabled,identity,password,username
+user-account-inventor-01,true,"UserIdentity{name: '', surname: 'Inventor', email: 'a@b.es'}",inventor1,inventor1
+user-account-inventor-02,true,"UserIdentity{name: 'John', surname: 'Inventor', email: 'user:password@mail.com'}",inventor2,inventor2
+user-account-inventor-03,true,"UserIdentity{name: 'Manolo', surname: 'Inventor', email: 'acme@lorem-ipsum.org'}","",""

@@ -7,3 +7,6 @@ user-account-consumer-03,true,"UserIdentity{name: 'Manolo', surname: '之乎路�
 user-account-provider-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",provider1,provider1
 user-account-provider-02,true,"UserIdentity{name: 'Martina', surname: 'коза თხა', email: 'martina@acme.com'}",provider2,provider2
 user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטיח Æløzå', email: 'antonia@acme.com'}",provider3,provider3
+user-account-inventor-01,true,"UserIdentity{name: 'Paz', surname: '<marquee>Hacked</marquee>', email: 'acme@lorem-ipsum.org'}",inventor1,inventor1
+user-account-inventor-02,true,"UserIdentity{name: '洛伦·伊普森', surname: 'لوريم إيبسوم', email: 'a@b.es'}",inventor2,inventor2
+user-account-inventor-03,true,"UserIdentity{name: 'Paco', surname: 'โลเร็ม อิปซัม', email: 'a@b.esx'}",inventor3,inventor3

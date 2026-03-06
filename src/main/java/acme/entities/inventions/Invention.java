@@ -11,6 +11,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
@@ -18,7 +20,6 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
-import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidInvention;
 import acme.constraints.ValidText;
@@ -39,6 +40,10 @@ public class Invention extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+
+	@Transient
+	@Autowired
+	PartRepository				repo;
 
 	@Mandatory
 	@ValidTicker
@@ -71,7 +76,6 @@ public class Invention extends AbstractEntity {
 	private String				moreInfo;
 
 
-	@Valid //ask manuel jesus about the use of the valid in here
 	@Transient
 	public Double getMonthsActive() {
 
@@ -85,19 +89,17 @@ public class Invention extends AbstractEntity {
 
 	}
 
-	@Valid
 	@Transient
 	public Money getCost() {
 		Money result = new Money();
 
-		PartRepository repo = SpringHelper.getBean(PartRepository.class);
-		Double total = repo.getInventionCost(this.getId());
+		Double total = this.repo.getInventionCost(this.getId());
 
 		if (total == null)
 			total = 0.0; //ask about this politic
 
 		result.setAmount(total);
-		result.setCurrency("EURO");
+		result.setCurrency("EUR");
 		return result;
 
 	}
