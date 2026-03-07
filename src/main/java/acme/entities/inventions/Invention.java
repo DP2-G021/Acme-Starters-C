@@ -1,6 +1,7 @@
 
 package acme.entities.inventions;
 
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,6 +19,7 @@ import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
@@ -76,19 +78,22 @@ public class Invention extends AbstractEntity {
 	private String				moreInfo;
 
 
+	@Mandatory
+	//@Valid  //HINT: Eclipse's validator forbids this annotation here.
 	@Transient
 	public Double getMonthsActive() {
 
 		if (this.startMoment == null || this.endMoment == null)
-			return 0.0; //ask manuel jesus about if this is a great politic
+			return 0.0;
 
-		double seconds = MomentHelper.computeDuration(this.startMoment, this.endMoment).getSeconds(); //esto va a dar una excepción, lo traigo en segudos y hago la conversión
-		double months = seconds / (60.0 * 60.0 * 24.0 * 30.0);
+		double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
 
 		return Math.round(months * 10.0) / 10.0;
 
 	}
 
+	@Mandatory
+	@ValidMoney(min = 0.0)
 	@Transient
 	public Money getCost() {
 		Money result = new Money();
@@ -106,9 +111,9 @@ public class Invention extends AbstractEntity {
 
 
 	@Mandatory
-	@Valid
+	//HINT: @Valid by default
 	@Column
-	private Boolean		draftMode;
+	private boolean		draftMode;
 
 	@Mandatory
 	@Valid

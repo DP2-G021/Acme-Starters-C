@@ -52,16 +52,15 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 				super.state(context, uniqueTicker, "ticker", "acme.validation.invention.duplicated-ticker.message");
 			}
 			{
-				boolean hasAtLeastOnePart = true;
-				Boolean draftMode = invention.getDraftMode();
+				boolean hasAtLeastOnePart;
 
-				if (draftMode != null)
-					if (Boolean.TRUE.equals(draftMode))
-						hasAtLeastOnePart = true;
-					else {
-						Long partsCount = this.repository.countPartsByInventionId(invention.getId());
-						hasAtLeastOnePart = partsCount != null && partsCount >= 1;
-					}
+				//getDraftMode means if it is going to be submit or not
+				if (invention.isDraftMode())
+					hasAtLeastOnePart = true;
+				else {
+					Long partsCount = this.repository.countPartsByInventionId(invention.getId());
+					hasAtLeastOnePart = partsCount != null && partsCount >= 1;
+				}
 
 				super.state(context, hasAtLeastOnePart, "*", "acme.validation.invention.at-least-one-part.message");
 			}
