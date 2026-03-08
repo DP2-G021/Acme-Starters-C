@@ -21,6 +21,11 @@ master.menu.administrator.populate-db-initial = Reset Database
 master.menu.administrator.populate-db-sample = Load Sample Data
 master.menu.administrator.shut-system-down = Maintenance / Shutdown
 
+# master.menu.any #############################################################
+
+master.menu.any = Strategies
+master.menu.any.list-strategies = Published strategies
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider

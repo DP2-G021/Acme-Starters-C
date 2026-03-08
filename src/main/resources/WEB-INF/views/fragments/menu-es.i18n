@@ -21,6 +21,11 @@ master.menu.administrator.populate-db-initial = Reiniciar B.D.
 master.menu.administrator.populate-db-sample = Cargar datos de prueba
 master.menu.administrator.shut-system-down = Mantenimiento / Apagar
 
+# master.menu.any #############################################################
+
+master.menu.any = Estrategias
+master.menu.any.list-strategies = Estrategias publicadas
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
