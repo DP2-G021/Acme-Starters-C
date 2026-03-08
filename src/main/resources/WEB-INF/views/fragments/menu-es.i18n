@@ -13,6 +13,11 @@
 master.menu.anonymous = Acme Starters
 master.menu.anonymous.about = Sobre nosotros
 
+# master.menu.any #############################################################
+
+master.menu.any = General
+master.menu.any.list-campaigns = Listar Campañas
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Sistema

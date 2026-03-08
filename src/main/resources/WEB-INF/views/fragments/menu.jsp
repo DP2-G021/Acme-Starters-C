@@ -23,8 +23,11 @@
 			
 			<acme:menu-suboption code="master.menu.anonymous.about" action="/"/>
 		</acme:menu-option>
-
 		
+		<acme:menu-option code="master.menu.any" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.any.list-campaign" action="/any/campaign/list"/>
+		</acme:menu-option>
+
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
