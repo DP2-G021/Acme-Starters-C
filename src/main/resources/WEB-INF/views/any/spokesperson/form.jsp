@@ -4,10 +4,12 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:form-textbox code="any.spokesperson.form.label.name" path="identity.name"/>
-	<acme:form-textbox code="any.spokesperson.form.label.surname" path="identity.surname"/>
-	<acme:form-textbox code="any.spokesperson.form.label.email" path="identity.email"/>
-	<acme:form-textbox code="any.spokesperson.form.label.address" path="address"/>
-	<acme:form-textbox code="any.spokesperson.form.label.im" path="im"/>
-	<acme:form-textbox code="any.spokesperson.form.label.gold" path="gold"/>
+    <acme:form-textbox code="any.spokesperson.form.label.name" path="userAccount.identity.name"/>
+    <acme:form-textbox code="any.spokesperson.form.label.surname" path="userAccount.identity.surname"/>
+    <acme:form-textbox code="any.spokesperson.form.label.email" path="userAccount.identity.email"/>
+    
+    <acme:form-textarea code="any.spokesperson.form.label.cv" path="cv"/>
+    <acme:form-textarea code="any.spokesperson.form.label.achievements" path="achievements"/>
+    <acme:form-textbox code="any.spokesperson.form.label.licensed" path="licensed"/>
+    
 </acme:form>

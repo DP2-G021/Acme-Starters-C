@@ -8,6 +8,6 @@ any.milestone.form.title = Detalles de los Hitos
 any.milestone.form.label.title = Título:
 any.milestone.form.label.effort = Esfuerzo:
 any.milestone.form.label.kind = Tipo de Hito:
-any.milestone.form.label.notes = Notas adicionales:
+any.milestone.form.label.achievements = Logros:
 
 any.milestone.form.button.return = Volver a la lista
