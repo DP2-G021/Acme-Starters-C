@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
-import acme.entities.auditReports.AuditReport;
-import acme.entities.auditReports.AuditReportRepository;
+import acme.entities.auditreports.AuditReport;
+import acme.entities.auditreports.AuditReportRepository;
 
 @Validator
 public class AuditReportValidator extends AbstractValidator<ValidAuditReport, AuditReport> {

@@ -1,5 +1,5 @@
 
-package acme.entities.auditReports;
+package acme.entities.auditreports;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
