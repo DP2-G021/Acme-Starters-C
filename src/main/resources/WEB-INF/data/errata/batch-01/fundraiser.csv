@@ -13,4 +13,4 @@ fundraiser-err-03,BBVA Bank,,TRUE,user-account-fundraiser-01
 fundraiser-err-04,BBVA Bank, ,TRUE,user-account-fundraiser-01
 
 # agent - missing
-fundraiser-00,,"Investment strategy focused on sustainable growth",,user-account-fundraiser-01
+fundraiser-err-05,,"Investment strategy focused on sustainable growth",,user-account-fundraiser-01
