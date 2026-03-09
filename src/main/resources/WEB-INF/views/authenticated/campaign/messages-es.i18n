@@ -1,0 +1,21 @@
+authenticated.campaign.form.title = Detalles de la campaña
+authenticated.campaign.list.title = Lista de campañas
+
+authenticated.campaign.form.label.ticker = Referencia:
+authenticated.campaign.form.label.name = Nombre:
+authenticated.campaign.form.label.description = Descripción:
+authenticated.campaign.form.label.startMoment = Fecha de inicio:
+authenticated.campaign.form.label.endMoment = Fecha de fin:
+authenticated.campaign.form.label.moreInfo = Más información:
+authenticated.campaign.form.label.draftMode = Modo borrador:
+authenticated.campaign.form.label.monthsActive = Meses activos:
+authenticated.campaign.form.label.effort = Esfuerzo:
+
+authenticated.campaign.form.button.milestones = Ver Hitos
+authenticated.campaign.form.button.spokesperson = Ver Perfil del Portavoz
+
+authenticated.campaign.list.label.ticker = Referencia
+authenticated.campaign.list.label.name = Nombre
+authenticated.campaign.list.label.startMoment = Fecha de inicio
+authenticated.campaign.list.label.endMoment = Fecha de fin
+authenticated.campaign.list.label.draftMode = Modo borrador
