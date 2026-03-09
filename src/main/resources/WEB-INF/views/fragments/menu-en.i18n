@@ -19,6 +19,7 @@ master.menu.any = Any
 master.menu.any.list-campaigns = List Campaigns
 master.menu.any.list-strategies = Published strategies
 master.menu.any.list-inventions = Published Inventions
+master.menu.any.list-sponsorship = Published Sponsorships
 
 # master.menu.administrator ###################################################
 

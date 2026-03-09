@@ -19,6 +19,7 @@ master.menu.any = Cualquier
 master.menu.any.list-campaigns = Listar Campañas
 master.menu.any.list-strategies = Estrategias publicadas
 master.menu.any.list-inventions = Invenciones Publicadas
+master.menu.any.list-sponsorship = Patrocinaciones Publicadas
 
 # master.menu.administrator ###################################################
 
