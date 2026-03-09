@@ -7,6 +7,8 @@ any.campaign.form.label.description = Descripción:
 any.campaign.form.label.startMoment = Fecha de inicio:
 any.campaign.form.label.endMoment = Fecha de fin:
 any.campaign.form.label.moreInfo = Más información:
+any.campaign.form.label.monthsActive = Meses Activos:
+any.campaign.form.label.effort = Esfuerzo:
 
 any.campaign.form.button.milestones = Ver Hitos
 any.campaign.form.button.spokesperson = Ver Perfil del Portavoz

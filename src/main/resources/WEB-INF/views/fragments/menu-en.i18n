@@ -15,7 +15,7 @@ master.menu.anonymous.about = About us
 
 # master.menu.any #############################################################
 
-master.menu.any = General
+master.menu.any = Any
 master.menu.any.list-campaigns = List Campaigns
 master.menu.any.list-strategies = Published strategies
 
