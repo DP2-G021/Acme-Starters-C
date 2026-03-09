@@ -11,13 +11,12 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidStrategy;
 import acme.constraints.ValidText;
@@ -76,10 +75,6 @@ public class Strategy extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	@Transient
-	@Autowired
-	private StrategyRepository	repository;
-
 
 	// CUMPLE CONSTRAINT: "monthsActive is computed as the number of months in interval startMoment/endMoment rounded to the nearest decimal."
 	@Transient
@@ -95,9 +90,11 @@ public class Strategy extends AbstractEntity {
 	// CUMPLE CONSTRAINT: "The expected percentage is the sum of the expected percentage of each tactic."
 	@Transient
 	public Double getExpectedPercentage() {
+		StrategyRepository repository;
 		Double sum;
 
-		sum = this.repository.sumExpectedPercentageByStrategyId(this.getId());
+		repository = SpringHelper.getBean(StrategyRepository.class);
+		sum = repository.sumExpectedPercentageByStrategyId(this.getId());
 		return sum == null ? 0.0 : sum;
 	}
 
