@@ -1,0 +1,18 @@
+authenticated.campaign.form.title = Campaign details
+authenticated.campaign.list.title = Campaign list
+
+authenticated.campaign.form.label.ticker = Ticker:
+authenticated.campaign.form.label.name = Name:
+authenticated.campaign.form.label.description = Description:
+authenticated.campaign.form.label.startMoment = Start Date:
+authenticated.campaign.form.label.endMoment = End Date:
+authenticated.campaign.form.label.moreInfo = More info:
+authenticated.campaign.form.label.draftMode = Draft Mode:
+authenticated.campaign.form.label.monthsActive = Months Active:
+authenticated.campaign.form.label.effort = Effort:
+
+authenticated.campaign.list.label.ticker = Ticker
+authenticated.campaign.list.label.name = Name
+authenticated.campaign.list.label.startMoment = Start Date
+authenticated.campaign.list.label.endMoment = End Date
+authenticated.campaign.list.label.draftMode = Draft Mode

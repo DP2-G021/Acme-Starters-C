@@ -113,7 +113,7 @@ public class Invention extends AbstractEntity {
 	@Mandatory
 	//HINT: @Valid by default
 	@Column
-	private boolean		draftMode;
+	private Boolean		draftMode;
 
 	@Mandatory
 	@Valid

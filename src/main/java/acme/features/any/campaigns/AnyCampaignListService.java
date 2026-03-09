@@ -37,7 +37,7 @@ public class AnyCampaignListService extends AbstractService<Any, Campaign> {
 	@Override
 	public void unbind() {
 		// campos que queremos mostrar en la tabla
-		super.unbindObjects(this.campaigns, "ticker", "name", "description", "startMoment", "endMoment");
+		super.unbindObjects(this.campaigns, "ticker", "name", "startMoment", "endMoment");
 	}
 
 }

@@ -31,6 +31,7 @@
 			<acme:menu-suboption code="master.menu.any.list-strategies" action="/any/strategy/list"/>
 			<acme:menu-suboption code="master.menu.any.list-sponsorship" action="/any/sponsorship/list"/>
 
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
@@ -51,6 +52,18 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.dashboard" action="#"/>
 		</acme:menu-option>
+		
+
+		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
+			<acme:menu-suboption code="master.menu.fundraiser.list-my-strategies" action="/authenticated/strategy/list"/>
+		</acme:menu-option>
+		
+				
+		<acme:menu-option code="master.menu.spokesperson" access="hasRealm('Spokesperson')">
+    		<acme:menu-suboption code="master.menu.spokesperson.list-my-campaigns" action="/authenticated/campaign/list"/>
+		</acme:menu-option>
+		
+		
 	</acme:menu-left>
 
 	<acme:menu-right>		
