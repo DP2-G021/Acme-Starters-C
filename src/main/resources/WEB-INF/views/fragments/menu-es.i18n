@@ -37,6 +37,11 @@ master.menu.provider.dashboard = Mi Panel
 master.menu.consumer = Consumidor
 master.menu.consumer.dashboard = Mi Panel 
 
+# master.menu.fundraiser ##########################################################
+
+master.menu.fundraiser = Recaudador
+master.menu.fundraiser.list-my-strategies = Mis estrategias
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Mi Perfil
