@@ -95,15 +95,22 @@ public class Sponsorship extends AbstractEntity {
 	}
 
 	//CONSTRAINT: The total money of a sponsorship is the sum of money in the corresponding donations. Only Euros are accepted.
-	@Mandatory
 	@ValidMoney(min = 0.0)
 	@Transient
-	private Money getTotalMoney() {
+	public Money getTotalMoney() {
+		// 1. Obtenemos la suma del repositorio
 		Double sum = this.repository.getSumTotalMoneyBySponsorship(this.getId());
-		double total = sum != null ? sum : 0.0;
+
+		// 2. Creamos el objeto Money SIEMPRE con un valor numérico
 		Money result = new Money();
-		result.setAmount(sum);
 		result.setCurrency("EUR");
+
+		// Si sum es null (porque no hay donaciones en BD todavía), ponemos 0.0
+		if (sum == null)
+			result.setAmount(0.0);
+		else
+			result.setAmount(sum);
+
 		return result;
 	}
 
