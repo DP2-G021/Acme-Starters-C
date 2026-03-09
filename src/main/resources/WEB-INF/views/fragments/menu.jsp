@@ -25,11 +25,8 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.any">
-			<acme:menu-suboption code="master.menu.any.list-strategies" action="/any/strategy/list"/>
-		</acme:menu-option>
-
-		<acme:menu-option code="master.menu.any" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list"/>
+			<acme:menu-suboption code="master.menu.any.list-strategies" action="/any/strategy/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
