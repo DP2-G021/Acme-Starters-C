@@ -1,6 +1,7 @@
 
 package acme.entities.sponsorships;
 
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,7 +19,9 @@ import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidSponsorship;
 import acme.constraints.ValidText;
@@ -79,25 +82,21 @@ public class Sponsorship extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	//@Mandatory
-
 
 	//CONSTRAINT:monthsActive is computed as the number of months in interval startMoment/endMoment rounded to the nearest decimal.
+	@Mandatory
 	@Valid
 	@Transient
-	private Double getMonthsActive() { // cambiar
-		if (this.startMoment != null && this.endMoment != null) {
-			long diffInMillies = this.endMoment.getTime() - this.startMoment.getTime();
-			double months = diffInMillies / (1000.0 * 60 * 60 * 24 * 30);
-			return Math.round(months * 10.0) / 10.0;
-		}
-		return 0.0;
+	private Double getMonthsActive() {
+		if (this.startMoment == null || this.endMoment == null)
+			return 0.0;
+		Double months = MomentHelper.computeDifference(this.startMoment, this.startMoment, ChronoUnit.MONTHS);
+		return Math.round(months * 100.0) / 100.0;
 	}
 
 	//CONSTRAINT: The total money of a sponsorship is the sum of money in the corresponding donations. Only Euros are accepted.
-	//@Mandatory
-	//@ValidMoney(min = 0.0)
-
+	@Mandatory
+	@ValidMoney(min = 0.0)
 	@Transient
 	private Money getTotalMoney() {
 		Double sum = this.repository.getSumTotalMoneyBySponsorship(this.getId());
