@@ -1,0 +1,15 @@
+any.tactic.list.title = Tactics
+any.tactic.list.label.name = Name
+any.tactic.list.label.kind = Kind
+any.tactic.list.label.expected-percentage = Expected percentage
+any.tactic.list.button.return = Return to strategy
+
+any.tactic.form.title = Tactic details
+any.tactic.form.label.name = Name
+any.tactic.form.label.notes = Notes
+any.tactic.form.label.expected-percentage = Expected percentage
+any.tactic.form.label.kind = Kind
+any.tactic.form.label.kind.SUBTLE = Subtle
+any.tactic.form.label.kind.AGGRESSIVE = Aggressive
+any.tactic.form.label.kind.TENDER = Tender
+any.tactic.form.button.return = Return

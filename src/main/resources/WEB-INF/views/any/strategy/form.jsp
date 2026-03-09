@@ -15,5 +15,4 @@
     
     <acme:button code="any.strategy.form.button.tactics" action="/any/tactic/list?strategyId=${id}"/>
     <acme:button code="any.strategy.form.button.fundraiser" action="/any/fundraiser/show?strategyId=${id}"/>
-    <acme:form-return code="any.strategy.form.button.return"/>
 </acme:form>

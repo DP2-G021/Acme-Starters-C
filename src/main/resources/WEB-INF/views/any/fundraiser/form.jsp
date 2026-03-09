@@ -9,5 +9,4 @@
     <acme:form-textarea code="any.fundraiser.form.label.statement" path="statement" readonly="true"/>
     <acme:form-checkbox code="any.fundraiser.form.label.agent" path="agent" readonly="true"/>
     
-    <acme:form-return code="any.fundraiser.form.button.return"/>
 </acme:form>

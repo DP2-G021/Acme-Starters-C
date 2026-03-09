@@ -9,5 +9,4 @@
     <acme:form-double code="any.tactic.form.label.expected-percentage" path="expectedPercentage" readonly="true"/>
     <acme:form-textbox code="any.tactic.form.label.kind" path="kind" readonly="true"/>
     
-    <acme:form-return code="any.tactic.form.button.return"/>
 </acme:form>
