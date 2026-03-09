@@ -1,0 +1,19 @@
+authenticated.strategy.list.title = My strategies
+authenticated.strategy.list.label.ticker = Ticker
+authenticated.strategy.list.label.name = Name
+authenticated.strategy.list.label.start-moment = Start moment
+authenticated.strategy.list.label.end-moment = End moment
+authenticated.strategy.list.label.draft-mode = Draft mode
+
+authenticated.strategy.form.title = Strategy details
+authenticated.strategy.form.label.ticker = Ticker
+authenticated.strategy.form.label.name = Name
+authenticated.strategy.form.label.description = Description
+authenticated.strategy.form.label.start-moment = Start moment
+authenticated.strategy.form.label.end-moment = End moment
+authenticated.strategy.form.label.more-info = More info
+authenticated.strategy.form.label.draft-mode = Draft mode
+authenticated.strategy.form.label.months-active = Months active
+authenticated.strategy.form.label.expected-percentage = Expected percentage
+
+authenticated.strategy.form.button.return = Return

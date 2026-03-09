@@ -38,6 +38,11 @@ master.menu.provider.dashboard = My Dashboard
 master.menu.consumer = Consumer
 master.menu.consumer.dashboard = My Dashboard
 
+# master.menu.fundraiser ##########################################################
+
+master.menu.fundraiser = Fundraiser
+master.menu.fundraiser.list-my-strategies = My strategies
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = My Profile

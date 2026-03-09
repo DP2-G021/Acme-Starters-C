@@ -1,0 +1,53 @@
+
+package acme.features.authenticated.fundraiser.strategy;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import acme.client.components.principals.Authenticated;
+import acme.client.services.AbstractService;
+import acme.entities.strategies.Strategy;
+import acme.realms.Fundraiser;
+
+@Service
+public class FundraiserStrategyShowService extends AbstractService<Authenticated, Strategy> {
+
+	// Internal state ---------------------------------------------------------
+	@Autowired
+	protected FundraiserStrategyRepository	repository;
+
+	private Strategy						strategy;
+
+	// AbstractService interface -------------------------------------------
+
+
+	@Override
+	public void authorise() {
+		boolean status;
+		int id;
+		int userAccountId;
+
+		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
+		id = super.getRequest().getData("id", int.class);
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(id, userAccountId);
+		status = status && this.strategy != null;
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void load() {
+		int id;
+		int userAccountId;
+
+		id = super.getRequest().getData("id", int.class);
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(id, userAccountId);
+	}
+
+	@Override
+	public void unbind() {
+		super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "expectedPercentage");
+	}
+}

@@ -1,0 +1,19 @@
+package acme.features.authenticated.fundraiser.strategy;
+
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import acme.client.repositories.AbstractRepository;
+import acme.entities.strategies.Strategy;
+
+@Repository
+public interface FundraiserStrategyRepository extends AbstractRepository {
+
+	@Query("select s from Strategy s where s.fundraiser.userAccount.id = :userAccountId")
+	Collection<Strategy> findStrategiesByFundraiserUserAccountId(int userAccountId);
+
+	@Query("select s from Strategy s where s.id = :id and s.fundraiser.userAccount.id = :userAccountId")
+	Strategy findStrategyByIdAndFundraiserUserAccountId(int id, int userAccountId);
+}
