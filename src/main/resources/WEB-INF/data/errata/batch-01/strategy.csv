@@ -24,11 +24,19 @@ strategy-err-13,ES25-ERR13, , "Valid description",2026/01/10 10:00,2026/06/10 10
 strategy-err-14,ES25-ERR14,Green Growth Plan,,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-err-15,ES25-ERR15,Green Growth Plan, ,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 
-# start-moment - not future
-strategy-err-16,ES25-ERR16,Green Growth Plan,"Valid description",2024/12/31 23:59,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+# start-moment - must be future when published
+strategy-err-16,ES25-ERR16,Green Growth Plan,"Valid description",2024/12/31 23:59,2026/06/10 10:00,http://example.com,FALSE,fundraiser-00
+strategy-err-17,ES25-ERR17,Green Growth Plan,"Valid description",2025/01/01 00:00,2026/06/10 10:00,http://example.com,FALSE,fundraiser-00
 
-# end-moment - not future
-strategy-err-18,ES25-ERR18,Green Growth Plan,"Valid description",2026/01/10 10:00,2024/12/31 23:59,http://example.com,TRUE,fundraiser-00
+# start-moment - out of explicit lower range
+strategy-err-26,ES25-ERR27,Green Growth Plan,"Valid description",1999/12/31 23:59,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+
+# end-moment - must be future when published
+strategy-err-18,ES25-ERR18,Green Growth Plan,"Valid description",2026/01/10 10:00,2024/12/31 23:59,http://example.com,FALSE,fundraiser-00
+strategy-err-19,ES25-ERR19,Green Growth Plan,"Valid description",2026/01/10 10:00,2025/01/01 00:00,http://example.com,FALSE,fundraiser-00
+
+# end-moment - out of explicit upper range
+strategy-err-27,ES25-ERR26,Green Growth Plan,"Valid description",2026/01/10 10:00,2201/01/01 00:00,http://example.com,TRUE,fundraiser-00
 
 # cross-field validation - invalid interval
 strategy-err-20,ES25-ERR20,Green Growth Plan,"Valid description",2026/07/01 10:00,2026/06/01 10:00,http://example.com,TRUE,fundraiser-00
@@ -39,3 +47,5 @@ strategy-err-22,ES25-ERR22,Green Growth Plan,"Valid description",2026/01/10 10:0
 strategy-err-23,ES25-ERR23,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http:/example.com,TRUE,fundraiser-00
 strategy-err-24,ES25-ERR24,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,www.example.com,TRUE,fundraiser-00
 strategy-err-25,ES25-ERR25,Green Growth Plan,"Valid description",2026/01/10 10:00,2026/06/10 10:00,http://,TRUE,fundraiser-00
+
+

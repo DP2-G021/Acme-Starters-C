@@ -1,5 +1,5 @@
 
-package acme.entities.auditReports;
+package acme.entities.auditreports;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
