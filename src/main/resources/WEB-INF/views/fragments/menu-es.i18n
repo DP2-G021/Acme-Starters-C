@@ -43,6 +43,11 @@ master.menu.consumer.dashboard = Mi Panel
 master.menu.fundraiser = Recaudador
 master.menu.fundraiser.list-my-strategies = Mis estrategias
 
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.list-my-inventions = Mis invenciones
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Mi Perfil

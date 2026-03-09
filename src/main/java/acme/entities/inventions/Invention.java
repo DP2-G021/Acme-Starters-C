@@ -22,6 +22,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
+import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidInvention;
 import acme.constraints.ValidText;
@@ -97,8 +98,8 @@ public class Invention extends AbstractEntity {
 	@Transient
 	public Money getCost() {
 		Money result = new Money();
-
-		Double total = this.repo.getInventionCost(this.getId());
+		PartRepository repo = SpringHelper.getBean(PartRepository.class);
+		Double total = repo.getInventionCost(this.getId());
 
 		if (total == null)
 			total = 0.0; //ask about this politic

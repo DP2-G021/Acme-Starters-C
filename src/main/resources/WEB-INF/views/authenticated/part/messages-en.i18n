@@ -1,0 +1,34 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.part.form.title = Invention's Part Form
+authenticated.part.list.title = Invention's Part Listing
+
+authenticated.invention.form.label.ticker=Ticker
+authenticated.invention.form.label.name=Name
+authenticated.invention.form.label.description=Description
+authenticated.invention.form.label.start-moment=Start moment
+authenticated.invention.form.label.end-moment=End moment
+authenticated.invention.form.label.more-info=More info
+authenticated.invention.form.label.months-active=Months active
+authenticated.invention.form.label.cost=Cost
+authenticated.invention.form.label.draft-mode=Draft mode
+authenticated.invention.form.button.list-parts=Show parts
+
+authenticated.part.list.label.name=Name
+authenticated.part.list.label.description=Description
+authenticated.part.list.label.cost=Cost
+authenticated.part.list.label.kind=Kind
+
+authenticated.part.form.label.name=Name
+authenticated.part.form.label.description=Description
+authenticated.part.form.label.cost=Cost
+authenticated.part.form.label.kind=Kind
+authenticated.part.form.button.show-invention=Show invention
