@@ -11,10 +11,14 @@ import acme.realms.Fundraiser;
 @Service
 public class AnyFundraiserShowService extends AbstractService<Any, Fundraiser> {
 
+	// Internal state ---------------------------------------------------------
+
 	@Autowired
 	protected AnyFundraiserRepository	repository;
 
-	private Fundraiser				fundraiser;
+	private Fundraiser					fundraiser;
+
+	// AbstractService interface -------------------------------------------
 
 
 	@Override

@@ -11,10 +11,14 @@ import acme.entities.strategies.Strategy;
 @Service
 public class AnyStrategyShowService extends AbstractService<Any, Strategy> {
 
+	// Internal state ---------------------------------------------------------
+
 	@Autowired
 	protected AnyStrategyRepository	repository;
 
 	private Strategy				strategy;
+
+	// AbstractService interface -------------------------------------------
 
 
 	@Override
