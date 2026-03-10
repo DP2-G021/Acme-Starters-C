@@ -16,4 +16,5 @@ authenticated.strategy.form.label.draft-mode = Borrador
 authenticated.strategy.form.label.months-active = Meses activos
 authenticated.strategy.form.label.expected-percentage = Porcentaje esperado
 
+authenticated.strategy.form.button.tactics = Ver tacticas
 authenticated.strategy.form.button.return = Volver
