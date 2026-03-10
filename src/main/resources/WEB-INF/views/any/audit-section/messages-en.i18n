@@ -8,11 +8,14 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+any.audit-section.form.title = Audit Section Form:
 
 any.audit-section.form.label.name = Name:
 any.audit-section.form.label.notes = Notes:
 any.audit-section.form.label.hours = Hours:
 any.audit-section.form.label.kind = Kind:
+
+any.audit-section.list.title = Audit Section List:
 
 any.audit-section.list.label.name = Name:
 any.audit-section.list.label.hours = Hours:

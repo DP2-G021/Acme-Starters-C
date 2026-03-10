@@ -14,11 +14,6 @@
 master.menu.auditor = Auditor
 master.menu.auditor.list-my-audit-reports = My Audit Reports
 
-# master.menu.any #############################################################
-
-master.menu.any = Any user
-master.menu.any.auditreport = List published Audit Reports
-
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Acme Starters
@@ -31,6 +26,7 @@ master.menu.any.list-campaigns = Published campaigns
 master.menu.any.list-strategies = Published strategies
 master.menu.any.list-inventions = Published Inventions
 master.menu.any.list-sponsorship = Published Sponsorships
+master.menu.any.auditreport = Published Audit Reports
 
 # master.menu.administrator ###################################################
 

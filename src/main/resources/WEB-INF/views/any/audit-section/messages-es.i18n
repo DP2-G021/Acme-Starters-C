@@ -9,11 +9,14 @@
 # they accept any liabilities with respect to them.
 
 
+any.audit-section.form.title = Formulario de Sección de Auditoría:
 
 any.audit-section.form.label.name = Nombre:
 any.audit-section.form.label.notes = Notas:
 any.audit-section.form.label.hours = Horas:
 any.audit-section.form.label.kind = Tipo:
+
+any.audit-section.list.title = Lista de Sección de Auditoría:
 
 any.audit-section.list.label.name = Nombre:
 any.audit-section.list.label.hours = Horas:
