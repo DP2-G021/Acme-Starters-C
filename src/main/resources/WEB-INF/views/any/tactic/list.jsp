@@ -8,5 +8,3 @@
     <acme:list-column code="any.tactic.list.label.kind" path="kind" width="30%"/>
     <acme:list-column code="any.tactic.list.label.expected-percentage" path="expectedPercentage" width="30%"/>
 </acme:list>
-
-<acme:button code="any.tactic.list.button.return" action="/any/strategy/show?id=${param.strategyId}"/>

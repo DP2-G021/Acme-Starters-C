@@ -2,7 +2,6 @@ any.tactic.list.title = Tactics
 any.tactic.list.label.name = Name
 any.tactic.list.label.kind = Kind
 any.tactic.list.label.expected-percentage = Expected percentage
-any.tactic.list.button.return = Return to strategy
 
 any.tactic.form.title = Tactic details
 any.tactic.form.label.name = Name

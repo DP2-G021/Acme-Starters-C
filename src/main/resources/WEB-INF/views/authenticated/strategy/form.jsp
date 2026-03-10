@@ -13,4 +13,5 @@
 	<acme:form-checkbox code="authenticated.strategy.form.label.draft-mode" path="draftMode" readonly="true"/>
 	<acme:form-double code="authenticated.strategy.form.label.months-active" path="monthsActive" readonly="true"/>
 	<acme:form-double code="authenticated.strategy.form.label.expected-percentage" path="expectedPercentage" readonly="true"/>
+	<acme:button code="authenticated.strategy.form.button.tactics" action="/authenticated/tactic/list?strategyId=${id}"/>
 </acme:form>
