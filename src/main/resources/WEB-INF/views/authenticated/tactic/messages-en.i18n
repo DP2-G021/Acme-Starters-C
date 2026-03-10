@@ -1,0 +1,14 @@
+authenticated.tactic.list.title = Tactics
+authenticated.tactic.list.label.name = Name
+authenticated.tactic.list.label.kind = Kind
+authenticated.tactic.list.label.expected-percentage = Expected percentage
+
+authenticated.tactic.form.title = Tactic details
+authenticated.tactic.form.label.name = Name
+authenticated.tactic.form.label.notes = Notes
+authenticated.tactic.form.label.expected-percentage = Expected percentage
+authenticated.tactic.form.label.kind = Kind
+authenticated.tactic.form.label.kind.SUBTLE = Subtle
+authenticated.tactic.form.label.kind.AGGRESSIVE = Aggressive
+authenticated.tactic.form.label.kind.TENDER = Tender
+authenticated.tactic.form.button.return = Return
