@@ -1,0 +1,30 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+authenticated.audit-report.list.title = Mis Informes de Auditoría
+
+authenticated.audit-report.list.label.ticker = Ticker
+authenticated.audit-report.list.label.name = Nombre
+authenticated.audit-report.list.label.draftMode = Modo borrador
+
+authenticated.audit-report.form.title = Auditoría detalles
+
+authenticated.audit-report.form.label.ticker = Ticker
+authenticated.audit-report.form.label.name = Nombre
+authenticated.audit-report.form.label.description = Descripción
+authenticated.audit-report.form.label.startMoment = Momento de inicio
+authenticated.audit-report.form.label.endMoment = Momento de fin
+authenticated.audit-report.form.label.moreInfo = Más información
+authenticated.audit-report.form.label.draftMode = Modo borrador
+authenticated.audit-report.form.label.monthsActive = Meses activo
+authenticated.audit-report.form.label.hours = Horas
+
+authenticated.audit-report.form.button.return = Volver

@@ -23,7 +23,11 @@
 			
 			<acme:menu-suboption code="master.menu.anonymous.about" action="/"/>
 		</acme:menu-option>
-
+		
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.auditreport" action="/any/audit-report/list"/>
+		</acme:menu-option>
+		
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
@@ -34,6 +38,9 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 		</acme:menu-option>
 
+		<acme:menu-option code="master.menu.auditor" access="hasRealm('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.list-my-audit-reports" action="/authenticated/audit-report/list"/>
+		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
 			<acme:menu-suboption code="master.menu.provider.dashboard" action="#"/>
