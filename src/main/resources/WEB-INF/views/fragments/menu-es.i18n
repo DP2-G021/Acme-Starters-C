@@ -8,6 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+# master.menu.fundraiser ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.list-my-audit-reports = Mis reportes de auditoría
+
+# master.menu.any #############################################################
+
+master.menu.any = Cualquier Usuario
+master.menu.any.auditreport = Listado de Informes de Auditoría publicados
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Acme Starters
