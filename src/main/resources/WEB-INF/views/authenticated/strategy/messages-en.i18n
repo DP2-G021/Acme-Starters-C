@@ -4,6 +4,7 @@ authenticated.strategy.list.label.name = Name
 authenticated.strategy.list.label.start-moment = Start moment
 authenticated.strategy.list.label.end-moment = End moment
 authenticated.strategy.list.label.draft-mode = Draft mode
+authenticated.strategy.list.button.create = Create
 
 authenticated.strategy.form.title = Strategy details
 authenticated.strategy.form.label.ticker = Ticker
@@ -17,4 +18,8 @@ authenticated.strategy.form.label.months-active = Months active
 authenticated.strategy.form.label.expected-percentage = Expected percentage
 
 authenticated.strategy.form.button.tactics = View tactics
+authenticated.strategy.form.button.create = Create
+authenticated.strategy.form.button.update = Update
+authenticated.strategy.form.button.delete = Delete
+authenticated.strategy.form.button.publish = Publish
 authenticated.strategy.form.button.return = Return

@@ -4,6 +4,7 @@ authenticated.strategy.list.label.name = Nombre
 authenticated.strategy.list.label.start-moment = Inicio
 authenticated.strategy.list.label.end-moment = Fin
 authenticated.strategy.list.label.draft-mode = Borrador
+authenticated.strategy.list.button.create = Crear
 
 authenticated.strategy.form.title = Detalles de estrategia
 authenticated.strategy.form.label.ticker = Ticker
@@ -17,4 +18,8 @@ authenticated.strategy.form.label.months-active = Meses activos
 authenticated.strategy.form.label.expected-percentage = Porcentaje esperado
 
 authenticated.strategy.form.button.tactics = Ver tacticas
+authenticated.strategy.form.button.create = Crear
+authenticated.strategy.form.button.update = Actualizar
+authenticated.strategy.form.button.delete = Borrar
+authenticated.strategy.form.button.publish = Publicar
 authenticated.strategy.form.button.return = Volver
