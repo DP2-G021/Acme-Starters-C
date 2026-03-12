@@ -12,4 +12,5 @@
     <acme:form-url code="authenticated.campaign.form.label.moreInfo" path="moreInfo"/>
     <acme:form-textbox code="authenticated.campaign.form.label.effort" path="effort" readonly="true"/>
     <acme:form-textbox code="authenticated.campaign.form.label.monthsActive" path="monthsActive" readonly="true"/>
+    <acme:button code="authenticated.campaign.form.button.milestones" action="/authenticated/milestone/list?campaignId=${id}"/>
 </acme:form>
