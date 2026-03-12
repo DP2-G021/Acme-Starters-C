@@ -1,8 +1,8 @@
-
 package acme.features.any.donation;
 
 import java.util.Collection;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.principals.Any;
@@ -14,6 +14,7 @@ public class AnyDonationListService extends AbstractService<Any, Donation> {
 
 	// Internal state ---------------------------------------------------------
 
+	@Autowired
 	private AnyDonationRepository	repository;
 	private Collection<Donation>	donations;
 

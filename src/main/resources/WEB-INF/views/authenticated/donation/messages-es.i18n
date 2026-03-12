@@ -1,0 +1,36 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.donation.form.title = Formulario de donación
+authenticated.donation.list.title = Lista de donaciones
+
+authenticated.sponsorship.form.label.ticker = Referencia:
+authenticated.sponsorship.form.label.name = Nombre:
+authenticated.sponsorship.form.label.description = Descripción:
+authenticated.sponsorship.form.label.startMoment = Fecha de inicio:
+authenticated.sponsorship.form.label.endMoment = Fecha de fin:
+authenticated.sponsorship.form.label.moreInfo = Más información:
+authenticated.sponsorship.form.label.monthsActive = Meses activo
+authenticated.sponsorship.form.label.totalMoney = Dinero total
+authenticated.sponsorship.form.label.draftMode = Modo borrador
+
+authenticated.sponsorship.form.button.donations= Ver donaciones
+
+authenticated.donation.list.label.name= Nombre
+authenticated.donation.list.label.notes= Notas
+authenticated.donation.list.label.money= Dinero
+authenticated.donation.list.label.kind= Tipo
+
+authenticated.donation.form.label.name= Nombre
+authenticated.donation.form.label.notes= Notas
+authenticated.donation.form.label.money= Dinero
+authenticated.donation.form.label.kind= Tipo
+
+authenticated.donation.form.button.show-sponsorship=Ver Patrocinador

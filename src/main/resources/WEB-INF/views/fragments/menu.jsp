@@ -97,6 +97,11 @@
 			<acme:menu-suboption code="master.menu.inventor.list-my-inventions"
 				action="/authenticated/invention/list" />
 		</acme:menu-option>
+				<acme:menu-option code="master.menu.sponsor"
+			access="hasRealm('Sponsor')">
+			<acme:menu-suboption code="master.menu.sponsor.list-my-sponsorships"
+				action="/authenticated/sponsorship/list" />
+		</acme:menu-option>
 
 
 	</acme:menu-left>

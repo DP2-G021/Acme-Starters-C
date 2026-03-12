@@ -15,10 +15,10 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
-<acme:list>
-	<acme:list-column code="any.sponsorship.list.label.ticker" path="ticker" width="15%"/>
-	<acme:list-column code="any.sponsorship.list.label.name" path="name" width="35%"/>
-	<acme:list-column code="any.sponsorship.list.label.monthsActive" path="monthsActive" width="10%"/>
-	<acme:list-column code="any.sponsorship.list.label.totalMoney" path="totalMoney" width="15%"/>
-	<acme:list-hidden path="sponsor.identity.fullName"/>
-</acme:list>
+<acme:form>
+	<acme:form-textbox code="authenticated.donation.form.label.name" path="name" readonly="true"/>
+	<acme:form-money code="authenticated.donation.form.label.money" path="money" readonly="true"/>	
+	<acme:form-textbox code="authenticated.donation.form.label.kind" path="kind" readonly="true"/>
+	<acme:form-textarea code="authenticated.donation.form.label.notes" path="notes" readonly="true"/>
+		
+</acme:form>

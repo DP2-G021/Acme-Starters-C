@@ -1,3 +1,4 @@
+
 package acme.features.any.sponsorship;
 
 import java.util.Collection;
@@ -33,6 +34,6 @@ public class AnySponsorshipListService extends AbstractService<Any, Sponsorship>
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.sponsorships, "ticker", "name", "description", "startMoment", "endMoment");
+		super.unbindObjects(this.sponsorships, "ticker", "name", "description", "monthsActive", "totalMoney");
 	}
 }

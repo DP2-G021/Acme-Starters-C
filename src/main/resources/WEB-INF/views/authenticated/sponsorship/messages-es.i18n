@@ -1,0 +1,32 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.sponsorship.form.title = Formulario de Patrocinios
+authenticated.sponsorship.list.title = Listado de Mis Patrocinios
+
+authenticated.sponsorship.form.label.ticker= Ticker
+authenticated.sponsorship.form.label.name= Nombre
+authenticated.sponsorship.form.label.description= Descripción
+authenticated.sponsorship.form.label.start-moment= Fecha de inicio
+authenticated.sponsorship.form.label.end-moment= Fecha de fin
+authenticated.sponsorship.form.label.more-info= Más información
+authenticated.sponsorship.form.label.months-active= Meses activa
+authenticated.sponsorship.form.label.total-money= Dinero total
+authenticated.sponsorship.form.label.draft-mode=Modo borrador
+authenticated.sponsorship.form.button.list-donations=Ver donaciones
+
+authenticated.sponsorship.list.label.ticker=Ticker
+authenticated.sponsorship.list.label.name=Nombre
+authenticated.sponsorship.list.label.months-active=Meses de actividad
+authenticated.sponsorship.list.label.total-money= Dinero total
+authenticated.sponsorship.list.label.more-info=Más información
+authenticated.sponsorship.list.label.start-moment=Fecha de inicio
+authenticated.sponsorship.list.label.end-moment=Fecha de fin
+authenticated.sponsorship.list.label.draft-mode=Modo borrador

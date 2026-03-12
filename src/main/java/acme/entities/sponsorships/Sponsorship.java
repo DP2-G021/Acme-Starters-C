@@ -12,8 +12,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
@@ -22,6 +20,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
+import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidSponsorship;
 import acme.constraints.ValidText;
@@ -36,49 +35,45 @@ import lombok.Setter;
 
 public class Sponsorship extends AbstractEntity {
 
-	@Transient
-	@Autowired
-	private SponsorshipRepository	repository;
-
 	// Serialisation version --------------------------------------------------
-	private static final long		serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
 	@ValidTicker
 	@Column(unique = true)
-	private String					ticker;
+	private String				ticker;
 
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String					name;
+	private String				name;
 
 	@Mandatory
 	@ValidText
 	@Column
-	private String					description;
+	private String				description;
 
 	@Mandatory
 	@ValidMoment(constraint = ValidMoment.Constraint.ENFORCE_FUTURE)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date					startMoment;
+	private Date				startMoment;
 
 	@Mandatory
 	@ValidMoment(constraint = ValidMoment.Constraint.ENFORCE_FUTURE)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date					endMoment;
+	private Date				endMoment;
 
 	@Optional
 	@ValidUrl
 	@Column
-	private String					moreInfo;
+	private String				moreInfo;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean					draftMode;
+	private Boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -87,19 +82,21 @@ public class Sponsorship extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Transient
-	private Double getMonthsActive() {
+	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
 			return 0.0;
-		Double months = MomentHelper.computeDifference(this.startMoment, this.startMoment, ChronoUnit.MONTHS);
-		return Math.round(months * 100.0) / 100.0;
+		Double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+		return Math.round(months * 10.0) / 10.0;
 	}
 
 	//CONSTRAINT: The total money of a sponsorship is the sum of money in the corresponding donations. Only Euros are accepted.
 	@ValidMoney(min = 0.0)
 	@Transient
 	public Money getTotalMoney() {
+		SponsorshipRepository repository;
+		repository = SpringHelper.getBean(SponsorshipRepository.class);
 		// 1. Obtenemos la suma del repositorio
-		Double sum = this.repository.getSumTotalMoneyBySponsorship(this.getId());
+		Double sum = repository.getSumTotalMoneyBySponsorship(this.getId());
 
 		// 2. Creamos el objeto Money SIEMPRE con un valor numérico
 		Money result = new Money();

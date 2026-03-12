@@ -59,6 +59,11 @@ master.menu.fundraiser.list-my-strategies = Mis estrategias
 master.menu.inventor = Inventor
 master.menu.inventor.list-my-inventions = Mis invenciones
 
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.list-my-sponsorships = Mis patrocinaciones
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Mi Perfil
@@ -67,3 +72,5 @@ master.menu.user-account.become-provider = Registrarse como Proveedor
 master.menu.user-account.provider-profile = Editar perfil de Proveedor
 master.menu.user-account.become-consumer = Registrarse como Consumidor
 master.menu.user-account.consumer-profile = Editar perfil de Consumidor
+master.menu.user-account.become-sponsor = Registrarse como Patrocinador
+master.menu.user-account.sponsor-profile = Editar perfil de Patrocinador
