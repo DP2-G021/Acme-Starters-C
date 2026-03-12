@@ -1,4 +1,3 @@
-
 package acme.features.authenticated.fundraiser.tactic;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +7,13 @@ import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
+import acme.entities.strategies.Strategy;
 import acme.entities.strategies.Tactic;
 import acme.entities.strategies.TacticKind;
 import acme.realms.Fundraiser;
 
 @Service
-public class FundraiserTacticShowService extends AbstractService<Authenticated, Tactic> {
+public class FundraiserTacticCreateService extends AbstractService<Authenticated, Tactic> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,32 +22,50 @@ public class FundraiserTacticShowService extends AbstractService<Authenticated, 
 
 	private Tactic							tactic;
 
-	// AbstractService interface -------------------------------------------
+	// AbstractService interface ----------------------------------------------
 
+
+	@Override
+	public void load() {
+		int strategyId;
+		int userAccountId;
+		Strategy strategy;
+
+		strategyId = super.getRequest().getData("strategyId", int.class);
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
+
+		this.tactic = super.newObject(Tactic.class);
+		this.tactic.setName("");
+		this.tactic.setNotes("");
+		this.tactic.setExpectedPercentage(0.0);
+		this.tactic.setKind(TacticKind.SUBTLE);
+		this.tactic.setStrategy(strategy);
+	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
-		int userAccountId;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.tactic = this.repository.findTacticByIdAndFundraiserUserAccountId(id, userAccountId);
-		status = status && this.tactic != null;
+		status = status && this.tactic.getStrategy() != null && this.tactic.getStrategy().getDraftMode();
 
 		super.setAuthorised(status);
 	}
 
 	@Override
-	public void load() {
-		int id;
-		int userAccountId;
+	public void bind() {
+		super.bindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+	}
 
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.tactic = this.repository.findTacticByIdAndFundraiserUserAccountId(id, userAccountId);
+	@Override
+	public void validate() {
+		super.validateObject(this.tactic);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.tactic);
 	}
 
 	@Override

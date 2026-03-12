@@ -20,5 +20,8 @@ public class FundraiserTacticController extends AbstractController<Authenticated
 		super.setMediaType(MediaType.TEXT_HTML);
 		super.addBasicCommand("list", FundraiserTacticListService.class);
 		super.addBasicCommand("show", FundraiserTacticShowService.class);
+		super.addBasicCommand("create", FundraiserTacticCreateService.class);
+		super.addBasicCommand("update", FundraiserTacticUpdateService.class);
+		super.addBasicCommand("delete", FundraiserTacticDeleteService.class);
 	}
 }

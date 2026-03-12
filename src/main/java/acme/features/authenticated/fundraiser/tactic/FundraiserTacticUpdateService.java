@@ -1,4 +1,3 @@
-
 package acme.features.authenticated.fundraiser.tactic;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import acme.entities.strategies.TacticKind;
 import acme.realms.Fundraiser;
 
 @Service
-public class FundraiserTacticShowService extends AbstractService<Authenticated, Tactic> {
+public class FundraiserTacticUpdateService extends AbstractService<Authenticated, Tactic> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,23 +21,8 @@ public class FundraiserTacticShowService extends AbstractService<Authenticated, 
 
 	private Tactic							tactic;
 
-	// AbstractService interface -------------------------------------------
+	// AbstractService interface ----------------------------------------------
 
-
-	@Override
-	public void authorise() {
-		boolean status;
-		int id;
-		int userAccountId;
-
-		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.tactic = this.repository.findTacticByIdAndFundraiserUserAccountId(id, userAccountId);
-		status = status && this.tactic != null;
-
-		super.setAuthorised(status);
-	}
 
 	@Override
 	public void load() {
@@ -48,6 +32,31 @@ public class FundraiserTacticShowService extends AbstractService<Authenticated, 
 		id = super.getRequest().getData("id", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.tactic = this.repository.findTacticByIdAndFundraiserUserAccountId(id, userAccountId);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
+		status = status && this.tactic != null && this.tactic.getStrategy().getDraftMode();
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.tactic);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.tactic);
 	}
 
 	@Override

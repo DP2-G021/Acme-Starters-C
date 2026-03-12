@@ -20,6 +20,7 @@ public class FundraiserTacticListService extends AbstractService<Authenticated, 
 	@Autowired
 	protected FundraiserTacticRepository	repository;
 
+	private Strategy						strategy;
 	private Collection<Tactic>				tactics;
 
 	// AbstractService interface -------------------------------------------
@@ -30,13 +31,12 @@ public class FundraiserTacticListService extends AbstractService<Authenticated, 
 		boolean status;
 		int strategyId;
 		int userAccountId;
-		Strategy strategy;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
 		strategyId = super.getRequest().getData("strategyId", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
-		status = status && strategy != null;
+		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
+		status = status && this.strategy != null;
 
 		super.setAuthorised(status);
 	}
@@ -48,6 +48,7 @@ public class FundraiserTacticListService extends AbstractService<Authenticated, 
 
 		strategyId = super.getRequest().getData("strategyId", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
 		this.tactics = this.repository.findTacticsByStrategyIdAndFundraiserUserAccountId(strategyId, userAccountId);
 	}
 
@@ -56,5 +57,8 @@ public class FundraiserTacticListService extends AbstractService<Authenticated, 
 		if (this.tactics != null)
 			for (final Tactic tactic : this.tactics)
 				super.unbindObject(tactic, "name", "kind", "expectedPercentage");
+
+		super.unbindGlobal("strategyId", this.strategy.getId());
+		super.unbindGlobal("showCreate", this.strategy.getDraftMode());
 	}
 }
