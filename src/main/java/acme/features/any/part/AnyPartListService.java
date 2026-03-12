@@ -45,7 +45,7 @@ public class AnyPartListService extends AbstractService<Any, Part> {
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.parts, "name", "cost", "kind");
+		super.unbindObjects(this.parts, "name", "cost", "description", "kind");
 	}
 
 }

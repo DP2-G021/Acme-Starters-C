@@ -19,38 +19,39 @@ public class AuthenticatedPartListService extends AbstractService<Authenticated,
 	@Autowired
 	private AuthenticatedPartRepository	repository;
 
+	private Inventor					inventor;
+	private Invention					invention;
 	private Collection<Part>			parts;
 
 
 	@Override
 	public void load() {
 		int inventionId;
+		int userAccountId;
 
-		inventionId = super.getRequest().getData("masterId", int.class);
-		this.parts = this.repository.findPartsByInventionId(inventionId);
+		inventionId = super.getRequest().getData("inventionId", int.class);
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
 
-		if (this.parts == null)
+		this.inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
+
+		if (this.inventor == null) {
+			this.invention = null; // NUEVO
 			this.parts = Collections.emptyList();
+		} else {
+			this.invention = this.repository.findOneInventionByIdAndInventorId(inventionId, this.inventor.getId()); // NUEVO: valido ownership aquí
+
+			if (this.invention == null)
+				this.parts = Collections.emptyList();
+			else
+				this.parts = this.repository.findPartsByInventionId(inventionId);
+		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int inventionId;
-		int userAccountId;
-		Inventor inventor;
-		Invention invention;
 
-		inventionId = super.getRequest().getData("masterId", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
-
-		if (inventor == null)
-			status = false;
-		else {
-			invention = this.repository.findOneInventionByIdAndInventorId(inventionId, inventor.getId());
-			status = invention != null;
-		}
+		status = this.invention != null;
 
 		super.setAuthorised(status);
 	}

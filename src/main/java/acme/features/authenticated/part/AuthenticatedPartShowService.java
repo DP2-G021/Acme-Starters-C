@@ -13,49 +13,36 @@ import acme.realms.Inventor;
 @Service
 public class AuthenticatedPartShowService extends AbstractService<Authenticated, Part> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private AuthenticatedPartRepository	repository;
 
+	private Inventor					inventor;
 	private Part						part;
 
-	// AbstractService interface ----------------------------------------------
-
-
-	@Override
-	public void authorise() {
-		boolean status;
-		int id;
-		int userAccountId;
-		Inventor inventor;
-
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
-
-		if (inventor == null)
-			status = false;
-		else {
-			this.part = this.repository.findOnePartByIdAndInventorId(id, inventor.getId());
-			status = this.part != null;
-		}
-
-		super.setAuthorised(status);
-	}
 
 	@Override
 	public void load() {
 		int id;
 		int userAccountId;
-		Inventor inventor;
 
 		id = super.getRequest().getData("id", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
 
-		if (inventor != null)
-			this.part = this.repository.findOnePartByIdAndInventorId(id, inventor.getId());
+		this.inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
+
+		if (this.inventor == null)
+			this.part = null;
+		else
+			this.part = this.repository.findOnePartByIdAndInventorId(id, this.inventor.getId());
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+
+		status = this.part != null;
+
+		super.setAuthorised(status);
 	}
 
 	@Override

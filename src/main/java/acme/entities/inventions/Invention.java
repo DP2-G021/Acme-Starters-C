@@ -12,8 +12,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
@@ -43,10 +41,6 @@ public class Invention extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
-	@Transient
-	@Autowired
-	PartRepository				repo;
 
 	@Mandatory
 	@ValidTicker
@@ -98,6 +92,7 @@ public class Invention extends AbstractEntity {
 	@Transient
 	public Money getCost() {
 		Money result = new Money();
+
 		PartRepository repo = SpringHelper.getBean(PartRepository.class);
 		Double total = repo.getInventionCost(this.getId());
 

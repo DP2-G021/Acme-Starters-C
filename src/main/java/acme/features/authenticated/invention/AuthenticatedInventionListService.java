@@ -18,40 +18,35 @@ public class AuthenticatedInventionListService extends AbstractService<Authentic
 	@Autowired
 	private AuthenticatedInventionRepository	repository;
 
+	private Inventor							inventor;
 	private Collection<Invention>				inventions;
 
 
 	@Override
 	public void load() {
 		int userAccountId;
-		Inventor inventor;
 
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
+		this.inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
 
-		if (inventor == null)
+		if (this.inventor == null)
 			this.inventions = Collections.emptyList();
 		else
-			this.inventions = this.repository.findInventionsByInventorId(inventor.getId());
+			this.inventions = this.repository.findInventionsByInventorId(this.inventor.getId());
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int userAccountId;
-		Inventor inventor;
 
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
-
-		status = inventor != null;
+		status = this.inventor != null;
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.inventions, "ticker", "name", "monthsActive", "cost", "moreInfo");
+		super.unbindObjects(this.inventions, "ticker", "name", "description", "startMoment", "endMoment", "monthsActive", "cost", "moreInfo");
 	}
 
 }

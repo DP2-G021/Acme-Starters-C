@@ -1,34 +1,13 @@
-# messages-en.i18n
-#
-# Copyright (C) 2012-2026 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
+authenticated.part.form.title = Detalles de la pieza
+authenticated.part.list.title = Lista de piezas
 
-authenticated.part.form.title = Formulario de la Part
-authenticated.part.list.title = Listado de Partes
+authenticated.part.list.label.name = Nombre
+authenticated.part.list.label.kind = Tipo
+authenticated.part.list.label.cost = Coste
 
-authenticated.invention.form.label.ticker=Ticker
-authenticated.invention.form.label.name=Nombre
-authenticated.invention.form.label.description=Descripción
-authenticated.invention.form.label.start-moment=Fecha de inicio
-authenticated.invention.form.label.end-moment=Fecha de fin
-authenticated.invention.form.label.more-info=Más información
-authenticated.invention.form.label.months-active=Meses activa
-authenticated.invention.form.label.cost=Coste
-authenticated.invention.form.label.draft-mode=Modo borrador
-authenticated.invention.form.button.list-parts=Ver partes
+authenticated.part.form.label.name = Nombre
+authenticated.part.form.label.description = Descripción
+authenticated.part.form.label.cost = Coste
+authenticated.part.form.label.kind = Tipo
 
-authenticated.part.list.label.name=Nombre
-authenticated.part.list.label.description=Descripción
-authenticated.part.list.label.cost=Coste
-authenticated.part.list.label.kind=Tipo
-
-authenticated.part.form.label.name=Nombre
-authenticated.part.form.label.description=Descripción
-authenticated.part.form.label.cost=Coste
-authenticated.part.form.label.kind=Tipo
-authenticated.part.form.button.show-invention=Ver invención
+authenticated.part.form.button.showInvention = Ver invención

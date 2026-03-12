@@ -4,21 +4,20 @@ package acme.features.any.part;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.components.principals.Any;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.parts.Part;
+import acme.entities.parts.PartKind;
 
 @Service
 public class AnyPartShowService extends AbstractService<Any, Part> {
-
-	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private AnyPartRepository	repository;
 
 	private Part				part;
-
-	// AbstractService interface ----------------------------------------------
 
 
 	@Override
@@ -40,9 +39,12 @@ public class AnyPartShowService extends AbstractService<Any, Part> {
 
 	@Override
 	public void unbind() {
+		Tuple tuple;
+		SelectChoices kinds;
 
-		super.unbindObject(this.part, "name", "description", "cost", "kind");
-
+		kinds = SelectChoices.from(PartKind.class, this.part.getKind());
+		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind");
+		tuple.put("kinds", kinds);
 	}
 
 }
