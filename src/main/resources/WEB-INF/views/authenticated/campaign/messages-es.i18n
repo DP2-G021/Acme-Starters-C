@@ -19,3 +19,5 @@ authenticated.campaign.list.label.name = Nombre
 authenticated.campaign.list.label.startMoment = Fecha de inicio
 authenticated.campaign.list.label.endMoment = Fecha de fin
 authenticated.campaign.list.label.draftMode = Modo borrador
+
+authenticated.campaign.form.button.milestones = Ver Hitos

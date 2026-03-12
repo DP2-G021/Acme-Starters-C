@@ -16,3 +16,5 @@ authenticated.campaign.list.label.name = Name
 authenticated.campaign.list.label.startMoment = Start Date
 authenticated.campaign.list.label.endMoment = End Date
 authenticated.campaign.list.label.draftMode = Draft Mode
+
+authenticated.campaign.form.button.milestones = View Milestones
