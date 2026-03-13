@@ -10,13 +10,17 @@ import acme.entities.inventions.Invention;
 import acme.realms.Inventor;
 
 @Service
-public class InventorInventionShowService extends AbstractService<Inventor, Invention> {
+public class InventorInventionUpdateService extends AbstractService<Inventor, Invention> {
+
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private InventorInventionRepository	repository;
 
-	private Inventor					inventor;
 	private Invention					invention;
+	private Inventor					inventor;
+
+	// AbstractService interface ----------------------------------------------
 
 
 	@Override
@@ -39,9 +43,24 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null;
+		status = this.invention != null && this.invention.getDraftMode();
 
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.invention);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.invention);
 	}
 
 	@Override

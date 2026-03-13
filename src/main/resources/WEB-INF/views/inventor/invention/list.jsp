@@ -1,3 +1,15 @@
+<%--
+- list.jsp
+-
+- Copyright (C) 2012-2026 Rafael Corchuelo.
+-
+- In keeping with the traditional purpose of furthering education and research, it is
+- the policy of the copyright owner to permit non-commercial use and redistribution of
+- this software. It has been tested carefully, but it is not guaranteed for any particular
+- purposes. The copyright owner does not offer any warranties or representations, nor do
+- they accept any liabilities with respect to them.
+--%>
+
 <%@page%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -8,8 +20,13 @@
 	<acme:list-column code="inventor.invention.list.label.name" path="name" width="30%"/>
 	<acme:list-column code="inventor.invention.list.label.monthsActive" path="monthsActive" width="15%"/>
 	<acme:list-column code="inventor.invention.list.label.cost" path="cost" width="15%"/>
+
 	<acme:list-hidden path="description"/>
 	<acme:list-hidden path="moreInfo"/>
 	<acme:list-hidden path="startMoment"/>
 	<acme:list-hidden path="endMoment"/>
+	<acme:list-hidden path="draftMode"/>
+	
 </acme:list>
+
+<acme:button code="inventor.invention.list.button.create" action="/inventor/invention/create"/>

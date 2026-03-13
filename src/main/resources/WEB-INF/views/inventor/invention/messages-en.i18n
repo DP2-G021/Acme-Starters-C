@@ -1,5 +1,5 @@
-inventor.invention.form.title = My Invention Form
-inventor.invention.list.title = Listing of My Inventions
+inventor.invention.form.title = Invention form
+inventor.invention.list.title = Listing of my inventions
 
 inventor.invention.form.label.ticker = Ticker
 inventor.invention.form.label.name = Name
@@ -10,10 +10,15 @@ inventor.invention.form.label.moreInfo = More info
 inventor.invention.form.label.monthsActive = Months active
 inventor.invention.form.label.cost = Cost
 inventor.invention.form.label.draftMode = Draft mode
+
+inventor.invention.form.button.create = Create
+inventor.invention.form.button.update = Update
+inventor.invention.form.button.delete = Delete
+inventor.invention.form.button.publish = Publish
 inventor.invention.form.button.listParts = Show parts
 
 inventor.invention.list.label.ticker = Ticker
 inventor.invention.list.label.name = Name
 inventor.invention.list.label.monthsActive = Months active
 inventor.invention.list.label.cost = Cost
-inventor.invention.list.label.moreInfo = More info
+inventor.invention.list.button.create = Create invention

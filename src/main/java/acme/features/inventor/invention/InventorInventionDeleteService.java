@@ -1,22 +1,29 @@
 
 package acme.features.inventor.invention;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.inventions.Invention;
+import acme.entities.parts.Part;
 import acme.realms.Inventor;
 
 @Service
-public class InventorInventionShowService extends AbstractService<Inventor, Invention> {
+public class InventorInventionDeleteService extends AbstractService<Inventor, Invention> {
+
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private InventorInventionRepository	repository;
 
-	private Inventor					inventor;
 	private Invention					invention;
+	private Inventor					inventor;
+
+	// AbstractService interface ----------------------------------------------
 
 
 	@Override
@@ -39,9 +46,31 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null;
+		status = this.invention != null && this.invention.getDraftMode();
 
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.invention);
+	}
+
+	@Override
+	public void execute() {
+		Collection<Part> parts;
+
+		parts = this.repository.findManyPartsByInventionId(this.invention.getId());
+
+		for (Part part : parts)
+			this.repository.delete(part);
+
+		this.repository.delete(this.invention);
 	}
 
 	@Override

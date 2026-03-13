@@ -31,7 +31,7 @@ public class InventorInventionListService extends AbstractService<Inventor, Inve
 		if (this.inventor == null)
 			this.inventions = Collections.emptyList();
 		else
-			this.inventions = this.repository.findInventionsByInventorId(this.inventor.getId());
+			this.inventions = this.repository.findManyInventionsByInventorId(this.inventor.getId());
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class InventorInventionListService extends AbstractService<Inventor, Inve
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.inventions, "ticker", "name", "description", "startMoment", "endMoment", "monthsActive", "cost", "moreInfo");
+		super.unbindObjects(this.inventions, "ticker", "name", "description", "startMoment", "endMoment", "monthsActive", "cost", "moreInfo", "draftMode");
 	}
 
 }
