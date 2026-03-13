@@ -8,12 +8,13 @@ import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
+import acme.entities.campaigns.Campaign;
 import acme.entities.campaigns.Milestone;
 import acme.entities.campaigns.MilestoneKind;
 import acme.realms.Spokesperson;
 
 @Service
-public class SpokespersonMilestoneShowService extends AbstractService<Authenticated, Milestone> {
+public class SpokespersonMilestoneCreateService extends AbstractService<Authenticated, Milestone> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,32 +23,50 @@ public class SpokespersonMilestoneShowService extends AbstractService<Authentica
 
 	private Milestone							milestone;
 
-	// AbstractService interface -------------------------------------------
+	// AbstractService interface ----------------------------------------------
 
+
+	@Override
+	public void load() {
+		int campaignId;
+		int userAccountId;
+		Campaign campaign;
+
+		campaignId = super.getRequest().getData("campaignId", int.class);
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		campaign = this.repository.findCampaignByIdAndSpokespersonUserAccountId(campaignId, userAccountId);
+
+		this.milestone = super.newObject(Milestone.class);
+		this.milestone.setCampaign(campaign);
+		this.milestone.setTitle("");
+		this.milestone.setAchievements("");
+		this.milestone.setEffort(0.0);
+		this.milestone.setKind(MilestoneKind.TEASER);
+	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
-		int userAccountId;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.milestone = this.repository.findMilestoneByIdAndSpokespersonUserAccountId(id, userAccountId);
-		status = status && this.milestone != null;
+		status = status && this.milestone.getCampaign() != null && this.milestone.getCampaign().getDraftMode();
 
 		super.setAuthorised(status);
 	}
 
 	@Override
-	public void load() {
-		int id;
-		int userAccountId;
+	public void bind() {
+		super.bindObject(this.milestone, "title", "achievements", "effort", "kind");
+	}
 
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.milestone = this.repository.findMilestoneByIdAndSpokespersonUserAccountId(id, userAccountId);
+	@Override
+	public void validate() {
+		super.validateObject(this.milestone);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.milestone);
 	}
 
 	@Override
@@ -55,6 +74,7 @@ public class SpokespersonMilestoneShowService extends AbstractService<Authentica
 		SelectChoices choices;
 		Tuple tuple;
 
+		// desplegable
 		choices = SelectChoices.from(MilestoneKind.class, this.milestone.getKind());
 
 		tuple = super.unbindObject(this.milestone, "title", "achievements", "effort", "kind");
@@ -62,5 +82,4 @@ public class SpokespersonMilestoneShowService extends AbstractService<Authentica
 		tuple.put("draftMode", this.milestone.getCampaign().getDraftMode());
 		tuple.put("kinds", choices);
 	}
-
 }

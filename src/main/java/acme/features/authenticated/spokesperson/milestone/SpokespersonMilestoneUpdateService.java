@@ -13,7 +13,7 @@ import acme.entities.campaigns.MilestoneKind;
 import acme.realms.Spokesperson;
 
 @Service
-public class SpokespersonMilestoneShowService extends AbstractService<Authenticated, Milestone> {
+public class SpokespersonMilestoneUpdateService extends AbstractService<Authenticated, Milestone> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,23 +22,8 @@ public class SpokespersonMilestoneShowService extends AbstractService<Authentica
 
 	private Milestone							milestone;
 
-	// AbstractService interface -------------------------------------------
+	// AbstractService interface ----------------------------------------------
 
-
-	@Override
-	public void authorise() {
-		boolean status;
-		int id;
-		int userAccountId;
-
-		status = super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.milestone = this.repository.findMilestoneByIdAndSpokespersonUserAccountId(id, userAccountId);
-		status = status && this.milestone != null;
-
-		super.setAuthorised(status);
-	}
 
 	@Override
 	public void load() {
@@ -48,6 +33,31 @@ public class SpokespersonMilestoneShowService extends AbstractService<Authentica
 		id = super.getRequest().getData("id", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.milestone = this.repository.findMilestoneByIdAndSpokespersonUserAccountId(id, userAccountId);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
+		status = status && this.milestone != null && this.milestone.getCampaign().getDraftMode();
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.milestone, "title", "achievements", "effort", "kind");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.milestone);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.milestone);
 	}
 
 	@Override

@@ -10,3 +10,5 @@
 	<acme:list-column code="authenticated.campaign.list.label.endMoment" path="endMoment" width="25%"/>
 	<acme:list-column code="authenticated.campaign.list.label.draftMode" path="draftMode" width="10%"/>
 </acme:list>
+
+<acme:button code="authenticated.campaign.list.button.create" action="/authenticated/campaign/create"/>
