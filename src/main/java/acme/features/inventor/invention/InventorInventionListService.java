@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.invention;
+package acme.features.inventor.invention;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -7,19 +7,18 @@ import java.util.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.inventions.Invention;
 import acme.realms.Inventor;
 
 @Service
-public class AuthenticatedInventionListService extends AbstractService<Authenticated, Invention> {
+public class InventorInventionListService extends AbstractService<Inventor, Invention> {
 
 	@Autowired
-	private AuthenticatedInventionRepository	repository;
+	private InventorInventionRepository	repository;
 
-	private Inventor							inventor;
-	private Collection<Invention>				inventions;
+	private Inventor					inventor;
+	private Collection<Invention>		inventions;
 
 
 	@Override
@@ -32,7 +31,7 @@ public class AuthenticatedInventionListService extends AbstractService<Authentic
 		if (this.inventor == null)
 			this.inventions = Collections.emptyList();
 		else
-			this.inventions = this.repository.findInventionsByInventorId(this.inventor.getId());
+			this.inventions = this.repository.findManyInventionsByInventorId(this.inventor.getId());
 	}
 
 	@Override
@@ -46,7 +45,7 @@ public class AuthenticatedInventionListService extends AbstractService<Authentic
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.inventions, "ticker", "name", "description", "startMoment", "endMoment", "monthsActive", "cost", "moreInfo");
+		super.unbindObjects(this.inventions, "ticker", "name", "description", "startMoment", "endMoment", "monthsActive", "cost", "moreInfo", "draftMode");
 	}
 
 }

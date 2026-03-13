@@ -1,23 +1,24 @@
 
-package acme.features.authenticated.part;
+package acme.features.inventor.part;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
-import acme.client.components.principals.Authenticated;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.parts.Part;
+import acme.entities.parts.PartKind;
 import acme.realms.Inventor;
 
 @Service
-public class AuthenticatedPartShowService extends AbstractService<Authenticated, Part> {
+public class InventorPartShowService extends AbstractService<Inventor, Part> {
 
 	@Autowired
-	private AuthenticatedPartRepository	repository;
+	private InventorPartRepository	repository;
 
-	private Inventor					inventor;
-	private Part						part;
+	private Inventor				inventor;
+	private Part					part;
 
 
 	@Override
@@ -48,9 +49,12 @@ public class AuthenticatedPartShowService extends AbstractService<Authenticated,
 	@Override
 	public void unbind() {
 		Tuple tuple;
+		SelectChoices kinds;
+
+		kinds = SelectChoices.from(PartKind.class, this.part.getKind());
 
 		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind", "id");
-		tuple.put("inventionId", this.part.getInvention().getId());
+		tuple.put("inventionDraftMode", this.part.getInvention().getDraftMode());
+		tuple.put("kinds", kinds);
 	}
-
 }

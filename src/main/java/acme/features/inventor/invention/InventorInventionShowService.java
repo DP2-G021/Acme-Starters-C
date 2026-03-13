@@ -1,22 +1,22 @@
 
-package acme.features.authenticated.invention;
+package acme.features.inventor.invention;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Authenticated;
+import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.inventions.Invention;
 import acme.realms.Inventor;
 
 @Service
-public class AuthenticatedInventionShowService extends AbstractService<Authenticated, Invention> {
+public class InventorInventionShowService extends AbstractService<Inventor, Invention> {
 
 	@Autowired
-	private AuthenticatedInventionRepository	repository;
+	private InventorInventionRepository	repository;
 
-	private Inventor							inventor;
-	private Invention							invention;
+	private Inventor					inventor;
+	private Invention					invention;
 
 
 	@Override
@@ -39,15 +39,16 @@ public class AuthenticatedInventionShowService extends AbstractService<Authentic
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null; // CAMBIO: no repito consultas; autorizo solo si load() ha encontrado la invención.
+		status = this.invention != null;
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "cost", "draftMode", "id");
-		// CAMBIO: elimino tuple.put("inventorId", ...) porque en este JSP ya no se usa.
-	}
+		Tuple tuple;
 
+		tuple = super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "cost", "draftMode");
+		tuple.put("inventionId", this.invention.getId());
+	}
 }
