@@ -1,6 +1,12 @@
-authenticated.campaign.form.title = Campaign details
-authenticated.campaign.list.title = Campaign list
+authenticated.campaign.list.title = My campaigns
+authenticated.campaign.list.label.ticker = Ticker
+authenticated.campaign.list.label.name = Name
+authenticated.campaign.list.label.startMoment = Start Date
+authenticated.campaign.list.label.endMoment = End Date
+authenticated.campaign.list.label.draftMode = Draft Mode
+authenticated.campaign.list.button.create = Create
 
+authenticated.campaign.form.title = Campaign details
 authenticated.campaign.form.label.ticker = Ticker:
 authenticated.campaign.form.label.name = Name:
 authenticated.campaign.form.label.description = Description:
@@ -11,10 +17,9 @@ authenticated.campaign.form.label.draftMode = Draft Mode:
 authenticated.campaign.form.label.monthsActive = Months Active:
 authenticated.campaign.form.label.effort = Effort:
 
-authenticated.campaign.list.label.ticker = Ticker
-authenticated.campaign.list.label.name = Name
-authenticated.campaign.list.label.startMoment = Start Date
-authenticated.campaign.list.label.endMoment = End Date
-authenticated.campaign.list.label.draftMode = Draft Mode
-
 authenticated.campaign.form.button.milestones = View Milestones
+authenticated.campaign.form.button.create = Create
+authenticated.campaign.form.button.update = Update
+authenticated.campaign.form.button.delete = Delete
+authenticated.campaign.form.button.publish = Publish
+authenticated.campaign.form.button.return = Return
