@@ -56,7 +56,7 @@ public class SpokespersonMilestoneListService extends AbstractService<Authentica
 	public void unbind() {
 		if (this.milestones != null)
 			for (final Milestone milestone : this.milestones)
-				super.unbindObject(milestone, "title", "effort", "kind");
+				super.unbindObject(milestone, "id", "title", "effort", "kind");
 
 		super.unbindGlobal("campaignId", this.campaign.getId());
 		super.unbindGlobal("showCreate", this.campaign.getDraftMode());

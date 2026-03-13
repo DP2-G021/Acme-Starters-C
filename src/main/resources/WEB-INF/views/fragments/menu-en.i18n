@@ -76,3 +76,5 @@ master.menu.user-account.become-consumer = Register as Consumer
 master.menu.user-account.consumer-profile = Edit Consumer Data
 master.menu.user-account.become-sponsor = Register as Sponsor
 master.menu.user-account.sponsor-profile = Edit Sponsor Data
+master.menu.user-account.become-spokesperson = Register as spokesperson
+master.menu.user-account.spokesperson-profile = Edit Spokesperson Data

@@ -74,3 +74,5 @@ master.menu.user-account.become-consumer = Registrarse como Consumidor
 master.menu.user-account.consumer-profile = Editar perfil de Consumidor
 master.menu.user-account.become-sponsor = Registrarse como Patrocinador
 master.menu.user-account.sponsor-profile = Editar perfil de Patrocinador
+master.menu.user-account.become-spokesperson = Registrarse como portavoz
+master.menu.user-account.spokesperson-profile = Editar Perfil de portavoz
