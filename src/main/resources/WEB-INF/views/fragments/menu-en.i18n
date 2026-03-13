@@ -24,22 +24,22 @@ master.menu.anonymous.about = About us
 master.menu.any = Any
 master.menu.any.list-campaigns = Published campaigns
 master.menu.any.list-strategies = Published strategies
-master.menu.any.list-inventions = Published Inventions
-master.menu.any.list-sponsorship = Published Sponsorships
-master.menu.any.auditreport = Published Audit Reports
+master.menu.any.list-inventions = Published inventions
+master.menu.any.list-sponsorship = Published sponsorships
+master.menu.any.auditreport = Published audit reports
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = System
 master.menu.administrator.list-user-accounts = Manage User Accounts
-master.menu.administrator.populate-db-initial = Reset Database 
+master.menu.administrator.populate-db-initial = Reset Database
 master.menu.administrator.populate-db-sample = Load Sample Data
 master.menu.administrator.shut-system-down = Maintenance / Shutdown
 
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
-master.menu.provider.dashboard = My Dashboard 
+master.menu.provider.dashboard = My Dashboard
 
 # master.menu.consumer ##########################################################
 

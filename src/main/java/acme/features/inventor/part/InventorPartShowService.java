@@ -1,23 +1,22 @@
 
-package acme.features.authenticated.part;
+package acme.features.inventor.part;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
-import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.parts.Part;
 import acme.realms.Inventor;
 
 @Service
-public class AuthenticatedPartShowService extends AbstractService<Authenticated, Part> {
+public class InventorPartShowService extends AbstractService<Inventor, Part> {
 
 	@Autowired
-	private AuthenticatedPartRepository	repository;
+	private InventorPartRepository	repository;
 
-	private Inventor					inventor;
-	private Part						part;
+	private Inventor				inventor;
+	private Part					part;
 
 
 	@Override
