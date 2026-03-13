@@ -12,13 +12,17 @@ import acme.entities.parts.PartKind;
 import acme.realms.Inventor;
 
 @Service
-public class InventorPartShowService extends AbstractService<Inventor, Part> {
+public class InventorPartDeleteService extends AbstractService<Inventor, Part> {
+
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private InventorPartRepository	repository;
 
 	private Inventor				inventor;
 	private Part					part;
+
+	// AbstractService interface ----------------------------------------------
 
 
 	@Override
@@ -41,9 +45,24 @@ public class InventorPartShowService extends AbstractService<Inventor, Part> {
 	public void authorise() {
 		boolean status;
 
-		status = this.part != null;
+		status = this.inventor != null && this.inventor.isPrincipal() && this.part != null && this.part.getInvention() != null && this.part.getInvention().getDraftMode();
 
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.part, "name", "description", "cost", "kind");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.part);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.delete(this.part);
 	}
 
 	@Override
@@ -53,8 +72,9 @@ public class InventorPartShowService extends AbstractService<Inventor, Part> {
 
 		kinds = SelectChoices.from(PartKind.class, this.part.getKind());
 
-		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind", "id");
-		tuple.put("inventionDraftMode", this.part.getInvention().getDraftMode());
+		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind");
+		tuple.put("inventionId", this.part == null || this.part.getInvention() == null ? 0 : this.part.getInvention().getId());
+		tuple.put("inventionDraftMode", this.part != null && this.part.getInvention() != null && this.part.getInvention().getDraftMode());
 		tuple.put("kinds", kinds);
 	}
 }

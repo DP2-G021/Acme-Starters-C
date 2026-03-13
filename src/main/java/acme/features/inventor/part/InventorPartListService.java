@@ -34,10 +34,10 @@ public class InventorPartListService extends AbstractService<Inventor, Part> {
 		this.inventor = this.repository.findOneInventorByUserAccountId(userAccountId);
 
 		if (this.inventor == null) {
-			this.invention = null; // NUEVO
+			this.invention = null;
 			this.parts = Collections.emptyList();
 		} else {
-			this.invention = this.repository.findOneInventionByIdAndInventorId(inventionId, this.inventor.getId()); // NUEVO: valido ownership aquí
+			this.invention = this.repository.findOneInventionByIdAndInventorId(inventionId, this.inventor.getId());
 
 			if (this.invention == null)
 				this.parts = Collections.emptyList();
@@ -58,6 +58,9 @@ public class InventorPartListService extends AbstractService<Inventor, Part> {
 	@Override
 	public void unbind() {
 		super.unbindObjects(this.parts, "name", "description", "cost", "kind");
+
+		super.getResponse().addGlobal("inventionId", this.invention == null ? 0 : this.invention.getId());
+		super.getResponse().addGlobal("inventionDraftMode", this.invention != null && this.invention.getDraftMode());
 	}
 
 }
