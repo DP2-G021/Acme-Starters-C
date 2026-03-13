@@ -78,3 +78,5 @@ master.menu.user-account.become-sponsor = Register as Sponsor
 master.menu.user-account.sponsor-profile = Edit Sponsor Data
 master.menu.user-account.become-inventor = Register as Inventor
 master.menu.user-account.inventor-profile = Edit Inventor Data
+master.menu.user-account.become-fundraiser = Become a fundraiser
+master.menu.user-account.fundraiser-profile = My fundraiser profile

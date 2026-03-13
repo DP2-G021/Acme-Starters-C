@@ -80,8 +80,12 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRealm('Consumer')" />
 			<acme:menu-suboption code="master.menu.user-account.consumer-profile" action="/authenticated/consumer/update" access="hasRealm('Consumer')" />
+			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.become-inventor" action="/authenticated/inventor/create" access="!hasRealm('Inventor')" />
 			<acme:menu-suboption code="master.menu.user-account.consumer-profile" action="/authenticated/inventor/update" access="hasRealm('Inventor')" />
+			<acme:menu-separator />
+						<acme:menu-suboption code="master.menu.user-account.become-fundraiser" action="/authenticated/fundraiser/create" access="!hasRealm('Fundraiser')" />
+						<acme:menu-suboption code="master.menu.user-account.fundraiser-profile" action="/authenticated/fundraiser/update" access="hasRealm('Fundraiser')" />
 		</acme:menu-option>
 
 	</acme:menu-right>

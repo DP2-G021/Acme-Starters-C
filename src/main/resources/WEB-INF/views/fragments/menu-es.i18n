@@ -77,3 +77,5 @@ master.menu.user-account.become-sponsor = Registrarse como patrocinador
 master.menu.user-account.sponsor-profile = Editar perfil de patrocinador
 master.menu.user-account.become-inventor = Registrarse como inventor
 master.menu.user-account.inventor-profile = Editar perfil de inventor
+master.menu.user-account.become-fundraiser = Registrarse como recaudador
+master.menu.user-account.fundraiser-profile = Mi perfil de recaudador
