@@ -75,3 +75,5 @@ master.menu.user-account.become-consumer = Registrarse como consumidor
 master.menu.user-account.consumer-profile = Editar perfil de consumidor
 master.menu.user-account.become-sponsor = Registrarse como patrocinador
 master.menu.user-account.sponsor-profile = Editar perfil de patrocinador
+master.menu.user-account.become-fundraiser = Registrarse como recaudador
+master.menu.user-account.fundraiser-profile = Mi perfil de recaudador
