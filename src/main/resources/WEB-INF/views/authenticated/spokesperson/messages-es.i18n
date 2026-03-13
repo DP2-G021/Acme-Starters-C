@@ -1,0 +1,8 @@
+authenticated.spokesperson.form.title = Formulario de portavoz
+
+authenticated.spokesperson.form.label.cv = CV:
+authenticated.spokesperson.form.label.achievements = Logros:
+authenticated.spokesperson.form.label.licensed = ¿Tiene licencia?:
+
+authenticated.spokesperson.form.button.create = Registrar
+authenticated.spokesperson.form.button.update = Actualizar

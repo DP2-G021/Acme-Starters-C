@@ -86,6 +86,9 @@
 			<acme:menu-separator />
 						<acme:menu-suboption code="master.menu.user-account.become-fundraiser" action="/authenticated/fundraiser/create" access="!hasRealm('Fundraiser')" />
 						<acme:menu-suboption code="master.menu.user-account.fundraiser-profile" action="/authenticated/fundraiser/update" access="hasRealm('Fundraiser')" />
+			<acme:menu-separator />
+        	<acme:menu-suboption code="master.menu.user-account.become-spokesperson" action="/authenticated/spokesperson/create" access="!hasRealm('Spokesperson')" />
+        	<acme:menu-suboption code="master.menu.user-account.spokesperson-profile" action="/authenticated/spokesperson/update" access="hasRealm('Spokesperson')" />
 		</acme:menu-option>
 
 	</acme:menu-right>

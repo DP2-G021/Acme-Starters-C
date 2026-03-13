@@ -80,3 +80,5 @@ master.menu.user-account.become-inventor = Register as Inventor
 master.menu.user-account.inventor-profile = Edit Inventor Data
 master.menu.user-account.become-fundraiser = Become a fundraiser
 master.menu.user-account.fundraiser-profile = My fundraiser profile
+master.menu.user-account.become-spokesperson = Register as Spokesperson
+master.menu.user-account.spokesperson-profile = Edit Spokesperson Data

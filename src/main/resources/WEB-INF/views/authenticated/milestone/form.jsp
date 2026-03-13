@@ -11,8 +11,8 @@
 
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
-			<acme:submit code="authenticated.milestone.form.button.update" action="/authenticated/milestone/update"/>
-			<acme:submit code="authenticated.milestone.form.button.delete" action="/authenticated/milestone/delete"/>
+			<acme:submit code="authenticated.milestone.form.button.update" action="/authenticated/milestone/update?id=${id}"/>
+        	<acme:submit code="authenticated.milestone.form.button.delete" action="/authenticated/milestone/delete?id=${id}"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="authenticated.milestone.form.button.create" action="/authenticated/milestone/create?campaignId=${campaignId}"/>
