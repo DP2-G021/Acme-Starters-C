@@ -57,7 +57,7 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			}
 
 			// 3️º reglas SOLO si se publica
-			if (!strategy.getDraftMode()) {
+			if (Boolean.FALSE.equals(strategy.getDraftMode())) {
 
 				// 3.1 Debe tener al menos una tactic
 				{
