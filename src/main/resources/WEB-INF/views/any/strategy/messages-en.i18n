@@ -17,3 +17,9 @@ any.strategy.form.label.expected-percentage = Expected percentage
 any.strategy.form.button.tactics = View tactics
 any.strategy.form.button.fundraiser = View fundraiser
 any.strategy.form.button.return = Return
+
+acme.validation.strategy.invalid-interval.message = Start moment must be before end moment.
+acme.validation.strategy.duplicated-ticker.message = Ticker is already in use by another strategy.
+acme.validation.strategy.at-least-one-tactic.message = A strategy must have at least one tactic before publishing.
+acme.validation.strategy.start-must-be-future.message = Start moment must be in the future to publish.
+acme.validation.strategy.end-must-be-future.message = End moment must be in the future to publish.
