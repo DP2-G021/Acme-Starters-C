@@ -21,4 +21,7 @@ public interface SponsorDonationRepository extends AbstractRepository {
 
 	@Query("select d from Donation d where d.id = :id and d.sponsorship.sponsor.userAccount.id = :userAccountId")
 	Donation findDonationByIdAndSponsorUserAccountId(int id, int userAccountId);
+
+	@Query("select d from Donation d where d.id = :id")
+	Donation findOneDonation(int id);
 }

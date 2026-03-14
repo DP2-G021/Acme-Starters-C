@@ -8,9 +8,19 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.sponsorship.form.title = Sponsorship Form
 authenticated.sponsorship.list.title = Sponsorship List
+authenticated.sponsorship.list.label.ticker=Ticker
+authenticated.sponsorship.list.label.name=Name
+authenticated.sponsorship.list.label.months-active= Months active
+authenticated.sponsorship.list.label.total-money= Total money
+authenticated.sponsorship.list.label.more-info=More info
+authenticated.sponsorship.list.label.start-moment=Start moment
+authenticated.sponsorship.list.label.end-moment=End moment
+authenticated.sponsorship.list.label.draft-mode=Draft mode
+authenticated.sponsorship.list.button.create = Create
 
+
+authenticated.sponsorship.form.title = Sponsorship Form
 authenticated.sponsorship.form.label.ticker= Ticker
 authenticated.sponsorship.form.label.name= Name
 authenticated.sponsorship.form.label.description= Description
@@ -20,13 +30,11 @@ authenticated.sponsorship.form.label.more-info= More info
 authenticated.sponsorship.form.label.months-active= Months active
 authenticated.sponsorship.form.label.total-money= Total money
 authenticated.sponsorship.form.label.draft-mode= Draft mode
-authenticated.sponsorship.form.button.list-donations= Display donations
 
-authenticated.sponsorship.list.label.ticker=Ticker
-authenticated.sponsorship.list.label.name=Name
-authenticated.sponsorship.list.label.months-active= Months active
-authenticated.sponsorship.list.label.total-money= Total money
-authenticated.sponsorship.list.label.more-info=More info
-authenticated.sponsorship.list.label.start-moment=Start moment
-authenticated.sponsorship.list.label.end-moment=End moment
-authenticated.sponsorship.list.label.draft-mode=Draft mode
+
+authenticated.sponsorship.form.button.donations= Display donations
+authenticated.sponsorship.form.button.create = Create
+authenticated.sponsorship.form.button.update = Update
+authenticated.sponsorship.form.button.delete = Delete
+authenticated.sponsorship.form.button.publish = Publish
+authenticated.sponsorship.form.button.return = Return

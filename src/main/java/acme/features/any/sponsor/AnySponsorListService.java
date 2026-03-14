@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
-import acme.entities.sponsorships.Sponsor;
+import acme.realms.Sponsor;
 
 @Service
 public class AnySponsorListService extends AbstractService<Any, Sponsor> {

@@ -10,3 +10,5 @@
 	<acme:list-column code="authenticated.sponsorship.list.label.end-moment" path="endMoment" width="25%"/>
 	<acme:list-column code="authenticated.sponsorship.list.label.draft-mode" path="draftMode" width="10%"/>
 </acme:list>
+
+<acme:button code="authenticated.sponsorship.list.button.create" action="/authenticated/sponsorship/create"/>

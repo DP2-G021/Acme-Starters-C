@@ -1,3 +1,4 @@
+
 package acme.features.authenticated.sponsor.donation;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,32 +13,15 @@ import acme.entities.sponsorships.DonationKind;
 import acme.realms.Sponsor;
 
 @Service
-public class SponsorDonationShowService extends AbstractService<Authenticated, Donation> {
+public class SponsorDonationUpdateService extends AbstractService<Authenticated, Donation> {
 
-	// Internal state ---------------------------------------------------------
-
+	//Internal state ---------------------------------------------------------
 	@Autowired
 	protected SponsorDonationRepository	repository;
+	private Donation					donation;
 
-	private Donation				donation;
+	//AbstractService interface ----------------------------------------------
 
-	// AbstractService interface -------------------------------------------
-
-
-	@Override
-	public void authorise() {
-		boolean status;
-		int id;
-		int userAccountId;
-
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.donation = this.repository.findDonationByIdAndSponsorUserAccountId(id, userAccountId);
-		status = status && this.donation != null;
-
-		super.setAuthorised(status);
-	}
 
 	@Override
 	public void load() {
@@ -47,6 +31,39 @@ public class SponsorDonationShowService extends AbstractService<Authenticated, D
 		id = super.getRequest().getData("id", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.donation = this.repository.findDonationByIdAndSponsorUserAccountId(id, userAccountId);
+
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
+
+		status = status && this.donation != null && this.donation.getSponsorship().getDraftMode();
+
+		super.setAuthorised(status);
+	}
+	@Override
+	public void bind() {
+		super.bindObject(this.donation, "name", "notes", "money", "kind");
+	}
+
+	@Override
+	public void validate() {
+		boolean onlyEuros;
+
+		super.validateObject(this.donation);
+
+		onlyEuros = true;
+		if (this.donation.getMoney() != null && this.donation.getMoney().getCurrency() != null)
+			onlyEuros = "EUR".equalsIgnoreCase(this.donation.getMoney().getCurrency().trim());
+
+		super.state(onlyEuros, "money", "sponsor.donation.form.error.only-euros");
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.donation);
 	}
 
 	@Override
@@ -59,6 +76,7 @@ public class SponsorDonationShowService extends AbstractService<Authenticated, D
 		tuple.put("sponsorshipId", this.donation.getSponsorship().getId());
 		tuple.put("draftMode", this.donation.getSponsorship().getDraftMode());
 		tuple.put("kinds", choices);
+
 	}
 
 }

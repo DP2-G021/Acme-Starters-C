@@ -1,3 +1,4 @@
+
 package acme.features.authenticated.sponsor.donation;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,32 +13,15 @@ import acme.entities.sponsorships.DonationKind;
 import acme.realms.Sponsor;
 
 @Service
-public class SponsorDonationShowService extends AbstractService<Authenticated, Donation> {
+public class SponsorDonationDeleteService extends AbstractService<Authenticated, Donation> {
 
-	// Internal state ---------------------------------------------------------
-
+	//Internal state ---------------------------------------------------------
 	@Autowired
 	protected SponsorDonationRepository	repository;
+	private Donation					donation;
 
-	private Donation				donation;
+	//AbstractService interface ----------------------------------------------
 
-	// AbstractService interface -------------------------------------------
-
-
-	@Override
-	public void authorise() {
-		boolean status;
-		int id;
-		int userAccountId;
-
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.donation = this.repository.findDonationByIdAndSponsorUserAccountId(id, userAccountId);
-		status = status && this.donation != null;
-
-		super.setAuthorised(status);
-	}
 
 	@Override
 	public void load() {
@@ -50,6 +34,45 @@ public class SponsorDonationShowService extends AbstractService<Authenticated, D
 	}
 
 	@Override
+	public void authorise() {
+		boolean status;
+
+		// 1. Comprobamos rol
+		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
+
+		// 2. Comprobamos que la donación se haya cargado 
+		status = status && this.donation != null;
+
+		// 3. Comprobamos la relación de forma segura
+		if (status)
+			// Si el framework ha limpiado la relación en el POST, 
+			// la recargamos de la BD para que el authorise no falle.
+			if (this.donation.getSponsorship() == null) {
+				// Esto "fuerza" a cargar el objeto real si el formulario lo puso a null
+				Donation dbDonation = this.repository.findOneDonation(this.donation.getId());
+				status = dbDonation.getSponsorship().getDraftMode();
+			} else
+				status = this.donation.getSponsorship().getDraftMode();
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.donation, "name", "notes", "money", "kind");
+	}
+
+	@Override
+	public void validate() {
+		;
+	}
+
+	@Override
+	public void execute() {
+		this.repository.delete(this.donation);
+	}
+
+	@Override
 	public void unbind() {
 		Tuple tuple;
 		SelectChoices choices;
@@ -59,6 +82,7 @@ public class SponsorDonationShowService extends AbstractService<Authenticated, D
 		tuple.put("sponsorshipId", this.donation.getSponsorship().getId());
 		tuple.put("draftMode", this.donation.getSponsorship().getDraftMode());
 		tuple.put("kinds", choices);
+
 	}
 
 }

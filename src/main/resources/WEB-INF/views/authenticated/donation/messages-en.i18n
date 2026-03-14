@@ -8,29 +8,28 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.donation.form.title = Donation form
-authenticated.donation.list.title = Donation list
 
-authenticated.sponsorship.form.label.ticker = Ticker:
-authenticated.sponsorship.form.label.name = Name:
-authenticated.sponsorship.form.label.description = Description:
-authenticated.sponsorship.form.label.startMoment = Start date:
-authenticated.sponsorship.form.label.endMoment = End date:
-authenticated.sponsorship.form.label.moreInfo = More info:
-authenticated.sponsorship.form.label.monthsActive = Months active:
-authenticated.sponsorship.form.label.totalMoney = Total money:
-authenticated.sponsorship.form.label.draftMode = Draft mode:
-
-authenticated.sponsorship.form.button.donations= View donations
+authenticated.donation.list.title = Donations
 
 authenticated.donation.list.label.name= Name
 authenticated.donation.list.label.notes= Notes
 authenticated.donation.list.label.money= Money
 authenticated.donation.list.label.kind= Kind
+authenticated.donation.list.button.create = Create
 
+
+authenticated.donation.form.title = Donation details
 authenticated.donation.form.label.name= Name
 authenticated.donation.form.label.notes= Notes
 authenticated.donation.form.label.money= Money
 authenticated.donation.form.label.kind= Kind
 
-authenticated.donation.form.button.show-sponsorship= Show Sponsorship
+authenticated.donation.form.label.kind.ALTRUIST = Altruist
+authenticated.donation.form.label.kind.REWARDED = Rewarded
+authenticated.donation.form.label.kind.CELEBRATED = Celebrated
+
+
+authenticated.donation.form.button.create = Create
+authenticated.donation.form.button.update = Update
+authenticated.donation.form.button.delete = Delete
+authenticated.donation.form.button.return = Return

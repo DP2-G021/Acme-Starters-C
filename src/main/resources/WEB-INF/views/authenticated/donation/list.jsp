@@ -8,3 +8,8 @@
 	<acme:list-column code="authenticated.donation.list.label.money" path="money" width="30%"/>
 	<acme:list-column code="authenticated.donation.list.label.kind" path="kind" width="30%"/>
 </acme:list>
+
+
+<jstl:if test="${showCreate}">
+	<acme:button code="authenticated.donation.list.button.create" action="/authenticated/donation/create?sponsorshipId=${sponsorshipId}"/>
+</jstl:if>

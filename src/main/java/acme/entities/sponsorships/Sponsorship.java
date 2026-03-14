@@ -2,6 +2,7 @@
 package acme.entities.sponsorships;
 
 import java.time.temporal.ChronoUnit;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -25,6 +26,7 @@ import acme.constraints.ValidHeader;
 import acme.constraints.ValidSponsorship;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
+import acme.realms.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -117,6 +119,12 @@ public class Sponsorship extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Sponsor sponsor;
+
+
+	@Transient
+	public Collection<Donation> getDonations() {
+		return new java.util.ArrayList<>();
+	}
 
 	// Sponsorships cannot be published unless they have at least one donation.
 

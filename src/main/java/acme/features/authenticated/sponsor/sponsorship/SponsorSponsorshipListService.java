@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
-import acme.entities.sponsorships.Sponsor;
 import acme.entities.sponsorships.Sponsorship;
+import acme.realms.Sponsor;
 
 @Service
 public class SponsorSponsorshipListService extends AbstractService<Authenticated, Sponsorship> {

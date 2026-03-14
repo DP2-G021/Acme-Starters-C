@@ -1,4 +1,3 @@
-
 package acme.features.authenticated.sponsor.donation;
 
 import java.util.Collection;
@@ -9,8 +8,8 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorships.Donation;
-import acme.entities.sponsorships.Sponsor;
 import acme.entities.sponsorships.Sponsorship;
+import acme.realms.Sponsor;
 
 @Service
 public class SponsorDonationListService extends AbstractService<Authenticated, Donation> {
@@ -20,6 +19,7 @@ public class SponsorDonationListService extends AbstractService<Authenticated, D
 	protected SponsorDonationRepository	repository;
 
 	private Collection<Donation>		donations;
+	private Sponsorship             	sponsorship;
 
 	// AbstractService interface -------------------------------------------
 
@@ -29,12 +29,11 @@ public class SponsorDonationListService extends AbstractService<Authenticated, D
 		boolean status;
 		int sponsorshipId;
 		int userAccountId;
-		Sponsorship sponsorship;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
 		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		sponsorship = this.repository.findSponsorshipByIdAndSponsorUserAccountId(sponsorshipId, userAccountId);
+		this.sponsorship = this.repository.findSponsorshipByIdAndSponsorUserAccountId(sponsorshipId, userAccountId);
 
 		status = status && sponsorship != null;
 		super.setAuthorised(status);
@@ -47,6 +46,7 @@ public class SponsorDonationListService extends AbstractService<Authenticated, D
 
 		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.sponsorship = this.repository.findSponsorshipByIdAndSponsorUserAccountId(sponsorshipId, userAccountId);
 		this.donations = this.repository.findDonationsBySponsorshipIdAndSponsorUserAccountId(sponsorshipId, userAccountId);
 	}
 
@@ -55,6 +55,11 @@ public class SponsorDonationListService extends AbstractService<Authenticated, D
 		if (this.donations != null)
 			for (final Donation donation : this.donations)
 				super.unbindObject(donation, "name", "notes", "money", "kind");
+
+		if (this.sponsorship != null) {
+			super.unbindGlobal("sponsorshipId", this.sponsorship.getId());
+			super.unbindGlobal("showCreate", this.sponsorship.getDraftMode());
+		}
 	}
 
 }
