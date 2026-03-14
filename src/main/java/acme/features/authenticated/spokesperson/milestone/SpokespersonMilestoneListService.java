@@ -20,6 +20,7 @@ public class SpokespersonMilestoneListService extends AbstractService<Authentica
 	@Autowired
 	protected SpokespersonMilestoneRepository	repository;
 
+	private Campaign							campaign;
 	private Collection<Milestone>				milestones;
 
 	// AbstractService interface -------------------------------------------
@@ -30,13 +31,12 @@ public class SpokespersonMilestoneListService extends AbstractService<Authentica
 		boolean status;
 		int campaignId;
 		int userAccountId;
-		Campaign campaign;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
 		campaignId = super.getRequest().getData("campaignId", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		campaign = this.repository.findCampaignByIdAndSpokespersonrUserAccountId(campaignId, userAccountId);
-		status = status && campaign != null;
+		this.campaign = this.repository.findCampaignByIdAndSpokespersonUserAccountId(campaignId, userAccountId);
+		status = status && this.campaign != null;
 
 		super.setAuthorised(status);
 	}
@@ -48,6 +48,7 @@ public class SpokespersonMilestoneListService extends AbstractService<Authentica
 
 		campaignId = super.getRequest().getData("campaignId", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.campaign = this.repository.findCampaignByIdAndSpokespersonUserAccountId(campaignId, userAccountId);
 		this.milestones = this.repository.findMilestonesByCampaignIdAndSpokespersonUserAccountId(campaignId, userAccountId);
 	}
 
@@ -55,6 +56,9 @@ public class SpokespersonMilestoneListService extends AbstractService<Authentica
 	public void unbind() {
 		if (this.milestones != null)
 			for (final Milestone milestone : this.milestones)
-				super.unbindObject(milestone, "title", "effort", "kind");
+				super.unbindObject(milestone, "id", "title", "effort", "kind");
+
+		super.unbindGlobal("campaignId", this.campaign.getId());
+		super.unbindGlobal("showCreate", this.campaign.getDraftMode());
 	}
 }

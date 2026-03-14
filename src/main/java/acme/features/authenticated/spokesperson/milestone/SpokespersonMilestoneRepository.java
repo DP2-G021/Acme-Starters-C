@@ -14,7 +14,7 @@ import acme.entities.campaigns.Milestone;
 public interface SpokespersonMilestoneRepository extends AbstractRepository {
 
 	@Query("select c from Campaign c where c.id = :campaignId and c.spokesperson.userAccount.id = :userAccountId")
-	Campaign findCampaignByIdAndSpokespersonrUserAccountId(int campaignId, int userAccountId);
+	Campaign findCampaignByIdAndSpokespersonUserAccountId(int campaignId, int userAccountId);
 
 	@Query("select m from Milestone m where m.campaign.id = :campaignId and m.campaign.spokesperson.userAccount.id = :userAccountId")
 	Collection<Milestone> findMilestonesByCampaignIdAndSpokespersonUserAccountId(int campaignId, int userAccountId);

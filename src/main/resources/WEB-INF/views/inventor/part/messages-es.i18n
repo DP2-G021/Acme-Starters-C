@@ -1,0 +1,21 @@
+inventor.part.form.title = Detalles de la pieza
+inventor.part.list.title = Lista de piezas
+
+inventor.part.list.label.name = Nombre
+inventor.part.list.label.kind = Tipo
+inventor.part.list.label.cost = Coste
+
+inventor.part.form.label.name = Nombre
+inventor.part.form.label.description = Descripcion
+inventor.part.form.label.cost = Coste
+inventor.part.form.label.kind = Tipo
+
+inventor.part.form.button.create = Crear
+inventor.part.form.button.update = Actualizar
+inventor.part.form.button.delete = Eliminar
+inventor.part.form.button.showInvention = Ver invencion
+
+inventor.part.list.button.create = Crear pieza
+
+
+inventor.part.form.error.only-euros = Solo se aceptan euros.

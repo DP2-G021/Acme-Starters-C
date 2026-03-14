@@ -19,5 +19,9 @@ public class SpokespersonCampaignController extends AbstractController<Authentic
 
 		super.addBasicCommand("list", SpokespersonCampaignListService.class);
 		super.addBasicCommand("show", SpokespersonCampaignShowService.class);
+		super.addBasicCommand("create", SpokespersonCampaignCreateService.class);
+		super.addBasicCommand("update", SpokespersonCampaignUpdateService.class);
+		super.addBasicCommand("delete", SpokespersonCampaignDeleteService.class);
+		super.addCustomCommand("publish", "update", SpokespersonCampaignPublishService.class);
 	}
 }

@@ -1,0 +1,21 @@
+inventor.part.form.title = Part details
+inventor.part.list.title = Part list
+
+inventor.part.list.label.name = Name
+inventor.part.list.label.kind = Kind
+inventor.part.list.label.cost = Cost
+
+inventor.part.form.label.name = Name
+inventor.part.form.label.description = Description
+inventor.part.form.label.cost = Cost
+inventor.part.form.label.kind = Kind
+
+inventor.part.form.button.create = Create
+inventor.part.form.button.update = Update
+inventor.part.form.button.delete = Delete
+inventor.part.form.button.showInvention = Show invention
+
+inventor.part.list.button.create = Create part
+
+
+inventor.part.form.error.only-euros = Only euros are accepted.

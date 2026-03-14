@@ -18,6 +18,9 @@ public class SpokespersonMilestoneController extends AbstractController<Authenti
 		super.setMediaType(MediaType.TEXT_HTML);
 		super.addBasicCommand("list", SpokespersonMilestoneListService.class);
 		super.addBasicCommand("show", SpokespersonMilestoneShowService.class);
+		super.addBasicCommand("create", SpokespersonMilestoneCreateService.class);
+		super.addBasicCommand("update", SpokespersonMilestoneUpdateService.class);
+		super.addBasicCommand("delete", SpokespersonMilestoneDeleteService.class);
 	}
 
 }

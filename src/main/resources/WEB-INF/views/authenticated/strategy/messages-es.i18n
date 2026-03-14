@@ -23,3 +23,9 @@ authenticated.strategy.form.button.update = Actualizar
 authenticated.strategy.form.button.delete = Borrar
 authenticated.strategy.form.button.publish = Publicar
 authenticated.strategy.form.button.return = Volver
+
+acme.validation.strategy.invalid-interval.message = El momento de inicio debe ser anterior al momento de fin.
+acme.validation.strategy.duplicated-ticker.message = El ticker ya esta en uso por otra estrategia.
+acme.validation.strategy.at-least-one-tactic.message = Una estrategia debe tener al menos una tactica antes de publicarse.
+acme.validation.strategy.start-must-be-future.message = El momento de inicio debe estar en el futuro para publicar.
+acme.validation.strategy.end-must-be-future.message = El momento de fin debe estar en el futuro para publicar.

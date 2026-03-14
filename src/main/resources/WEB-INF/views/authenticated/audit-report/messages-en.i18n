@@ -11,7 +11,7 @@
 authenticated.audit-report.list.title = My Audit Reports
 
 authenticated.audit-report.list.label.ticker = Ticker
-authenticated.audaudit-reportitor.list.label.name = Name
+authenticated.audit-report.list.label.name = Name
 authenticated.audit-report.list.label.startMoment = Start moment
 authenticated.audit-report.list.label.endMoment = End moment
 authenticated.audit-report.list.label.draftMode = Draft mode
@@ -29,5 +29,7 @@ authenticated.audit-report.form.label.monthsActive = Months active
 authenticated.audit-report.form.label.hours = Hours
 
 authenticated.audit-report.form.button.return = Return
+
+authenticated.audit-report.form.button.audit-sections = View Audit Sections
 
 

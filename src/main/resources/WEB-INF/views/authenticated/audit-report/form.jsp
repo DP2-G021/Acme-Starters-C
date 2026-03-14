@@ -13,4 +13,6 @@
 	<acme:form-checkbox code="authenticated.audit-report.form.label.draftMode" path="draftMode" readonly="true"/>
 	<acme:form-double code="authenticated.audit-report.form.label.monthsActive" path="monthsActive" readonly="true"/>
 	<acme:form-double code="authenticated.audit-report.form.label.hours" path="hours" readonly="true"/>
+	
+	<acme:button code="authenticated.audit-report.form.button.audit-sections" action="/authenticated/audit-section/list?auditreportId=${id}"/>
 </acme:form>
