@@ -6,6 +6,7 @@ import javax.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.validation.AbstractValidator;
+import acme.client.helpers.MomentHelper;
 import acme.entities.sponsorships.Sponsorship;
 import acme.entities.sponsorships.SponsorshipRepository;
 
@@ -18,32 +19,54 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 	@Override
 	public boolean isValid(final Sponsorship sponsorship, final ConstraintValidatorContext context) {
 		assert context != null;
+		boolean result;
 
 		if (sponsorship == null)
 			return true;
+		else {
 
-		boolean ok = true;
+			// 1. Validación de ticker único
+			{
+				Sponsorship existingSponsorship = this.repository.findSponsorshipByTicker(sponsorship.getTicker());
+				boolean uniqueSponsorship = existingSponsorship == null || existingSponsorship.getId() == sponsorship.getId();
 
-		if (!sponsorship.getDraftMode()) {
-
-			// 1. Validación de intervalo temporal
-			boolean datesAreCorrect = false;
-
-			if (sponsorship.getStartMoment() != null && sponsorship.getEndMoment() != null)
-				datesAreCorrect = sponsorship.getEndMoment().compareTo(sponsorship.getStartMoment()) > 0;
-
-			super.state(context, datesAreCorrect, "endMoment", "startMoment/endMoment must be a valid time interval");
+				super.state(context, uniqueSponsorship, "ticker", "acme.validation.sponsorship.duplicated-ticker.message");
+			}
 
 			// 2. Validación de existencia de donaciones
-			int totalDonations = this.repository.findDonationsSizeBySponsorshipId(sponsorship.getId());
+			{
+				boolean hasDonations;
 
-			boolean hasAtLeastOne = totalDonations > 0;
+				if (sponsorship.getDraftMode())
+					hasDonations = true;
+				else {
+					int size = this.repository.findDonationsSizeBySponsorshipId(sponsorship.getId());
+					hasDonations = size > 0;
+				}
+				super.state(context, hasDonations, "draftMode", "acme.validation.sponsorship.at-least-one-donation.message");
 
-			super.state(context, hasAtLeastOne, "donations", "Sponsorships cannot be published unless they have at least one donation");
+			}
+			{
+				// 3. Validación de intervalo temporal
+				boolean datesAreCorrect = false;
+				if (sponsorship.getStartMoment() != null && sponsorship.getEndMoment() != null)
+					datesAreCorrect = MomentHelper.isBefore(sponsorship.getStartMoment(), sponsorship.getEndMoment());
+
+				super.state(context, datesAreCorrect, "endMoment", "acme.validation.sponsorship.invalid-time-interval.message");
+			}
+
+			{
+
+				boolean correctCurrency;
+
+				correctCurrency = this.repository.findCurrenciesOfDonationsBySponsorshipId(sponsorship.getId()).stream().allMatch(c -> c.equals("EUR"));
+
+				super.state(context, correctCurrency, "money", "acme.validation.invalid-currency.message");
+			}
+
+			result = !super.hasErrors(context);
 		}
-
-		ok = !super.hasErrors(context);
-		return ok;
+		return result;
 
 	}
 

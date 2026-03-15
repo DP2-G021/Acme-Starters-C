@@ -9,9 +9,6 @@
 # they accept any liabilities with respect to them.
 
 any.sponsor.form.title = Perfil del Patrocinador
-any.sponsor.form.label.name = Nombre:
-any.sponsor.form.label.surname = Apellidos:
-any.sponsor.form.label.email = Correo electrónico:
 any.sponsor.form.label.address = Dirección:
 any.sponsor.form.label.im = Mensajería instantánea:
 any.sponsor.form.label.gold = Miembro Gold:
