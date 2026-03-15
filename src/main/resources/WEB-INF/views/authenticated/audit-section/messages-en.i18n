@@ -21,3 +21,11 @@ authenticated.audit-section.form.label.notes = Notes
 authenticated.audit-section.form.label.hours = Hours
 authenticated.audit-section.form.label.kind = Kind
 
+authenticated.audit-section.form.label.kind.PRELIMINARY = Preliminary
+authenticated.audit-section.form.label.kind.EVALUATION = Evaluation
+authenticated.audit-section.form.label.kind.CONCLUSION = Conclusion
+
+authenticated.audit-section.list.button.create = Create
+authenticated.audit-section.form.button.update = Update
+authenticated.audit-section.form.button.delete = Delete
+authenticated.audit-section.form.button.return = Return

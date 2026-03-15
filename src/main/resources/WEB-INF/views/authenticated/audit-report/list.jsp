@@ -8,3 +8,5 @@
 	<acme:list-column code="authenticated.audit-report.list.label.name" path="name" width="45%"/>
 	<acme:list-column code="authenticated.audit-report.list.label.draftMode" path="draftMode" width="10%"/>
 </acme:list>
+
+<acme:button code="authenticated.audit-report.list.button.create" action="/authenticated/audit-report/create"/>

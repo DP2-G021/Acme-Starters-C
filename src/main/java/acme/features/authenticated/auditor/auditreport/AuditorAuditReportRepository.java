@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.auditreports.AuditReport;
+import acme.entities.auditreports.AuditSection;
+import acme.realms.Auditor;
 
 @Repository
 public interface AuditorAuditReportRepository extends AbstractRepository {
@@ -17,5 +19,11 @@ public interface AuditorAuditReportRepository extends AbstractRepository {
 
 	@Query("SELECT a FROM AuditReport a WHERE a.id = :id AND a.auditor.userAccount.id = :userAccountId")
 	AuditReport findAuditReportByIdAndAuditorUserAccountId(int id, int userAccountId);
+
+	@Query("select a from Auditor a where a.userAccount.id = :userAccountId")
+	Auditor findAuditorByUserAccountId(int userAccountId);
+
+	@Query("select a from AuditSection a where a.auditReport.id = :auditreportId")
+	Collection<AuditSection> findAuditSectionsByAuditReportId(int auditreportId);
 
 }

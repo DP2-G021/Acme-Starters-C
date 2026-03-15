@@ -30,3 +30,8 @@ authenticated.audit-report.form.label.hours = Horas
 authenticated.audit-report.form.button.return = Volver
 
 authenticated.audit-report.form.button.audit-sections = Ver Secciones de Auditoría
+
+authenticated.audit-report.form.button.create = Crear
+authenticated.audit-report.form.button.update = Modificar
+authenticated.audit-report.form.button.delete = Eliminar
+authenticated.audit-report.form.button.publish = Publicar
