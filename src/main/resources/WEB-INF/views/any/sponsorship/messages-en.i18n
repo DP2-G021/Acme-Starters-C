@@ -29,3 +29,12 @@ any.sponsorship.list.label.startMoment = Start Date
 any.sponsorship.list.label.endMoment = End Date
 any.sponsorship.list.label.monthsActive = Months Active
 any.sponsorship.list.label.totalMoney = Total Money
+
+any.sponsorship.form.button.return = Return
+
+
+acme.validation.sponsorship.duplicated-ticker.message = Ticker is already in use by another sponsorship
+acme.validation.sponsorship.at-least-one-donation.message = Sponsorship cannot be published unless they have at least one donation
+acme.validation.invalid-currency.message = Only Euros are accepted
+acme.validation.sponsorship.start-must-be-future.message = Start moment must be in the future to publish.
+acme.validation.sponsorship.end-must-be-future.message = End moment must be in the future to publish.

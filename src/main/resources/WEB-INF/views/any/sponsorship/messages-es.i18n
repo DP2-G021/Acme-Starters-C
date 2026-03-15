@@ -30,3 +30,12 @@ any.sponsorship.list.label.startMoment = Fecha de inicio
 any.sponsorship.list.label.endMoment = Fecha de fin
 any.sponsorship.list.label.monthsActive = Meses activo
 any.sponsorship.list.label.totalMoney = Dinero total
+
+any.sponsorship.form.button.return = Volver
+
+
+acme.validation.sponsorship.duplicated-ticker.message = Ticker ya está en uso por otro patrocinio
+acme.validation.sponsorship.at-least-one-donation.message = El patrocinio no puede ser publicado a menos que tenga al menos una donación
+acme.validation.invalid-currency.message = Solo se aceptan Euros
+acme.validation.sponsorship.start-must-be-future.message = El momento de inicio debe ser en el futuro para publicar.
+acme.validation.sponsorship.end-must-be-future.message = El momento de fin debe ser en el futuro para publicar.
