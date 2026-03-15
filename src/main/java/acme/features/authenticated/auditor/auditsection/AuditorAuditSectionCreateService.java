@@ -8,12 +8,13 @@ import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
+import acme.entities.auditreports.AuditReport;
 import acme.entities.auditreports.AuditSection;
 import acme.entities.auditreports.SectionKind;
 import acme.realms.Auditor;
 
 @Service
-public class AuditorAuditSectionShowService extends AbstractService<Authenticated, AuditSection> {
+public class AuditorAuditSectionCreateService extends AbstractService<Authenticated, AuditSection> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,32 +23,50 @@ public class AuditorAuditSectionShowService extends AbstractService<Authenticate
 
 	private AuditSection					auditSection;
 
-	// AbstractService interface -------------------------------------------
+	// AbstractService interface ----------------------------------------------
 
+
+	@Override
+	public void load() {
+		int auditsectionId;
+		int userAccountId;
+		AuditReport auditReport;
+
+		auditsectionId = super.getRequest().getData("auditreportId", int.class);
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(auditsectionId, userAccountId);
+
+		this.auditSection = super.newObject(AuditSection.class);
+		this.auditSection.setAuditReport(auditReport);
+		this.auditSection.setName("");
+		this.auditSection.setNotes("");
+		this.auditSection.setHours(0);
+		this.auditSection.setKind(SectionKind.CONCLUSION);
+	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
-		int userAccountId;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.auditSection = this.repository.findAuditSectionByIdAndAuditorUserAccountId(id, userAccountId);
-		status = status && this.auditSection != null;
+		status = status && this.auditSection.getAuditReport() != null && this.auditSection.getAuditReport().getDraftMode();
 
 		super.setAuthorised(status);
 	}
 
 	@Override
-	public void load() {
-		int id;
-		int userAccountId;
+	public void bind() {
+		super.bindObject(this.auditSection, "name", "notes", "hours", "kind");
+	}
 
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.auditSection = this.repository.findAuditSectionByIdAndAuditorUserAccountId(id, userAccountId);
+	@Override
+	public void validate() {
+		super.validateObject(this.auditSection);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.auditSection);
 	}
 
 	@Override
@@ -62,5 +81,4 @@ public class AuditorAuditSectionShowService extends AbstractService<Authenticate
 		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
 		tuple.put("kinds", choices);
 	}
-
 }

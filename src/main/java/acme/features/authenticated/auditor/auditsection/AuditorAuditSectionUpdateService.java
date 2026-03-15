@@ -13,7 +13,7 @@ import acme.entities.auditreports.SectionKind;
 import acme.realms.Auditor;
 
 @Service
-public class AuditorAuditSectionShowService extends AbstractService<Authenticated, AuditSection> {
+public class AuditorAuditSectionUpdateService extends AbstractService<Authenticated, AuditSection> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,23 +22,8 @@ public class AuditorAuditSectionShowService extends AbstractService<Authenticate
 
 	private AuditSection					auditSection;
 
-	// AbstractService interface -------------------------------------------
+	// AbstractService interface ----------------------------------------------
 
-
-	@Override
-	public void authorise() {
-		boolean status;
-		int id;
-		int userAccountId;
-
-		status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.auditSection = this.repository.findAuditSectionByIdAndAuditorUserAccountId(id, userAccountId);
-		status = status && this.auditSection != null;
-
-		super.setAuthorised(status);
-	}
 
 	@Override
 	public void load() {
@@ -48,6 +33,31 @@ public class AuditorAuditSectionShowService extends AbstractService<Authenticate
 		id = super.getRequest().getData("id", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.auditSection = this.repository.findAuditSectionByIdAndAuditorUserAccountId(id, userAccountId);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class);
+		status = status && this.auditSection != null && this.auditSection.getAuditReport().getDraftMode();
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.auditSection, "name", "notes", "hours", "kind");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.auditSection);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.auditSection);
 	}
 
 	@Override

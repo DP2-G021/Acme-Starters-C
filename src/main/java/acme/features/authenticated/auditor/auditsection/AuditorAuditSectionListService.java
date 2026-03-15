@@ -22,6 +22,8 @@ public class AuditorAuditSectionListService extends AbstractService<Authenticate
 
 	private Collection<AuditSection>		auditSections;
 
+	private AuditReport						auditReport;
+
 	// AbstractService interface -------------------------------------------
 
 
@@ -30,15 +32,13 @@ public class AuditorAuditSectionListService extends AbstractService<Authenticate
 		boolean status;
 		int auditReportId;
 		int userAccountId;
-		AuditReport auditReport;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class);
 		auditReportId = super.getRequest().getData("auditreportId", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 
-		auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(auditReportId, userAccountId);
-
-		status = status && auditReport != null;
+		this.auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(auditReportId, userAccountId);
+		status = status && this.auditReport != null;
 
 		super.setAuthorised(status);
 	}
@@ -50,6 +50,7 @@ public class AuditorAuditSectionListService extends AbstractService<Authenticate
 
 		auditReportId = super.getRequest().getData("auditreportId", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(auditReportId, userAccountId);
 		this.auditSections = this.repository.findAuditSectionsByAuditReportIdAndAuditorUserAccountId(auditReportId, userAccountId);
 	}
 
@@ -58,5 +59,8 @@ public class AuditorAuditSectionListService extends AbstractService<Authenticate
 		if (this.auditSections != null)
 			for (final AuditSection auditSection : this.auditSections)
 				super.unbindObject(auditSection, "name", "hours", "kind");
+
+		super.unbindGlobal("auditreportId", this.auditReport.getId());
+		super.unbindGlobal("showCreate", this.auditReport.getDraftMode());
 	}
 }

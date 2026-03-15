@@ -18,6 +18,9 @@ public class AuditorAuditSectionController extends AbstractController<Authentica
 		super.setMediaType(MediaType.TEXT_HTML);
 		super.addBasicCommand("list", AuditorAuditSectionListService.class);
 		super.addBasicCommand("show", AuditorAuditSectionShowService.class);
+		super.addBasicCommand("create", AuditorAuditSectionCreateService.class);
+		super.addBasicCommand("update", AuditorAuditSectionUpdateService.class);
+		super.addBasicCommand("delete", AuditorAuditSectionDeleteService.class);
 	}
 
 }

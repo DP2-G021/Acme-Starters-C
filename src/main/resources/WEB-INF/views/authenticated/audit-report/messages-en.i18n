@@ -32,4 +32,10 @@ authenticated.audit-report.form.button.return = Return
 
 authenticated.audit-report.form.button.audit-sections = View Audit Sections
 
+authenticated.audit-report.list.button.create = Create
+
+authenticated.audit-report.form.button.create = Create
+authenticated.audit-report.form.button.update = Update
+authenticated.audit-report.form.button.delete = Delete
+authenticated.audit-report.form.button.publish = Publish
 
