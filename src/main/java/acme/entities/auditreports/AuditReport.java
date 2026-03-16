@@ -1,7 +1,6 @@
 
 package acme.entities.auditreports;
 
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,7 +16,6 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidUrl;
-import acme.client.helpers.MomentHelper;
 import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidAuditReport;
 import acme.constraints.ValidHeader;
@@ -80,16 +78,16 @@ public class AuditReport extends AbstractEntity {
 
 
 	// CUMPLE CONSTRAINT: "monthsActive is computed as the number of months in interval startMoment/endMoment rounded to the nearest decimal."
-	@Mandatory
 	@Transient
 	public Double getMonthsActive() {
+
 		if (this.startMoment == null || this.endMoment == null)
 			return 0.0;
+		long diffMillis = this.endMoment.getTime() - this.startMoment.getTime();
 
-		double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+		double meses = diffMillis / (1000.0 * 60 * 60 * 24 * 30);
 
-		return Math.round(months * 10.0) / 10.0;
-
+		return Math.round(meses * 10.0) / 10.0;
 	}
 
 	// CUMPLE CONSTRAINT: "The number of hours of an audit report is the sum of the individual number of hours in its audit sections."
