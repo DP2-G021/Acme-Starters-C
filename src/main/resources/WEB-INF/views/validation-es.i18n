@@ -1,0 +1,5 @@
+# Mensajes de validacion especificos del proyecto (cargados por ValidationConfiguration)
+
+acme.validation.ticker.message = El ticker debe seguir el formato XX00-YYYYY (de 5 a 10 caracteres alfanumericos tras el guion)
+acme.validation.header.message = No puede estar en blanco y su longitud debe estar entre 1 y 75 caracteres
+acme.validation.text.message = No puede estar en blanco y su longitud debe estar entre 1 y 255 caracteres

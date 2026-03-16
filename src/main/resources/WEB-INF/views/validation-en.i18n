@@ -1,0 +1,5 @@
+# Project-specific validation messages (loaded by ValidationConfiguration)
+
+acme.validation.ticker.message = Ticker must match format XX00-YYYYY (5 to 10 alphanumeric characters after the dash)
+acme.validation.header.message = Must not be blank and length must be between 1 and 75 characters
+acme.validation.text.message = Must not be blank and length must be between 1 and 255 characters
