@@ -27,6 +27,7 @@ authenticated.audit-section.form.label.kind.EVALUATION = Evaluación
 authenticated.audit-section.form.label.kind.CONCLUSION = Conclusión
 
 authenticated.audit-section.list.button.create = Crear
+authenticated.audit-section.form.button.create = Crear
 authenticated.audit-section.form.button.update = Modificar
 authenticated.audit-section.form.button.delete = Eliminar
 

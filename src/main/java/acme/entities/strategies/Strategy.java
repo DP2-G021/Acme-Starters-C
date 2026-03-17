@@ -69,7 +69,6 @@ public class Strategy extends AbstractEntity {
 
 	@Mandatory
 	@Column
-	// Poner @Valid comentado y que sea tipo boolean?
 	@Valid
 	private Boolean				draftMode;
 
