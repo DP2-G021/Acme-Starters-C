@@ -1,6 +1,7 @@
 
 package acme.features.any.donation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
@@ -12,7 +13,7 @@ import acme.entities.sponsorships.Donation;
 public class AnyDonationShowService extends AbstractService<Any, Donation> {
 
 	// Internal state ---------------------------------------------------------
-
+	@Autowired
 	private AnyDonationRepository	repository;
 
 	private Donation				donation;

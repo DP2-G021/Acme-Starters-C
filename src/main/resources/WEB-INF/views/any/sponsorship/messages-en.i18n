@@ -32,7 +32,9 @@ any.sponsorship.list.label.totalMoney = Total Money
 
 any.sponsorship.form.button.return = Return
 
-
+acme.validation.header.message = At least 1 character, and at most 75 characters
+acme.validation.text.message = At least 1 character, and at most 255 characters
+acme.validation.ticker.message = Ticker must have 2 letters, 2 numbers, a hyphen and between 5 to 10 characters (e.g. AB12-VALOR123).
 acme.validation.sponsorship.duplicated-ticker.message = Ticker is already in use by another sponsorship
 acme.validation.sponsorship.at-least-one-donation.message = Sponsorship cannot be published unless they have at least one donation
 acme.validation.invalid-currency.message = Only Euros are accepted

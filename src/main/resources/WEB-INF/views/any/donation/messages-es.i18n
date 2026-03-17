@@ -22,3 +22,10 @@ any.donation.form.label.money = Dinero aportado:
 any.donation.form.label.notes = Notas:
 
 any.donation.form.button.return = Volver a la lista
+
+
+acme.validation.sponsorship.duplicated-ticker.message = Ticker ya está en uso por otro patrocinio
+acme.validation.sponsorship.at-least-one-donation.message = El patrocinio no puede ser publicado a menos que tenga al menos una donación
+sponsor.donation.form.error.only-euros= Solo se aceptan Euros
+acme.validation.sponsorship.start-must-be-future.message = El momento de inicio debe ser en el futuro para publicar.
+acme.validation.sponsorship.end-must-be-future.message = El momento de fin debe ser en el futuro para publicar.

@@ -1,3 +1,4 @@
+
 package acme.features.any.donation;
 
 import java.util.Collection;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorships.Donation;
+import acme.entities.sponsorships.Sponsorship;
 
 @Service
 public class AnyDonationListService extends AbstractService<Any, Donation> {
@@ -31,7 +33,14 @@ public class AnyDonationListService extends AbstractService<Any, Donation> {
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status;
+		int sponsorshipId;
+		Sponsorship sponsorship;
+
+		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
+		status = sponsorship != null;
+		super.setAuthorised(status);
 	}
 
 	@Override
