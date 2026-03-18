@@ -10,7 +10,7 @@ import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.campaigns.Campaign;
 import acme.entities.campaigns.Milestone;
-import acme.realms.Fundraiser;
+import acme.realms.Spokesperson;
 
 @Service
 public class SpokespersonCampaignDeleteService extends AbstractService<Authenticated, Campaign> {
@@ -39,7 +39,7 @@ public class SpokespersonCampaignDeleteService extends AbstractService<Authentic
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
 		status = status && this.campaign != null && this.campaign.getDraftMode();
 
 		super.setAuthorised(status);

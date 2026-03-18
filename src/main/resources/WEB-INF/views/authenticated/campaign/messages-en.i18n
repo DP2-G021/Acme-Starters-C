@@ -23,3 +23,7 @@ authenticated.campaign.form.button.update = Update
 authenticated.campaign.form.button.delete = Delete
 authenticated.campaign.form.button.publish = Publish
 authenticated.campaign.form.button.return = Return
+
+acme.validation.campaign.duplicated-ticker.message = Ticker is already in use by another campaign
+acme.validation.campaign.at-least-one-milestone.message = A campaign must have at least one milestone before publishing
+acme.validation.campaign.invalid-interval.message = Start moment must be before end moment

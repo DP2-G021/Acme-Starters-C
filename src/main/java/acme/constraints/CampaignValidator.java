@@ -12,7 +12,6 @@ import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
 import acme.entities.campaigns.Campaign;
 import acme.entities.campaigns.CampaignRepository;
-import acme.entities.campaigns.MilestoneRepository;
 
 @Validator
 public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign> {
@@ -20,9 +19,7 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private CampaignRepository	campaignRepository;
-	@Autowired
-	private MilestoneRepository	milestoneRepository;
+	private CampaignRepository campaignRepository;
 
 	// ConstraintValidator interface ------------------------------------------
 
@@ -90,21 +87,6 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 					validInterval = false;
 
 				super.state(context, validInterval, "startMoment", "acme.validation.campaign.invalid-interval.message");
-			}
-
-			// 4. Validación de esfuerzo total (No superar el 100%)
-			{
-				boolean validEffort;
-				Double totalEffort = this.milestoneRepository.getCampaignEffort(campaign.getId());
-
-				if (totalEffort == null)
-					validEffort = true;
-				else if (totalEffort <= 100.0)
-					validEffort = true;
-				else
-					validEffort = false;
-
-				super.state(context, validEffort, "effort", "acme.validation.campaign.effort-exceeded.message");
 			}
 
 			// El resultado final es true solo si no se ha registrado ningún error en los bloques anteriores
