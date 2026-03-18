@@ -22,4 +22,10 @@ public interface AnyDonationRepository extends AbstractRepository {
 	@Query("select s from Sponsorship s where s.id = :id")
 	Sponsorship findSponsorshipById(int id);
 
+	@Query("select d from Donation d where d.id = :id and d.sponsorship.draftMode = false")
+	Donation findPublishedDonationById(int id);
+
+	@Query("select s from Sponsorship s where s.id = :id and s.draftMode = false")
+	Sponsorship findPublishedSponsorshipById(int id);
+
 }

@@ -19,6 +19,7 @@ public class AnyDonationListService extends AbstractService<Any, Donation> {
 	@Autowired
 	private AnyDonationRepository	repository;
 	private Collection<Donation>	donations;
+	private Sponsorship				sponsorship;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -28,18 +29,14 @@ public class AnyDonationListService extends AbstractService<Any, Donation> {
 		int sponsorshipId;
 
 		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		this.sponsorship = this.repository.findPublishedSponsorshipById(sponsorshipId);
 		this.donations = this.repository.findDonationsBySponsorshipId(sponsorshipId);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int sponsorshipId;
-		Sponsorship sponsorship;
-
-		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
-		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
-		status = sponsorship != null;
+		status = this.sponsorship != null;
 		super.setAuthorised(status);
 	}
 

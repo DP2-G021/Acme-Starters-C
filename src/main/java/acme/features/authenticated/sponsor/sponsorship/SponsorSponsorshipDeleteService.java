@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorships.Donation;
@@ -21,13 +22,15 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Authenticat
 
 	private Sponsorship						sponsorship;
 
+	private Sponsor							sponsor;
+
 	// AbstractService interface ----------------------------------------------
 
 
 	@Override
 	public void authorise() {
 		boolean status;
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class) && this.sponsorship.getSponsor() != null && this.sponsorship.getDraftMode();
+		status = this.sponsorship != null && this.sponsorship.getDraftMode();
 		super.setAuthorised(status);
 	}
 
@@ -38,7 +41,11 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Authenticat
 
 		id = super.getRequest().getData("id", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.sponsorship = this.repository.findSponsorshipByIdAndSponsorUserAccountId(id, userAccountId);
+		this.sponsor = this.repository.findSponsorByUserAccountId(userAccountId);
+		if (this.sponsor == null)
+			this.sponsorship = null;
+		else
+			this.sponsorship = this.repository.findOneSponsorshipByIdAndSponsorshipId(id, this.sponsor.getId());
 	}
 
 	@Override
@@ -62,7 +69,9 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Authenticat
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "totalMoney", "draftMode");
+		Tuple tuple;
+		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "totalMoney", "draftMode");
+		tuple.put("sponsorshipId", this.sponsorship.getId());
 	}
 
 }

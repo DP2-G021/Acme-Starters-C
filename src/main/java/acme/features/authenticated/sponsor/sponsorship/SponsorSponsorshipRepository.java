@@ -20,9 +20,15 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select s from Sponsorship s where s.id = :id and s.sponsor.userAccount.id = :userAccountId")
 	Sponsorship findSponsorshipByIdAndSponsorUserAccountId(int id, int userAccountId);
 
+	@Query("select s from Sponsorship s where s.id = :id and s.sponsor.id = :sponsorshipId")
+	Sponsorship findOneSponsorshipByIdAndSponsorshipId(int id, int sponsorshipId);
+
 	@Query("select s from Sponsor s where s.userAccount.id = :userAccountId")
 	Sponsor findSponsorByUserAccountId(int userAccountId);
 
 	@Query("select d from Donation d where d.sponsorship.id = :sponsorshipId")
 	Collection<Donation> findDonationsBySponsorshipId(int sponsorshipId);
+
+	@Query("select s from Sponsorship s where s.sponsor.id = :sponsorId")
+	Collection<Sponsorship> findManySponsorshipBySponsorId(int sponsorId);
 }
