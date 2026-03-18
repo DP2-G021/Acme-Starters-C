@@ -3,3 +3,8 @@
 acme.validation.ticker.message = Ticker must match format XX00-YYYYY (5 to 10 alphanumeric characters after the dash)
 acme.validation.header.message = Must not be blank and length must be between 1 and 75 characters
 acme.validation.text.message = Must not be blank and length must be between 1 and 255 characters
+
+acme.validation.auditReport.ticker.non-unique = Two audit reports cannot have the same ticker
+acme.validation.auditReport.auditSection.error = To publish an audit report it is necessary that it have audit sections
+acme.validation.auditReport.dates.error = Invalid value
+acme.validation.auditReport.start-before-end.message = The start date cannot be later than the end date or the current date

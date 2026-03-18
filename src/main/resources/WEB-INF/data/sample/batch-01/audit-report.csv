@@ -71,4 +71,5 @@ auditReport-57,FF01-url57,"Lorem ipsum dolor sit amet consectetur","Lorem ipsum 
 
 #draftMode - FALSE (PUBLISHED) -> REQUIRE SECTIONS IN audit-section.csv TO PASS VALIDATION
 auditReport-55,GG01-draft1,"Lorem ipsum dolor sit amet consectetur","Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/03 0:00,2025/01/04 0:00,"http://lorem.com/ipsum",false,auditor-01
-auditReport-56,GG01-draft2,"Lorem ipsum dolor sit amet consectetur","Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/03 0:00,2025/01/04 0:00,"http://lorem.com/ipsum",true,auditor-02
+auditReport-58,GG02-draft2,"Lorem ipsum dolor sit amet ","Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/03 0:00,2025/01/04 0:00,"http://lorem.com/ipsum",false,auditor-02
+auditReport-56,GG03-draft3,"Lorem ipsum dolor sit","Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/03 0:00,2025/01/04 0:00,"http://lorem.com/ipsum",true,auditor-02

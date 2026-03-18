@@ -58,9 +58,14 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 		Date start = auditReport.getStartMoment();
 		Date end = auditReport.getEndMoment();
 
-		boolean validDates = start != null && end != null && !start.before(now) && end.after(start);
-
-		super.state(context, validDates, "startMoment", "acme.validation.auditReport.dates.error");
+		boolean validStartDates = start != null;
+		boolean validEndDates = end != null;
+		if (validEndDates && validStartDates) {
+			boolean validDatesInterval = !start.before(now) && end.after(start);
+			super.state(context, validDatesInterval, "startMoment", "acme.validation.auditReport.start-before-end.message");
+		}
+		super.state(context, validStartDates, "startMoment", "acme.validation.auditReport.dates.error");
+		super.state(context, validEndDates, "endMoment", "acme.validation.auditReport.dates.error");
 
 		return !super.hasErrors(context);
 	}
