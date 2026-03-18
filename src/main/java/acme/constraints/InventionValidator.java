@@ -70,6 +70,7 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 			{
 				//comprobar lo del draft mode, esta validacion cuando se publique, a la hora de publicarlo y nada, y solo se puede hacer en el servicio, solo se valida al publicarse
 				boolean validInterval = true;
+				boolean validStart = true;
 				Date start = invention.getStartMoment();
 				Date end = invention.getEndMoment();
 
@@ -78,11 +79,14 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 					boolean positiveInterval = MomentHelper.isBefore(start, end);
 					boolean futureStart = MomentHelper.isAfter(start, MomentHelper.getCurrentMoment()); //it returns the current moment of the framework in develop and also in testing, but not in the deploy since it returns the time of system.now()
 
-					validInterval = positiveInterval && futureStart; //futureStart redundant because of ValidMoment in the entity?
+					validInterval = positiveInterval; //futureStart redundant because of ValidMoment in the entity?
+					validStart = futureStart;
 				}
 
-				super.state(context, validInterval, "startMoment", "acme.validation.invention.invalid-interval.message");
+				super.state(context, validInterval, "endMoment", "acme.validation.invention.invalid-interval.message");
+				super.state(context, validStart, "startMoment", "acme.validation.invention.invalid-start.message");
 			}
+
 			{
 				boolean onlyEuros;
 
