@@ -2,6 +2,7 @@
 package acme.features.authenticated.sponsor.sponsorship;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,8 @@ public class SponsorSponsorshipListService extends AbstractService<Authenticated
 
 	private Collection<Sponsorship>			sponsorships;
 
+	private Sponsor							sponsor;
+
 	// AbstractService interface -------------------------------------------
 
 
@@ -28,7 +31,7 @@ public class SponsorSponsorshipListService extends AbstractService<Authenticated
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
+		status = this.sponsor != null;
 		super.setAuthorised(status);
 	}
 
@@ -37,7 +40,11 @@ public class SponsorSponsorshipListService extends AbstractService<Authenticated
 		int userAccountId;
 
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.sponsorships = this.repository.findSponsorshipsBySponsorUserAccountId(userAccountId);
+		this.sponsor = this.repository.findSponsorByUserAccountId(userAccountId);
+		if (this.sponsor == null)
+			this.sponsorships = Collections.emptyList();
+		else
+			this.sponsorships = this.repository.findManySponsorshipBySponsorId(this.sponsor.getId());
 	}
 
 	@Override

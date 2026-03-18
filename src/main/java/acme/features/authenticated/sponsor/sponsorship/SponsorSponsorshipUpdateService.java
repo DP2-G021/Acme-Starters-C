@@ -18,6 +18,8 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Authenticat
 
 	private Sponsorship						sponsorship;
 
+	private Sponsor							sponsor;
+
 	// AbstractService interface ----------------------------------------------
 
 
@@ -28,13 +30,18 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Authenticat
 
 		id = super.getRequest().getData("id", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.sponsorship = this.repository.findSponsorshipByIdAndSponsorUserAccountId(id, userAccountId);
+
+		this.sponsor = this.repository.findSponsorByUserAccountId(userAccountId);
+		if (this.sponsor == null)
+			this.sponsorship = null;
+		else
+			this.sponsorship = this.repository.findOneSponsorshipByIdAndSponsorshipId(id, this.sponsor.getId());
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class) && this.sponsorship.getSponsor() != null && this.sponsorship.getDraftMode();
+		status = this.sponsorship != null && this.sponsorship.getDraftMode();
 		super.setAuthorised(status);
 	}
 
