@@ -21,7 +21,7 @@
 	<acme:form-textbox code="authenticated.audit-section.form.label.name" path="name" readonly="${readOnlyAuditSection}"/>
 	<acme:form-textbox code="authenticated.audit-section.form.label.notes" path="notes" readonly="${readOnlyAuditSection}"/>
 	<acme:form-double code="authenticated.audit-section.form.label.hours" path="hours" readonly="${readOnlyAuditSection}"/>
-	<acme:form-textbox code="authenticated.audit-section.form.label.kind" path="kind" readonly="${readOnlyAuditSection}"/>
+	<acme:form-select code="authenticated.audit-section.form.label.kind" path="kind" choices="${kinds}" readonly="${readOnlyAuditSection}"/>
 
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">

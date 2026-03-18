@@ -40,7 +40,7 @@ public class AuditorAuditSectionCreateService extends AbstractService<Authentica
 		this.auditSection.setAuditReport(auditReport);
 		this.auditSection.setName("");
 		this.auditSection.setNotes("");
-		this.auditSection.setHours(0);
+		this.auditSection.setHours(null);
 		this.auditSection.setKind(SectionKind.CONCLUSION);
 	}
 
