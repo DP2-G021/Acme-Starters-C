@@ -1,0 +1,9 @@
+@@ -0,0 +1,8 @@
+authenticated.auditor.form.title = Auditor Form
+
+authenticated.auditor.form.label.firm = Firm:
+authenticated.auditor.form.label.highlights = Highlights:
+authenticated.auditor.form.label.solicitor = Is a solicitor?:
+
+authenticated.auditor.form.button.create = Register
+authenticated.auditor.form.button.update = Update

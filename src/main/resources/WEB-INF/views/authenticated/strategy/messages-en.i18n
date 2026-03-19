@@ -1,0 +1,31 @@
+authenticated.strategy.list.title = My strategies
+authenticated.strategy.list.label.ticker = Ticker
+authenticated.strategy.list.label.name = Name
+authenticated.strategy.list.label.start-moment = Start moment
+authenticated.strategy.list.label.end-moment = End moment
+authenticated.strategy.list.label.draft-mode = Draft mode
+authenticated.strategy.list.button.create = Create
+
+authenticated.strategy.form.title = Strategy details
+authenticated.strategy.form.label.ticker = Ticker
+authenticated.strategy.form.label.name = Name
+authenticated.strategy.form.label.description = Description
+authenticated.strategy.form.label.start-moment = Start moment
+authenticated.strategy.form.label.end-moment = End moment
+authenticated.strategy.form.label.more-info = More info
+authenticated.strategy.form.label.draft-mode = Draft mode
+authenticated.strategy.form.label.months-active = Months active
+authenticated.strategy.form.label.expected-percentage = Expected percentage
+
+authenticated.strategy.form.button.tactics = View tactics
+authenticated.strategy.form.button.create = Create
+authenticated.strategy.form.button.update = Update
+authenticated.strategy.form.button.delete = Delete
+authenticated.strategy.form.button.publish = Publish
+authenticated.strategy.form.button.return = Return
+
+acme.validation.strategy.invalid-interval.message = Start moment must be before end moment.
+acme.validation.strategy.duplicated-ticker.message = Ticker is already in use by another strategy.
+acme.validation.strategy.at-least-one-tactic.message = A strategy must have at least one tactic before publishing.
+acme.validation.strategy.start-must-be-future.message = Start moment must be in the future to publish.
+acme.validation.strategy.end-must-be-future.message = End moment must be in the future to publish.

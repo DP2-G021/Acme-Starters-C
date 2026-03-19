@@ -1,0 +1,16 @@
+key,bank,statement,agent,key:userAccount
+
+# base entity - MUST be invalid
+# invalid because bank is blank (ValidHeader -> NotBlank)
+fundraiser-00,,"Investment strategy focused on sustainable growth",TRUE,user-account-fundraiser-01
+
+# bank - (ValidHeader -> NotBlank)
+fundraiser-err-01,,"Investment strategy focused on sustainable growth",TRUE,user-account-fundraiser-01
+fundraiser-err-02, , "Investment strategy focused on sustainable growth",TRUE,user-account-fundraiser-01
+
+# statement - (ValidText -> NotBlank)
+fundraiser-err-03,BBVA Bank,,TRUE,user-account-fundraiser-01
+fundraiser-err-04,BBVA Bank, ,TRUE,user-account-fundraiser-01
+
+# agent - missing
+fundraiser-err-05,,"Investment strategy focused on sustainable growth",,user-account-fundraiser-01

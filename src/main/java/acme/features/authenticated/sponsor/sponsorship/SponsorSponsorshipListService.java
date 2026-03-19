@@ -1,0 +1,56 @@
+
+package acme.features.authenticated.sponsor.sponsorship;
+
+import java.util.Collection;
+import java.util.Collections;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import acme.client.components.principals.Authenticated;
+import acme.client.services.AbstractService;
+import acme.entities.sponsorships.Sponsorship;
+import acme.realms.Sponsor;
+
+@Service
+public class SponsorSponsorshipListService extends AbstractService<Authenticated, Sponsorship> {
+
+	// Internal state ---------------------------------------------------------
+
+	@Autowired
+	protected SponsorSponsorshipRepository	repository;
+
+	private Collection<Sponsorship>			sponsorships;
+
+	private Sponsor							sponsor;
+
+	// AbstractService interface -------------------------------------------
+
+
+	@Override
+	public void authorise() {
+		boolean status;
+
+		status = this.sponsor != null;
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void load() {
+		int userAccountId;
+
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.sponsor = this.repository.findSponsorByUserAccountId(userAccountId);
+		if (this.sponsor == null)
+			this.sponsorships = Collections.emptyList();
+		else
+			this.sponsorships = this.repository.findManySponsorshipBySponsorId(this.sponsor.getId());
+	}
+
+	@Override
+	public void unbind() {
+		if (this.sponsorships != null)
+			for (final Sponsorship sponsorship : this.sponsorships)
+				super.unbindObject(sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "draftMode");
+	}
+}

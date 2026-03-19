@@ -1,0 +1,20 @@
+key,enabled,identity,password,username
+user-account-inventor-01,true,"UserIdentity{name: '', surname: 'Inventor', email: 'a@b.es'}",inventor1,inventor1
+user-account-inventor-02,true,"UserIdentity{name: 'John', surname: 'Inventor', email: 'user:password@mail.com'}",inventor2,inventor2
+user-account-inventor-03,true,"UserIdentity{name: 'Manolo', surname: 'Inventor', email: 'acme@lorem-ipsum.org'}","",""
+user-account-spokesperson-01,true,"UserIdentity{name: 'Spokesperson', surname: 'One', email: 'One@acme.com'}",,
+# invalid email inside identity (UserIdentity.email must be valid)
+user-account-fundraiser-01,true,"UserIdentity{name: 'Luis', surname: 'Mejía', email: 'invalid-email'}",fundraiser1,fundraiser1
+user-account-fundraiser-02,true,"UserIdentity{name: 'Elena', surname: 'García', email: 'invalid-email'}",fundraiser2,fundraiser2
+user-account-fundraiser-03,true,"UserIdentity{name: 'Javier', surname: 'López', email: 'invalid-email'}",fundraiser3,fundraiser3
+user-account-sponsor-01,true,"UserIdentity{name: '', surname: '', email: ''}",sponsor1,sponsor1
+# invalid email inside identity (UserIdentity.email must be valid)
+user-account-auditor-01,true,"UserIdentity{name: 'Darío', surname: 'Zafra', email: 'user:password@mail.com'}",,
+user-account-auditor-02,true,"UserIdentity{name: 'Darío', surname: 'Zafra', email: 'lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.est.com'}",,
+user-account-auditor-03,true,"UserIdentity{name: 'Darío', surname: 'Zafra', email: 'dzr@acme.com'}",,
+user-account-auditor-04,true,"UserIdentity{name: 'Darío', surname: 'Zafra', email: 'dzr@acme.com'}",,
+user-account-auditor-05,true,"UserIdentity{name: 'Darío', surname: 'Zafra', email: 'dzr@acme.com'}",,
+user-account-auditor-06,true,"UserIdentity{name: 'Darío', surname: 'Zafra', email: 'dzr@acme.com'}",,
+user-account-auditor-07,true,"UserIdentity{name: 'Darío', surname: 'Zafra', email: 'dzr@acme.com'}",,
+user-account-auditor-08,true,"UserIdentity{name: 'Darío', surname: 'Zafra', email: 'dzr@acme.com'}",,
+

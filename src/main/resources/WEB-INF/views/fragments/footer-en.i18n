@@ -9,14 +9,16 @@
 # they accept any liabilities with respect to them.
 
 master.footer.title.about = About us
-master.footer.label.company = Company
-master.footer.label.license = License
-master.footer.title.social = Social
-master.footer.url.linkedin = http://www.linkedin.com
-master.footer.label.linked-in = Linked-In
-master.footer.url.twitter = http://www.twitter.com
+master.footer.label.company = Who we are
+master.footer.label.license = Legal Terms
+
+master.footer.title.social = Follow us
+master.footer.url.twitter = http://www.twitter.com/AcmeStarters
 master.footer.label.twitter = Twitter
+# Mantenemos Instagram
+master.footer.url.instagram = http://www.instagram.com/AcmeStarters
+master.footer.label.instagram = Instagram
+
 master.footer.title.languages = Languages
 master.footer.label.english = English
 master.footer.label.spanish = Spanish
-

@@ -8,12 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-master.license.title = Licencia
+master.license.title = Licencia 
 master.license.text = \
-	Puede usar este sistema de forma completamente gratuita respetando las leyes \
-	que sean aplicables.  No compartimos ninguna información sobre Ud. con ninguna \
-	otra empresa.  Almacenamos los siguientes datos en su browser: \
-	"JSESSIONID" para identificar su sesión de trabajo, "remember" para mantener \
-	su información de autentificación, "language" para almacenar sus preferencias de \
-	lenguage, "XSRF-TOKEN" para tratar ataques CSRF, y "returnStack" para saber dónde \
-	volver al pulsar algunos botones.
+	Puede utilizar este sistema de forma gratuita, siempre y cuando respete \
+	escrupulosamente las leyes vigentes. Por favor, tenga en cuenta que Acme Starters \
+	no comparte ninguna información sobre usted con ninguna otra empresa. \
+	Almacenamos los siguientes elementos en su ordenador: "JSESSIONID" para \
+	identificar su sesión de trabajo, "remember" para permitirle autenticarse \
+	automáticamente, "language" para guardar sus preferencias de idioma, \
+	"XSRF-TOKEN" para gestionar ataques CSRF, y "returnStack" para saber a \
+	dónde volver cuando pulsa algunos botones.

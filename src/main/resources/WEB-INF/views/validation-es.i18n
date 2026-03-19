@@ -1,0 +1,10 @@
+# Mensajes de validacion especificos del proyecto (cargados por ValidationConfiguration)
+
+acme.validation.ticker.message = El ticker debe seguir el formato XX00-YYYYY (de 5 a 10 caracteres alfanumericos tras el guion)
+acme.validation.header.message = No puede estar en blanco y su longitud debe estar entre 1 y 75 caracteres
+acme.validation.text.message = No puede estar en blanco y su longitud debe estar entre 1 y 255 caracteres
+
+acme.validation.auditReport.ticker.non-unique = No puede existir dos audit reports con el mismo ticker
+acme.validation.auditReport.auditSection.error = Para publicar un audit report es necesario que este tenga audit sections
+acme.validation.auditReport.dates.error = Valor incorrecto
+acme.validation.auditReport.start-before-end.message = La fecha de inicio no puede ser posterior a la de fin ni a la actual

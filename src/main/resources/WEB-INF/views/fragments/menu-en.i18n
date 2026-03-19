@@ -8,34 +8,79 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
+# master.menu.fundraiser ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.list-my-audit-reports = My Audit Reports
+
 # master.menu.anonymous #######################################################
 
-master.menu.anonymous = Anonymous
-master.menu.anonymous.favourite-link = Favourite link
+master.menu.anonymous = Acme Starters
+master.menu.anonymous.about = About us
+
+# master.menu.any #############################################################
+
+master.menu.any = Any
+master.menu.any.list-campaigns = Published campaigns
+master.menu.any.list-strategies = Published strategies
+master.menu.any.list-inventions = Published inventions
+master.menu.any.list-sponsorship = Published sponsorships
+master.menu.any.auditreport = Published audit reports
 
 # master.menu.administrator ###################################################
 
-master.menu.administrator = Administrator
-master.menu.administrator.list-user-accounts = List user accounts
-master.menu.administrator.populate-db-initial = Populate DB (initial)
-master.menu.administrator.populate-db-sample = Populate DB (samples)
-master.menu.administrator.shut-system-down = Shut system down
+master.menu.administrator = System
+master.menu.administrator.list-user-accounts = Manage User Accounts
+master.menu.administrator.populate-db-initial = Reset Database
+master.menu.administrator.populate-db-sample = Load Sample Data
+master.menu.administrator.shut-system-down = Maintenance / Shutdown
 
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
+master.menu.provider.dashboard = My Dashboard
 
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumer
-master.menu.consumer.favourite-link = Favourite link
+master.menu.consumer.dashboard = My Dashboard
+
+# master.menu.fundraiser ##########################################################
+
+master.menu.fundraiser = Fundraiser
+master.menu.fundraiser.list-my-strategies = My strategies
+
+# master.menu.spokesperson ##########################################################
+
+master.menu.spokesperson = Spokesperson
+master.menu.spokesperson.list-my-campaigns = My campaigns
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.list-my-inventions = My inventions
+
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-my-sponsorships = My sponsorships
 
 # master.menu.user-account ####################################################
 
-master.menu.user-account = Account
-master.menu.user-account.general-profile = General profile
-master.menu.user-account.become-provider = Become a provider
-master.menu.user-account.provider-profile = Provider profile
-master.menu.user-account.become-consumer = Become a consumer
-master.menu.user-account.consumer-profile = Consumer profile
+master.menu.user-account = My Profile
+master.menu.user-account.general-profile = Edit Personal Data
+master.menu.user-account.become-provider = Register as Provider
+master.menu.user-account.provider-profile = Edit Provider Data
+master.menu.user-account.become-consumer = Register as Consumer
+master.menu.user-account.consumer-profile = Edit Consumer Data
+master.menu.user-account.become-sponsor = Register as Sponsor
+master.menu.user-account.sponsor-profile = Edit Sponsor Data
+master.menu.user-account.become-inventor = Register as Inventor
+master.menu.user-account.inventor-profile = Edit Inventor Data
+master.menu.user-account.become-fundraiser = Become a fundraiser
+master.menu.user-account.fundraiser-profile = My fundraiser profile
+master.menu.user-account.become-spokesperson = Register as Spokesperson
+master.menu.user-account.spokesperson-profile = Edit Spokesperson Data
+master.menu.user-account.auditor-profile = Edit Auditor Data
+master.menu.user-account.become-auditor = Register as Auditor

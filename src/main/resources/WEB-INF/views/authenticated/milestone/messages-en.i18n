@@ -1,0 +1,20 @@
+authenticated.milestone.list.title = Milestones
+authenticated.milestone.list.label.title = Title
+authenticated.milestone.list.label.kind = Kind
+authenticated.milestone.list.label.effort = Effort
+authenticated.milestone.list.button.create = Create
+
+authenticated.milestone.form.title = Milestone details
+
+authenticated.milestone.form.label.title = Title:
+authenticated.milestone.form.label.achievements = Achievements:
+authenticated.milestone.form.label.effort = Effort:
+authenticated.milestone.form.label.kind = Milestone kind:
+
+authenticated.milestone.form.label.kind.TEASER = Teaser
+authenticated.milestone.form.label.kind.ENGAGING = Engaging
+authenticated.milestone.form.label.kind.CONVERSION = Conversion
+authenticated.milestone.form.button.create = Create
+authenticated.milestone.form.button.update = Update
+authenticated.milestone.form.button.delete = Delete
+authenticated.milestone.form.button.return = Return

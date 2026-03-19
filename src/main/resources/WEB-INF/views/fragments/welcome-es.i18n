@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-master.welcome.title = ¡Bienvenidos!
+master.welcome.title = ¡Bienvenido!
 master.welcome.text = \
-	¡Hola mundo!  Nunca antes ha sido tan sencillo desarrollar un \
-	proyecto y hacerlo funcionar.
-﻿
+	¡Bienvenido a Acme Starters! La plataforma diseñada para gestionar sus \
+	servicios eficientemente. ¡Nunca antes había sido tan fácil poner en \
+	marcha su proyecto!

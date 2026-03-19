@@ -1,0 +1,45 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.sponsorship.list.title = Sponsorship List
+authenticated.sponsorship.list.label.ticker=Ticker
+authenticated.sponsorship.list.label.name=Name
+authenticated.sponsorship.list.label.months-active= Months active
+authenticated.sponsorship.list.label.total-money= Total money
+authenticated.sponsorship.list.label.more-info=More info
+authenticated.sponsorship.list.label.start-moment=Start moment
+authenticated.sponsorship.list.label.end-moment=End moment
+authenticated.sponsorship.list.label.draft-mode=Draft mode
+authenticated.sponsorship.list.button.create = Create
+
+
+authenticated.sponsorship.form.title = Sponsorship Form
+authenticated.sponsorship.form.label.ticker= Ticker
+authenticated.sponsorship.form.label.name= Name
+authenticated.sponsorship.form.label.description= Description
+authenticated.sponsorship.form.label.start-moment= Start moment
+authenticated.sponsorship.form.label.end-moment= End moment
+authenticated.sponsorship.form.label.more-info= More info
+authenticated.sponsorship.form.label.months-active= Months active
+authenticated.sponsorship.form.label.total-money= Total money
+authenticated.sponsorship.form.label.draft-mode= Draft mode
+
+
+authenticated.sponsorship.form.button.donations= Display donations
+authenticated.sponsorship.form.button.create = Create
+authenticated.sponsorship.form.button.update = Update
+authenticated.sponsorship.form.button.delete = Delete
+authenticated.sponsorship.form.button.publish = Publish
+authenticated.sponsorship.form.button.return = Return
+
+acme.validation.sponsorship.duplicated-ticker.message = Ticker is already in use by another sponsorship
+acme.validation.sponsorship.at-least-one-donation.message = Sponsorship cannot be published unless they have at least one donation
+acme.validation.invalid-currency.message = Only Euros are accepted
+acme.validation.sponsorship.invalid-time-interval.message  = Must be in the future to publish.

@@ -1,0 +1,25 @@
+any.strategy.list.title = Published strategies
+any.strategy.list.label.ticker = Ticker
+any.strategy.list.label.name = Name
+any.strategy.list.label.start-moment = Start moment
+any.strategy.list.label.end-moment = End moment
+
+any.strategy.form.title = Strategy details
+any.strategy.form.label.ticker = Ticker
+any.strategy.form.label.name = Name
+any.strategy.form.label.description = Description
+any.strategy.form.label.start-moment = Start moment
+any.strategy.form.label.end-moment = End moment
+any.strategy.form.label.more-info = More info
+any.strategy.form.label.months-active = Months active
+any.strategy.form.label.expected-percentage = Expected percentage
+
+any.strategy.form.button.tactics = View tactics
+any.strategy.form.button.fundraiser = View fundraiser
+any.strategy.form.button.return = Return
+
+acme.validation.strategy.invalid-interval.message = Start moment must be before end moment.
+acme.validation.strategy.duplicated-ticker.message = Ticker is already in use by another strategy.
+acme.validation.strategy.at-least-one-tactic.message = A strategy must have at least one tactic before publishing.
+acme.validation.strategy.start-must-be-future.message = Start moment must be in the future to publish.
+acme.validation.strategy.end-must-be-future.message = End moment must be in the future to publish.

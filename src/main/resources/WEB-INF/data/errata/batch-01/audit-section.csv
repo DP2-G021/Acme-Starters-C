@@ -1,0 +1,26 @@
+key,key:auditReport,name,notes,hours,kind
+
+#base - entity
+auditSection-1,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+
+#name - errata(@ValidHeader 1 a 75)
+auditSection-2,auditReport-1,"","Lorem ipsum dolor sit amet,consectetur adipiscing elit.",5,PRELIMINARY
+auditSection-3,auditReport-1,"   ","Lorem ipsum dolor sit amet,consectetur adipiscing elit.",5,PRELIMINARY
+auditSection-4,auditReport-1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut","Lorem ipsum dolor sit amet,consectetur adipiscing elit.",5,PRELIMINARY
+
+#notes - errata(@ValidText 1 a 255)
+auditSection-5,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","",5,PRELIMINARY
+auditSection-6,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","   ",5,PRELIMINARY
+auditSection-7,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur extra overflow text.",5,PRELIMINARY
+
+#hours - errata(negativo, demasiado grande, nulo)
+auditSection-8,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet.",-1,PRELIMINARY
+auditSection-9,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet.",1000000,PRELIMINARY
+auditSection-10,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet.",,PRELIMINARY
+
+#kind - errata (null y no es un valor del enum)
+auditSection-11,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet.",5,
+auditSection-12,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet.",5,null
+
+#auditReport - errata (null)
+auditSection-13,,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet.",5,PRELIMINARY

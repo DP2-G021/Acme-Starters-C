@@ -1,0 +1,30 @@
+inventor.invention.form.title = Invention form
+inventor.invention.list.title = Listing of my inventions
+
+inventor.invention.form.label.ticker = Ticker
+inventor.invention.form.label.name = Name
+inventor.invention.form.label.description = Description
+inventor.invention.form.label.startMoment = Start moment
+inventor.invention.form.label.endMoment = End moment
+inventor.invention.form.label.moreInfo = More info
+inventor.invention.form.label.monthsActive = Months active
+inventor.invention.form.label.cost = Cost
+inventor.invention.form.label.draftMode = Draft mode
+
+inventor.invention.form.button.create = Create
+inventor.invention.form.button.update = Update
+inventor.invention.form.button.delete = Delete
+inventor.invention.form.button.publish = Publish
+inventor.invention.form.button.listParts = Show parts
+
+inventor.invention.list.label.ticker = Ticker
+inventor.invention.list.label.name = Name
+inventor.invention.list.label.monthsActive = Months active
+inventor.invention.list.label.cost = Cost
+inventor.invention.list.button.create = Create invention
+
+acme.validation.invention.duplicated-ticker.message = The ticker is already in use.
+acme.validation.invention.at-least-one-part.message = A published invention must have at least one part.
+acme.validation.invention.invalid-interval.message = The end moment must be after the start moment.
+acme.validation.invention.invalid-start.message = The start moment must be after the current moment.
+acme.validation.invention.only-euros.message = Only euros are accepted in the costs of the parts associated with this invention.

@@ -1,0 +1,37 @@
+key,key:auditReport,name,notes,hours,kind
+#base - entity
+auditSection-1,auditReport-1,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+
+#name - standar (ValidHeader: 1 to 75 chars)
+auditSection-2,auditReport-2,"L","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-3,auditReport-3,"Lo","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-4,auditReport-4,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod temp","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-5,auditReport-5,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tem","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-6,auditReport-6,"โลเร็ม อิปซัม","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-7,auditReport-7,"لوريم إيبسوم","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-8,auditReport-8,"洛伦·伊普森","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-22,auditReport-23,"<marquee>Hacked</marquee>","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-23,auditReport-24,"<script>alert(‘Hacked!’);</script>","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-24,auditReport-25,"' or 'A' = 'A","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+
+#notes - standar (ValidText: 1 to 255 chars)
+auditSection-9,auditReport-9,"Lorem ipsum dolor sit amet, consectetu","L",5,PRELIMINARY
+auditSection-10,auditReport-10,"Lorem ipsum dolor sit amet, consectetu","Lo",5,PRELIMINARY
+auditSection-11,auditReport-11,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor inci",5,PRELIMINARY
+auditSection-12,auditReport-12,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor inc",5,PRELIMINARY
+auditSection-13,auditReport-13,"Lorem ipsum dolor sit amet, consectetu","โลเร็ม อิปซัม",5,PRELIMINARY
+auditSection-14,auditReport-14,"Lorem ipsum dolor sit amet, consectetu","洛伦·伊普森",5,PRELIMINARY
+auditSection-15,auditReport-15,"Lorem ipsum dolor sit amet, consectetu","<marquee>Hacked</marquee>",5,PRELIMINARY
+auditSection-25,auditReport-26,"Lorem ipsum dolor sit amet, consectetu","<script>alert(‘Hacked!’);</script>",5,PRELIMINARY
+auditSection-26,auditReport-27,"Lorem ipsum dolor sit amet, consectetu","' or 'A' = 'A",5,PRELIMINARY
+
+#hours - standar (ValidNumber min=0)
+auditSection-16,auditReport-16,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",0,PRELIMINARY
+auditSection-17,auditReport-17,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",1,PRELIMINARY
+auditSection-18,auditReport-19,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",999,PRELIMINARY
+
+#kind - standar (Enum: PRELIMINARY, EVALUATION, CONCLUSION)
+auditSection-19,auditReport-21,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,PRELIMINARY
+auditSection-20,auditReport-22,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,EVALUATION
+auditSection-21,auditReport-55,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,CONCLUSION
+auditSection-27,auditReport-58,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",56,CONCLUSION

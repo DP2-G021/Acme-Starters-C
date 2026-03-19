@@ -8,14 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-master.footer.title.about = Nosotros
-master.footer.label.company = La empresa
-master.footer.label.license = Licencia
-master.footer.title.social = Social
-master.footer.url.linkedin = http://www.linkedin.com
-master.footer.label.linked-in = Linked-In
-master.footer.url.twitter = http://www.twitter.com
+master.footer.title.about = Sobre nosotros
+master.footer.label.company = Quiénes somos
+master.footer.label.license = Términos legales
+
+master.footer.title.social = Síguenos
+master.footer.url.twitter = http://www.twitter.com/AcmeStarters
 master.footer.label.twitter = Twitter
-master.footer.title.languages = Lenguajes
+# Mantenemos Instagram
+master.footer.url.instagram = http://www.instagram.com/AcmeStarters
+master.footer.label.instagram = Instagram
+
+master.footer.title.languages = Idiomas
 master.footer.label.english = Inglés
 master.footer.label.spanish = Español

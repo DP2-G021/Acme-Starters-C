@@ -1,0 +1,19 @@
+any.invention.form.title = Formulario de invención
+any.invention.list.title = Listado de invenciones
+
+any.invention.form.label.ticker = Ticker:
+any.invention.form.label.name = Nombre:
+any.invention.form.label.description = Descripción:
+any.invention.form.label.startMoment = Fecha de inicio:
+any.invention.form.label.endMoment = Fecha de fin:
+any.invention.form.label.moreInfo = Más información (opcional):
+any.invention.form.label.monthsActive = Meses en activo:
+any.invention.form.label.cost = Coste:
+
+any.invention.form.button.inventor = Ver inventor
+any.invention.form.button.parts = Ver partes
+
+any.invention.list.label.ticker = Ticker
+any.invention.list.label.name = Nombre
+any.invention.list.label.monthsActive = Meses en activo
+any.invention.list.label.cost = Coste

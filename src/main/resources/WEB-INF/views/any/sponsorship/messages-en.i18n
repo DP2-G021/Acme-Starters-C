@@ -1,0 +1,42 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+any.sponsorship.form.title = Sponsorship details
+any.sponsorship.list.title = Sponsorship list
+
+any.sponsorship.form.label.ticker = Ticker:
+any.sponsorship.form.label.name = Name:
+any.sponsorship.form.label.description = Description:
+any.sponsorship.form.label.startMoment = Start Date:
+any.sponsorship.form.label.endMoment = End Date:
+any.sponsorship.form.label.moreInfo = More info:
+any.sponsorship.form.label.monthsActive = Months Active
+any.sponsorship.form.label.totalMoney = Total Money
+
+any.sponsorship.form.button.donations = View Donations
+any.sponsorship.form.button.sponsor = View Sponsor Profile
+
+any.sponsorship.list.label.ticker = Ticker
+any.sponsorship.list.label.name = Name
+any.sponsorship.list.label.startMoment = Start Date
+any.sponsorship.list.label.endMoment = End Date
+any.sponsorship.list.label.monthsActive = Months Active
+any.sponsorship.list.label.totalMoney = Total Money
+
+any.sponsorship.form.button.return = Return
+
+acme.validation.header.message = At least 1 character, and at most 75 characters
+acme.validation.text.message = At least 1 character, and at most 255 characters
+acme.validation.ticker.message = Ticker must have 2 letters, 2 numbers, a hyphen and between 5 to 10 characters (e.g. AB12-VALOR123).
+acme.validation.sponsorship.duplicated-ticker.message = Ticker is already in use by another sponsorship
+acme.validation.sponsorship.at-least-one-donation.message = Sponsorship cannot be published unless they have at least one donation
+acme.validation.invalid-currency.message = Only Euros are accepted
+acme.validation.sponsorship.start-must-be-future.message = Start moment must be in the future to publish.
+acme.validation.sponsorship.end-must-be-future.message = End moment must be in the future to publish.
