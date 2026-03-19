@@ -19,6 +19,7 @@ public class AnyMilestoneListService extends AbstractService<Any, Milestone> {
 	@Autowired
 	private AnyMilestoneRepository	repository;
 
+	private Campaign				campaign;
 	private Collection<Milestone>	milestones;
 
 	// AbstractService interface -------------------------------------------
@@ -30,17 +31,19 @@ public class AnyMilestoneListService extends AbstractService<Any, Milestone> {
 
 		campaignId = super.getRequest().getData("campaignId", int.class);
 		this.milestones = this.repository.findByCampaignId(campaignId);
+		this.campaign = this.repository.findPublishedCampaignById(campaignId);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int campaignId;
-		Campaign campaign;
+		//int campaignId;
+		//Campaign campaign;
 
-		campaignId = super.getRequest().getData("campaignId", int.class);
-		campaign = this.repository.findCampaignById(campaignId);
-		status = campaign != null;
+		//campaignId = super.getRequest().getData("campaignId", int.class);
+		//campaign = this.repository.findCampaignById(campaignId);
+		//status = campaign != null;
+		status = this.campaign != null;
 		super.setAuthorised(status);
 	}
 
