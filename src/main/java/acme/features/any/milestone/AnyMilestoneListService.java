@@ -37,12 +37,6 @@ public class AnyMilestoneListService extends AbstractService<Any, Milestone> {
 	@Override
 	public void authorise() {
 		boolean status;
-		//int campaignId;
-		//Campaign campaign;
-
-		//campaignId = super.getRequest().getData("campaignId", int.class);
-		//campaign = this.repository.findCampaignById(campaignId);
-		//status = campaign != null;
 		status = this.campaign != null;
 		super.setAuthorised(status);
 	}
