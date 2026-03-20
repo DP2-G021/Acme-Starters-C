@@ -12,7 +12,7 @@
 	<acme:form-url code="authenticated.sponsorship.form.label.more-info" path="moreInfo" readonly="${readOnlySponsorship}"/>
 	<acme:form-double code="authenticated.sponsorship.form.label.months-active" path="monthsActive" readonly="true"/>
 	<acme:form-money code="authenticated.sponsorship.form.label.total-money" path="totalMoney" readonly="true"/>
-	<acme:form-textbox code="authenticated.sponsorship.form.label.draft-mode" path="draftMode" readonly="true"/>
+	<acme:form-textbox code="authenticated.sponsorship.form.label.draft-mode" path="draftModeDisplay" readonly="true"/>
 	
 	<jstl:choose> 	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
