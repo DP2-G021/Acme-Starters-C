@@ -71,7 +71,9 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Authenticat
 	public void unbind() {
 		Tuple tuple;
 		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "totalMoney", "draftMode");
-		tuple.put("sponsorshipId", this.sponsorship.getId());
+		//tuple.put("sponsorshipId", this.sponsorship.getId());
+		tuple.put("draftModeDisplay", SponsorSponsorshipI18nHelper.draftModeDisplay(this.sponsorship.getDraftMode()));
+
 	}
 
 }

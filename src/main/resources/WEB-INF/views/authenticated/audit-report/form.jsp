@@ -11,7 +11,7 @@
 	<acme:form-moment code="authenticated.audit-report.form.label.startMoment" path="startMoment" readonly="${readOnlyAuditReport}"/>
 	<acme:form-moment code="authenticated.audit-report.form.label.endMoment" path="endMoment" readonly="${readOnlyAuditReport}"/>
 	<acme:form-url code="authenticated.audit-report.form.label.moreInfo" path="moreInfo" readonly="${readOnlyAuditReport}"/>
-	<acme:form-textbox code="authenticated.audit-report.form.label.draftMode" path="draftMode" readonly="true"/>
+	<acme:form-textbox code="authenticated.audit-report.form.label.draftMode" path="draftModeDisplay" readonly="true"/>
 	<acme:form-double code="authenticated.audit-report.form.label.monthsActive" path="monthsActive" readonly="true"/>
 	<acme:form-double code="authenticated.audit-report.form.label.hours" path="hours" readonly="true"/>
 	

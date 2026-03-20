@@ -24,9 +24,9 @@ strategy-err-13,ES25-ERR13, , "Valid description",2026/01/10 10:00,2026/06/10 10
 strategy-err-14,ES25-ERR14,Green Growth Plan,,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-err-15,ES25-ERR15,Green Growth Plan, ,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 
-# start-moment - must be future when published
+# start-moment - must be strictly after base moment (2025/01/01 00:00)
 strategy-err-16,ES25-ERR16,Green Growth Plan,"Valid description",2024/12/31 23:59,2026/06/10 10:00,http://example.com,FALSE,fundraiser-00
-strategy-err-17,ES25-ERR17,Green Growth Plan,"Valid description",2025/01/01 00:00,2026/06/10 10:00,http://example.com,FALSE,fundraiser-00
+strategy-err-17,ES25-ERR17,Green Growth Plan,"Valid description",2025/01/01 00:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 
 # start-moment - out of explicit lower range
 strategy-err-26,ES25-ERR27,Green Growth Plan,"Valid description",1999/12/31 23:59,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00

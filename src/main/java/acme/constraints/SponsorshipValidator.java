@@ -1,6 +1,8 @@
 
 package acme.constraints;
 
+import java.util.Date;
+
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,25 +38,35 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 			// 2. Validación de existencia de donaciones
 			{
 				boolean hasDonations;
-
 				if (sponsorship.getDraftMode())
 					hasDonations = true;
 				else {
 					int size = this.repository.findDonationsSizeBySponsorshipId(sponsorship.getId());
 					hasDonations = size > 0;
 				}
-				super.state(context, hasDonations, "draftMode", "acme.validation.sponsorship.at-least-one-donation.message");
+				super.state(context, hasDonations, "*", "acme.validation.sponsorship.at-least-one-donation.message");
 
 			}
+
+			//3. Validación de intervalo temporal
 			{
-				// 3. Validación de intervalo temporal
-				boolean datesAreCorrect = false;
-				if (sponsorship.getStartMoment() != null && sponsorship.getEndMoment() != null)
-					datesAreCorrect = MomentHelper.isBefore(sponsorship.getStartMoment(), sponsorship.getEndMoment());
+				boolean validInterval = true;
+				boolean validStart = true;
+				Date start = sponsorship.getStartMoment();
+				Date end = sponsorship.getEndMoment();
 
-				super.state(context, datesAreCorrect, "endMoment", "acme.validation.sponsorship.invalid-time-interval.message");
+				if (start != null && end != null) {
+					boolean positiveInterval = MomentHelper.isBefore(start, end);
+					boolean futureStart = MomentHelper.isAfter(start, MomentHelper.getBaseMoment());
+
+					validInterval = positiveInterval;
+					validStart = futureStart;
+				}
+				super.state(context, validInterval, "endMoment", "acme.validation.sponsorship.invalid-interval.message");
+				super.state(context, validStart, "startMoment", "acme.validation.sponsorship.invalid-start.message");
 			}
 
+			//4. Validación de moneda de las donaciones
 			{
 
 				boolean correctCurrency;
@@ -65,9 +77,9 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 			}
 
 			result = !super.hasErrors(context);
+
+			return result;
+
 		}
-		return result;
-
 	}
-
 }

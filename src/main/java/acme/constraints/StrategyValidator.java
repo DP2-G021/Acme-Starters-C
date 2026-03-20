@@ -1,4 +1,3 @@
-
 package acme.constraints;
 
 import javax.validation.ConstraintValidatorContext;
@@ -38,17 +37,17 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			result = true;
 		else {
 
-			// 1️º startMoment < endMoment
+			// 1. startMoment < endMoment (strict)
 			{
 				boolean validInterval = true;
 
 				if (strategy.getStartMoment() != null && strategy.getEndMoment() != null)
-					validInterval = MomentHelper.isBefore(strategy.getStartMoment(), strategy.getEndMoment());
+					validInterval = strategy.getEndMoment().after(strategy.getStartMoment());
 
-				super.state(context, validInterval, "startMoment", "acme.validation.strategy.invalid-interval.message");
+				super.state(context, validInterval, "endMoment", "acme.validation.strategy.invalid-interval.message");
 			}
 
-			// 2️º ticker único
+			// 2. unique ticker
 			{
 				boolean uniqueTicker;
 				uniqueTicker = !this.repository.existsOtherByTicker(strategy.getId(), strategy.getTicker());
@@ -56,10 +55,32 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 				super.state(context, uniqueTicker, "ticker", "acme.validation.strategy.duplicated-ticker.message");
 			}
 
-			// 3️º reglas SOLO si se publica
+			// 2.1 start moment must be strictly after base moment (2025/01/01 00:00 -> from 00:01 onwards)
+			{
+				boolean validStartMoment = true;
+
+				if (strategy.getStartMoment() != null)
+					validStartMoment = MomentHelper.isAfter(strategy.getStartMoment(), MomentHelper.getBaseMoment());
+
+				super.state(context, validStartMoment, "startMoment", "acme.validation.strategy.invalid-start.message");
+			}
+
+			// 3. publish-only rules
 			if (Boolean.FALSE.equals(strategy.getDraftMode())) {
 
-				// 3.1 Debe tener al menos una tactic
+				// 3.1 start and end moments are mandatory to publish
+				{
+					boolean hasStartMoment;
+					boolean hasEndMoment;
+
+					hasStartMoment = strategy.getStartMoment() != null;
+					hasEndMoment = strategy.getEndMoment() != null;
+
+					super.state(context, hasStartMoment, "startMoment", "acme.validation.strategy.start-required-to-publish.message");
+					super.state(context, hasEndMoment, "endMoment", "acme.validation.strategy.end-required-to-publish.message");
+				}
+
+				// 3.2 must have at least one tactic
 				{
 					boolean hasAtLeastOneTactic;
 					int tactics = this.repository.countTacticsByStrategyId(strategy.getId());
@@ -68,7 +89,7 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 					super.state(context, hasAtLeastOneTactic, "*", "acme.validation.strategy.at-least-one-tactic.message");
 				}
 
-				// 3.2 start y end futuros
+				// 3.3 start and end must be future moments
 				{
 					boolean futureStart = true;
 					boolean futureEnd = true;

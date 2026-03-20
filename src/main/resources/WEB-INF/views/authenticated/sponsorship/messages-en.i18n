@@ -31,6 +31,9 @@ authenticated.sponsorship.form.label.months-active= Months active
 authenticated.sponsorship.form.label.total-money= Total money
 authenticated.sponsorship.form.label.draft-mode= Draft mode
 
+authenticated.sponsorship.boolean.true = Yes
+authenticated.sponsorship.boolean.false = No
+
 
 authenticated.sponsorship.form.button.donations= Display donations
 authenticated.sponsorship.form.button.create = Create
@@ -42,4 +45,5 @@ authenticated.sponsorship.form.button.return = Return
 acme.validation.sponsorship.duplicated-ticker.message = Ticker is already in use by another sponsorship
 acme.validation.sponsorship.at-least-one-donation.message = Sponsorship cannot be published unless they have at least one donation
 acme.validation.invalid-currency.message = Only Euros are accepted
-acme.validation.sponsorship.invalid-time-interval.message  = Must be in the future to publish.
+acme.validation.sponsorship.invalid-interval.message = The end moment must be after the start moment
+acme.validation.sponsorship.invalid-start.message = The start moment must be after the current moment

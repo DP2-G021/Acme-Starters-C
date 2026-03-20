@@ -30,6 +30,9 @@ authenticated.sponsorship.form.label.months-active= Meses activa
 authenticated.sponsorship.form.label.total-money= Dinero total
 authenticated.sponsorship.form.label.draft-mode=Modo borrador
 
+authenticated.sponsorship.boolean.true = Si
+authenticated.sponsorship.boolean.false = No
+
 authenticated.sponsorship.form.button.donations=Ver donaciones
 authenticated.sponsorship.form.button.create = Crear
 authenticated.sponsorship.form.button.update = Actualizar
@@ -40,4 +43,5 @@ authenticated.sponsorship.form.button.return = Volver
 acme.validation.sponsorship.duplicated-ticker.message = Ticker ya está en uso por otro patrocinio
 acme.validation.sponsorship.at-least-one-donation.message = El patrocinio no puede ser publicado a menos que tenga al menos una donación
 acme.validation.invalid-currency.message = Solo se aceptan Euros
-acme.validation.sponsorship.invalid-time-interval.message  = Debe ser en el futuro para publicar.
+acme.validation.sponsorship.invalid-interval.message = La fecha de fin debe ser posterior a la fecha de inicio
+acme.validation.sponsorship.invalid-start.message = La fecha de inicio debe ser posterior al momento actual
