@@ -28,4 +28,5 @@ authenticated.campaign.form.button.return = Return
 
 acme.validation.campaign.duplicated-ticker.message = Ticker is already in use by another campaign
 acme.validation.campaign.at-least-one-milestone.message = A campaign must have at least one milestone before publishing
-acme.validation.campaign.invalid-interval.message = Start moment must be before end moment
+acme.validation.campaign.invalid-interval.message = The end moment must be after the start moment
+acme.validation.campaign.invalid-start.message = The start moment must be after the current moment

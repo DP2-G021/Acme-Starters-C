@@ -74,42 +74,19 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 			}
 
 			// 3. Validación de intervalo de fechas
-			/*
-			 * {
-			 * boolean validInterval;
-			 * final Date start = campaign.getStartMoment();
-			 * final Date end = campaign.getEndMoment();
-			 * 
-			 * if (start == null || end == null)
-			 * validInterval = true; // El @Mandatory de la entidad ya se encarga de que no sean nulos
-			 * else if (MomentHelper.isBefore(start, end))
-			 * validInterval = true;
-			 * else
-			 * validInterval = false;
-			 * 
-			 * super.state(context, validInterval, "startMoment", "acme.validation.campaign.invalid-interval.message");
-			 * }
-			 */
 			{
-				// 1. Obtener los datos (igual que tu compañero)
 				boolean validInterval = true;
 				boolean validStart = true;
 				Date start = campaign.getStartMoment();
 				Date end = campaign.getEndMoment();
 
 				if (start != null && end != null) {
-					// 2. Lógica de intervalo positivo (Inicio < Fin)
 					boolean positiveInterval = MomentHelper.isBefore(start, end);
-
-					// 3. Lógica de fecha futura respecto al sistema (Base Moment: 2025/01/01 00:00)
-					// Como isAfter es ESTRICTO, las 00:00 darán error y las 00:01 serán válidas.
 					boolean futureStart = MomentHelper.isAfter(start, MomentHelper.getBaseMoment());
 
 					validInterval = positiveInterval;
 					validStart = futureStart;
 				}
-
-				// 4. Lanzar los errores en los campos correspondientes
 				super.state(context, validInterval, "endMoment", "acme.validation.campaign.invalid-interval.message");
 				super.state(context, validStart, "startMoment", "acme.validation.campaign.invalid-start.message");
 			}

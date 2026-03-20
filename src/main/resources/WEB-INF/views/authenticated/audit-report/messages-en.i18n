@@ -42,3 +42,9 @@ authenticated.audit-report.form.button.publish = Publish
 authenticated.audit-report.boolean.true = Yes
 authenticated.audit-report.boolean.false = No
 
+acme.validation.auditReport.ticker.non-unique = Two audit reports cannot have the same ticker
+acme.validation.auditReport.auditSection.error = To publish an audit report it is necessary that it have audit sections
+acme.validation.auditReport.dates.error = Invalid value
+acme.validation.auditReport.start-before-end.message = The start date cannot be later than the end date or the current date
+acme.validation.auditReport.invalid-interval.message = The end moment must be after the start moment
+acme.validation.auditReport.invalid-start.message = The start moment must be after the current moment
