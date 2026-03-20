@@ -1,6 +1,6 @@
 key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson
 #base-entity
-campaign-00,CA00-aaaaa,"Lorem ipsum dolor sit amet","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","2025/01/01 0:00","2025/02/01 0:00","http://lorem.com/ipsum",false,spokesperson-01
+campaign-00,CA00-aaaaa,"Lorem ipsum dolor sit amet","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","2025/01/01 0:01","2025/02/01 0:00","http://lorem.com/ipsum",false,spokesperson-01
 
 #ticker - standard variations
 campaign-01,AA99-TICKERRRR,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","2026/01/01 00:00","2026/01/01 23:00","http://lorem.com/ipsum",false,spokesperson-01
