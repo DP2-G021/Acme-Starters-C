@@ -47,7 +47,6 @@ public class SpokespersonMilestoneDeleteService extends AbstractService<Authenti
 
 	@Override
 	public void bind() {
-		super.bindObject(this.milestone, "title", "achievements", "effort", "kind");
 	}
 
 	@Override

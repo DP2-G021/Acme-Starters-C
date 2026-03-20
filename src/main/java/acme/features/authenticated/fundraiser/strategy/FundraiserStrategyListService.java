@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
@@ -43,7 +44,11 @@ public class FundraiserStrategyListService extends AbstractService<Authenticated
 	@Override
 	public void unbind() {
 		if (this.strategies != null)
-			for (final Strategy strategy : this.strategies)
-				super.unbindObject(strategy, "ticker", "name", "startMoment", "endMoment", "draftMode");
+			for (final Strategy strategy : this.strategies) {
+				Tuple tuple;
+
+				tuple = super.unbindObject(strategy, "ticker", "name", "startMoment", "endMoment", "draftMode");
+				tuple.put("draftModeDisplay", FundraiserStrategyI18nHelper.draftModeDisplay(strategy.getDraftMode()));
+			}
 	}
 }

@@ -16,6 +16,8 @@ authenticated.campaign.form.label.moreInfo = Más información:
 authenticated.campaign.form.label.draftMode = Modo borrador:
 authenticated.campaign.form.label.monthsActive = Meses activos:
 authenticated.campaign.form.label.effort = Esfuerzo:
+authenticated.campaign.boolean.true = Sí
+authenticated.campaign.boolean.false = No
 
 authenticated.campaign.form.button.milestones = Ver Hitos
 authenticated.campaign.form.button.create = Crear
@@ -23,3 +25,8 @@ authenticated.campaign.form.button.update = Actualizar
 authenticated.campaign.form.button.delete = Borrar
 authenticated.campaign.form.button.publish = Publicar
 authenticated.campaign.form.button.return = Volver
+
+acme.validation.campaign.duplicated-ticker.message = La referencia está siendo usada por otra campaña
+acme.validation.campaign.at-least-one-milestone.message = La campaña debe tener al menos un hito antes de publicarse
+acme.validation.campaign.invalid-interval.message = La fecha de fin debe ser posterior a la fecha de inicio
+acme.validation.campaign.invalid-start.message = La fecha de inicio debe ser posterior al momento actual

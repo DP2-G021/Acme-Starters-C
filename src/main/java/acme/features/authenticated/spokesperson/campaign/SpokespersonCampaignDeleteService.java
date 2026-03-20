@@ -6,11 +6,12 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.campaigns.Campaign;
 import acme.entities.campaigns.Milestone;
-import acme.realms.Fundraiser;
+import acme.realms.Spokesperson;
 
 @Service
 public class SpokespersonCampaignDeleteService extends AbstractService<Authenticated, Campaign> {
@@ -39,7 +40,7 @@ public class SpokespersonCampaignDeleteService extends AbstractService<Authentic
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
 		status = status && this.campaign != null && this.campaign.getDraftMode();
 
 		super.setAuthorised(status);
@@ -67,7 +68,9 @@ public class SpokespersonCampaignDeleteService extends AbstractService<Authentic
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "effort", "monthsActive");
+		Tuple tuple;
+		tuple = super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "effort", "monthsActive");
+		tuple.put("draftModeDisplay", SpokespersonCampaignI18nHelper.draftModeDisplay(this.campaign.getDraftMode()));
 	}
 
 }

@@ -22,3 +22,9 @@ inventor.invention.list.label.name = Name
 inventor.invention.list.label.monthsActive = Months active
 inventor.invention.list.label.cost = Cost
 inventor.invention.list.button.create = Create invention
+
+acme.validation.invention.duplicated-ticker.message = The ticker is already in use.
+acme.validation.invention.at-least-one-part.message = A published invention must have at least one part.
+acme.validation.invention.invalid-interval.message = The end moment must be after the start moment.
+acme.validation.invention.invalid-start.message = The start moment must be after the current moment.
+acme.validation.invention.only-euros.message = Only euros are accepted in the costs of the parts associated with this invention.

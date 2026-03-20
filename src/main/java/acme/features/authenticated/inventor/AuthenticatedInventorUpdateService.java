@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Authenticated;
 import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
-import acme.realms.Consumer;
 import acme.realms.Inventor;
 
 @Service
@@ -35,7 +34,7 @@ public class AuthenticatedInventorUpdateService extends AbstractService<Authenti
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().hasRealmOfType(Consumer.class);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Inventor.class);
 		super.setAuthorised(status);
 	}
 

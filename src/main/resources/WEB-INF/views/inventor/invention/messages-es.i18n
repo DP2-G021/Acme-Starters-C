@@ -22,3 +22,9 @@ inventor.invention.list.label.name = Nombre
 inventor.invention.list.label.monthsActive = Meses de actividad
 inventor.invention.list.label.cost = Coste
 inventor.invention.list.button.create = Crear invención
+
+acme.validation.invention.duplicated-ticker.message = El ticker ya está en uso.
+acme.validation.invention.at-least-one-part.message = Una invención publicada debe tener al menos una parte.
+acme.validation.invention.invalid-interval.message = La fecha de fin debe ser posterior a la fecha de inicio.
+acme.validation.invention.invalid-start.message = La fecha de inicio debe ser posterior al momento actual.
+acme.validation.invention.only-euros.message = Solo se aceptan euros en los costes de las partes asociadas a esta invención.

@@ -12,7 +12,6 @@ import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
 import acme.entities.campaigns.Campaign;
 import acme.entities.campaigns.CampaignRepository;
-import acme.entities.campaigns.MilestoneRepository;
 
 @Validator
 public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign> {
@@ -20,9 +19,7 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private CampaignRepository	campaignRepository;
-	@Autowired
-	private MilestoneRepository	milestoneRepository;
+	private CampaignRepository campaignRepository;
 
 	// ConstraintValidator interface ------------------------------------------
 
@@ -78,33 +75,20 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 
 			// 3. Validación de intervalo de fechas
 			{
-				boolean validInterval;
-				final Date start = campaign.getStartMoment();
-				final Date end = campaign.getEndMoment();
+				boolean validInterval = true;
+				boolean validStart = true;
+				Date start = campaign.getStartMoment();
+				Date end = campaign.getEndMoment();
 
-				if (start == null || end == null)
-					validInterval = true; // El @Mandatory de la entidad ya se encarga de que no sean nulos
-				else if (MomentHelper.isBefore(start, end))
-					validInterval = true;
-				else
-					validInterval = false;
+				if (start != null && end != null) {
+					boolean positiveInterval = MomentHelper.isBefore(start, end);
+					boolean futureStart = MomentHelper.isAfter(start, MomentHelper.getBaseMoment());
 
-				super.state(context, validInterval, "startMoment", "acme.validation.campaign.invalid-interval.message");
-			}
-
-			// 4. Validación de esfuerzo total (No superar el 100%)
-			{
-				boolean validEffort;
-				Double totalEffort = this.milestoneRepository.getCampaignEffort(campaign.getId());
-
-				if (totalEffort == null)
-					validEffort = true;
-				else if (totalEffort <= 100.0)
-					validEffort = true;
-				else
-					validEffort = false;
-
-				super.state(context, validEffort, "effort", "acme.validation.campaign.effort-exceeded.message");
+					validInterval = positiveInterval;
+					validStart = futureStart;
+				}
+				super.state(context, validInterval, "endMoment", "acme.validation.campaign.invalid-interval.message");
+				super.state(context, validStart, "startMoment", "acme.validation.campaign.invalid-start.message");
 			}
 
 			// El resultado final es true solo si no se ha registrado ningún error en los bloques anteriores

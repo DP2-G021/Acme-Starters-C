@@ -37,3 +37,13 @@ authenticated.audit-report.form.button.create = Crear
 authenticated.audit-report.form.button.update = Modificar
 authenticated.audit-report.form.button.delete = Eliminar
 authenticated.audit-report.form.button.publish = Publicar
+
+authenticated.audit-report.boolean.true = Sí
+authenticated.audit-report.boolean.false = No
+
+acme.validation.auditReport.ticker.non-unique = No puede existir dos audit reports con el mismo ticker
+acme.validation.auditReport.auditSection.error = Para publicar un audit report es necesario que este tenga audit sections
+acme.validation.auditReport.dates.error = Valor incorrecto
+acme.validation.auditReport.start-before-end.message = La fecha de inicio no puede ser posterior a la de fin ni a la actual
+acme.validation.auditReport.invalid-interval.message = La fecha de fin debe ser posterior a la fecha de inicio
+acme.validation.auditReport.invalid-start.message = La fecha de inicio debe ser posterior al momento actual

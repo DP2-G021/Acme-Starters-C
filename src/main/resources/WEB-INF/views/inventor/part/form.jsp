@@ -13,26 +13,12 @@
 
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="inventor.part.form.button.create" action="/inventor/part/create?inventionId=${inventionId}"/>
-			
 		</jstl:when>
 
-		<jstl:when test="${_command == 'show' && inventionDraftMode}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update') && inventionDraftMode}">
 			<acme:submit code="inventor.part.form.button.update" action="/inventor/part/update?id=${id}"/>
 			<acme:submit code="inventor.part.form.button.delete" action="/inventor/part/delete?id=${id}"/>
-			
 		</jstl:when>
-
-		<jstl:when test="${_command == 'update' && inventionDraftMode}">
-			<acme:submit code="inventor.part.form.button.update" action="/inventor/part/update?id=${id}"/>
-			
-		</jstl:when>
-
-		<jstl:when test="${_command == 'delete' && inventionDraftMode}">
-			<acme:submit code="inventor.part.form.button.delete" action="/inventor/part/delete?id=${id}"/>
-			
-		</jstl:when>
-
-		
 
 	</jstl:choose>
 </acme:form>

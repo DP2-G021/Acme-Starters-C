@@ -70,6 +70,7 @@ public class AuditorAuditReportUpdateService extends AbstractService<Authenticat
 
 		tuple = super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "hours", "draftMode");
 		tuple.put("auditReportId", this.auditReport.getId());
+		tuple.put("draftModeDisplay", AuditorAuditReportI18nHelper.draftModeDisplay(this.auditReport.getDraftMode()));
 	}
 
 }
