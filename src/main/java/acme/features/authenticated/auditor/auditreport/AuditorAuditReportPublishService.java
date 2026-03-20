@@ -76,5 +76,6 @@ public class AuditorAuditReportPublishService extends AbstractService<Authentica
 
 		tuple = super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "hours");
 		tuple.put("auditReportId", this.auditReport.getId());
+		tuple.put("draftModeDisplay", AuditorAuditReportI18nHelper.draftModeDisplay(this.auditReport.getDraftMode()));
 	}
 }

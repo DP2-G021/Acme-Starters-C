@@ -16,6 +16,8 @@ authenticated.strategy.form.label.more-info = Mas informacion
 authenticated.strategy.form.label.draft-mode = Borrador
 authenticated.strategy.form.label.months-active = Meses activos
 authenticated.strategy.form.label.expected-percentage = Porcentaje esperado
+authenticated.strategy.boolean.true = Sí
+authenticated.strategy.boolean.false = No
 
 authenticated.strategy.form.button.tactics = Ver tacticas
 authenticated.strategy.form.button.create = Crear
@@ -24,8 +26,10 @@ authenticated.strategy.form.button.delete = Borrar
 authenticated.strategy.form.button.publish = Publicar
 authenticated.strategy.form.button.return = Volver
 
-acme.validation.strategy.invalid-interval.message = El momento de inicio debe ser anterior al momento de fin.
+acme.validation.strategy.invalid-interval.message = El momento de fin debe ser posterior al momento de inicio.
 acme.validation.strategy.duplicated-ticker.message = El ticker ya esta en uso por otra estrategia.
 acme.validation.strategy.at-least-one-tactic.message = Una estrategia debe tener al menos una tactica antes de publicarse.
+acme.validation.strategy.start-required-to-publish.message = El momento de inicio es obligatorio para publicar.
+acme.validation.strategy.end-required-to-publish.message = El momento de fin es obligatorio para publicar.
 acme.validation.strategy.start-must-be-future.message = El momento de inicio debe estar en el futuro para publicar.
 acme.validation.strategy.end-must-be-future.message = El momento de fin debe estar en el futuro para publicar.
