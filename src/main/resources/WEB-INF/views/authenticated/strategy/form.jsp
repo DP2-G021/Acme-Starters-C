@@ -11,7 +11,7 @@
 	<acme:form-moment code="authenticated.strategy.form.label.start-moment" path="startMoment" readonly="${readOnlyStrategy}"/>
 	<acme:form-moment code="authenticated.strategy.form.label.end-moment" path="endMoment" readonly="${readOnlyStrategy}"/>
 	<acme:form-url code="authenticated.strategy.form.label.more-info" path="moreInfo" readonly="${readOnlyStrategy}"/>
-	<acme:form-textbox code="authenticated.strategy.form.label.draft-mode" path="draftMode" readonly="true"/>
+	<acme:form-textbox code="authenticated.strategy.form.label.draft-mode" path="draftModeDisplay" readonly="true"/>
 	<acme:form-double code="authenticated.strategy.form.label.months-active" path="monthsActive" readonly="true"/>
 	<acme:form-double code="authenticated.strategy.form.label.expected-percentage" path="expectedPercentage" readonly="true"/>
 
