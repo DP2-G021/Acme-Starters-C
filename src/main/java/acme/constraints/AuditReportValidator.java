@@ -54,18 +54,22 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 		}
 
 		// CUMPLE CONSTRAINT: "startMoment/endMoment must be a valid time interval in future wrt. the moment when an audit report is	published."
-		Date now = MomentHelper.getBaseMoment();
+		boolean validInterval = true;
+		boolean validStart = true;
 		Date start = auditReport.getStartMoment();
 		Date end = auditReport.getEndMoment();
 
-		boolean validStartDates = start != null;
-		boolean validEndDates = end != null;
-		if (validEndDates && validStartDates) {
-			boolean validDatesInterval = !start.before(now) && end.after(start);
-			super.state(context, validDatesInterval, "startMoment", "acme.validation.auditReport.start-before-end.message");
+		if (start != null && end != null) {
+
+			boolean positiveInterval = MomentHelper.isBefore(start, end);
+			boolean futureStart = MomentHelper.isAfter(start, MomentHelper.getCurrentMoment());
+
+			validInterval = positiveInterval;
+			validStart = futureStart;
 		}
-		super.state(context, validStartDates, "startMoment", "acme.validation.auditReport.dates.error");
-		super.state(context, validEndDates, "endMoment", "acme.validation.auditReport.dates.error");
+
+		super.state(context, validInterval, "endMoment", "acme.validation.invention.invalid-interval.message");
+		super.state(context, validStart, "startMoment", "acme.validation.invention.invalid-start.message");
 
 		return !super.hasErrors(context);
 	}

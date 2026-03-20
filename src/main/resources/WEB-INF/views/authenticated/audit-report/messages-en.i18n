@@ -39,3 +39,6 @@ authenticated.audit-report.form.button.update = Update
 authenticated.audit-report.form.button.delete = Delete
 authenticated.audit-report.form.button.publish = Publish
 
+authenticated.audit-report.boolean.true = Yes
+authenticated.audit-report.boolean.false = No
+
