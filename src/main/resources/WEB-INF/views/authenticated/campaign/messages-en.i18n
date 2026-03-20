@@ -16,6 +16,8 @@ authenticated.campaign.form.label.moreInfo = More info:
 authenticated.campaign.form.label.draftMode = Draft Mode:
 authenticated.campaign.form.label.monthsActive = Months Active:
 authenticated.campaign.form.label.effort = Effort:
+authenticated.campaign.boolean.true = Yes
+authenticated.campaign.boolean.false = No
 
 authenticated.campaign.form.button.milestones = View Milestones
 authenticated.campaign.form.button.create = Create
