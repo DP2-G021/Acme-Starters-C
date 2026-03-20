@@ -16,6 +16,8 @@ authenticated.strategy.form.label.more-info = Mas informacion
 authenticated.strategy.form.label.draft-mode = Borrador
 authenticated.strategy.form.label.months-active = Meses activos
 authenticated.strategy.form.label.expected-percentage = Porcentaje esperado
+authenticated.strategy.boolean.true = Sí
+authenticated.strategy.boolean.false = No
 
 authenticated.strategy.form.button.tactics = Ver tacticas
 authenticated.strategy.form.button.create = Crear

@@ -16,6 +16,8 @@ authenticated.strategy.form.label.more-info = More info
 authenticated.strategy.form.label.draft-mode = Draft mode
 authenticated.strategy.form.label.months-active = Months active
 authenticated.strategy.form.label.expected-percentage = Expected percentage
+authenticated.strategy.boolean.true = Yes
+authenticated.strategy.boolean.false = No
 
 authenticated.strategy.form.button.tactics = View tactics
 authenticated.strategy.form.button.create = Create
