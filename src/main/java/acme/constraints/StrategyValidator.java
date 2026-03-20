@@ -55,6 +55,16 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 				super.state(context, uniqueTicker, "ticker", "acme.validation.strategy.duplicated-ticker.message");
 			}
 
+			// 2.1 start moment must be strictly after base moment (2025/01/01 00:00 -> from 00:01 onwards)
+			{
+				boolean validStartMoment = true;
+
+				if (strategy.getStartMoment() != null)
+					validStartMoment = MomentHelper.isAfter(strategy.getStartMoment(), MomentHelper.getBaseMoment());
+
+				super.state(context, validStartMoment, "startMoment", "acme.validation.strategy.invalid-start.message");
+			}
+
 			// 3. publish-only rules
 			if (Boolean.FALSE.equals(strategy.getDraftMode())) {
 

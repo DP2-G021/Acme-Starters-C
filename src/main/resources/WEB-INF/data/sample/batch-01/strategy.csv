@@ -35,7 +35,7 @@ strategy-24,ES25-STRAT21,Green Growth Plan,<script>alert('Hacked');</script>,202
 strategy-25,ES25-STRAT22,Green Growth Plan,' or 'A' = 'A,2026/01/10 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 
 # start-moment
-strategy-26,ES25-STRAT24,Green Growth Plan,"Valid description",2025/01/01 00:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
+strategy-26,ES25-STRAT24,Green Growth Plan,"Valid description",2025/01/02 00:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-27,ES25-STRAT25,Green Growth Plan,"Valid description",2025/01/01 00:01,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-28,ES25-STRAT26,Green Growth Plan,"Valid description",2026/01/10 09:59,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00
 strategy-29,ES25-STRAT29,Green Growth Plan,"Valid description",2026/06/01 10:00,2026/06/10 10:00,http://example.com,TRUE,fundraiser-00

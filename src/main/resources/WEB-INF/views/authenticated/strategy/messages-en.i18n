@@ -27,6 +27,7 @@ authenticated.strategy.form.button.publish = Publish
 authenticated.strategy.form.button.return = Return
 
 acme.validation.strategy.invalid-interval.message = End moment must be after start moment.
+acme.validation.strategy.invalid-start.message = Start moment must be after 2025/01/01 00:00.
 acme.validation.strategy.duplicated-ticker.message = Ticker is already in use by another strategy.
 acme.validation.strategy.at-least-one-tactic.message = A strategy must have at least one tactic before publishing.
 acme.validation.strategy.start-required-to-publish.message = Start moment is required to publish.
