@@ -10,7 +10,7 @@
     <acme:form-moment code="authenticated.campaign.form.label.startMoment" path="startMoment" readonly="${readOnlyCampaign}"/>
     <acme:form-moment code="authenticated.campaign.form.label.endMoment" path="endMoment" readonly="${readOnlyCampaign}"/>
     <acme:form-url code="authenticated.campaign.form.label.moreInfo" path="moreInfo" readonly="${readOnlyCampaign}"/>
-	<acme:form-textbox code="authenticated.campaign.form.label.draftMode" path="draftMode" readonly="true"/>
+	<acme:form-textbox code="authenticated.campaign.form.label.draftMode" path="draftModeDisplay" readonly="true"/>
     <acme:form-textbox code="authenticated.campaign.form.label.effort" path="effort" readonly="true"/>
     <acme:form-textbox code="authenticated.campaign.form.label.monthsActive" path="monthsActive" readonly="true"/>
     
