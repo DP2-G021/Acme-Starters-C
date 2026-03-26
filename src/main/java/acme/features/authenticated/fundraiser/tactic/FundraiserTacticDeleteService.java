@@ -1,3 +1,4 @@
+
 package acme.features.authenticated.fundraiser.tactic;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,12 +47,12 @@ public class FundraiserTacticDeleteService extends AbstractService<Authenticated
 
 	@Override
 	public void bind() {
-		super.bindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+
 	}
 
 	@Override
 	public void validate() {
-		;
+
 	}
 
 	@Override
