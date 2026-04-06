@@ -1,3 +1,4 @@
+
 package acme.features.authenticated.fundraiser.strategy;
 
 import java.util.Collection;
@@ -47,12 +48,12 @@ public class FundraiserStrategyDeleteService extends AbstractService<Authenticat
 
 	@Override
 	public void bind() {
-		super.bindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+
 	}
 
 	@Override
 	public void validate() {
-		;
+
 	}
 
 	@Override
