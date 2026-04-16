@@ -10,6 +10,7 @@ import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
 import acme.entities.strategies.Tactic;
+import acme.helpers.RequestDataHelper;
 import acme.realms.Fundraiser;
 
 @Service
@@ -29,13 +30,17 @@ public class FundraiserTacticListService extends AbstractService<Authenticated, 
 	@Override
 	public void authorise() {
 		boolean status;
-		int strategyId;
+		Integer strategyId;
 		int userAccountId;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
-		strategyId = super.getRequest().getData("strategyId", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
+		strategyId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "strategyId");
+		if (strategyId == null)
+			this.strategy = null;
+		else {
+			userAccountId = super.getRequest().getPrincipal().getAccountId();
+			this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
+		}
 		status = status && this.strategy != null;
 
 		super.setAuthorised(status);
@@ -43,13 +48,18 @@ public class FundraiserTacticListService extends AbstractService<Authenticated, 
 
 	@Override
 	public void load() {
-		int strategyId;
+		Integer strategyId;
 		int userAccountId;
 
-		strategyId = super.getRequest().getData("strategyId", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
-		this.tactics = this.repository.findTacticsByStrategyIdAndFundraiserUserAccountId(strategyId, userAccountId);
+		strategyId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "strategyId");
+		if (strategyId == null) {
+			this.strategy = null;
+			this.tactics = null;
+		} else {
+			userAccountId = super.getRequest().getPrincipal().getAccountId();
+			this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
+			this.tactics = this.repository.findTacticsByStrategyIdAndFundraiserUserAccountId(strategyId, userAccountId);
+		}
 	}
 
 	@Override

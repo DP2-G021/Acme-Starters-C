@@ -10,6 +10,7 @@ import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
 import acme.entities.strategies.Tactic;
 import acme.entities.strategies.TacticKind;
+import acme.helpers.RequestDataHelper;
 import acme.realms.Fundraiser;
 
 @Service
@@ -27,13 +28,16 @@ public class FundraiserTacticCreateService extends AbstractService<Authenticated
 
 	@Override
 	public void load() {
-		int strategyId;
+		Integer strategyId;
 		int userAccountId;
 		Strategy strategy;
 
-		strategyId = super.getRequest().getData("strategyId", int.class);
+		strategyId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "strategyId");
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
+		if (strategyId == null)
+			strategy = null;
+		else
+			strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(strategyId, userAccountId);
 
 		this.tactic = super.newObject(Tactic.class);
 		this.tactic.setName("");

@@ -11,6 +11,7 @@ import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
 import acme.entities.strategies.Tactic;
+import acme.helpers.RequestDataHelper;
 import acme.realms.Fundraiser;
 
 @Service
@@ -28,12 +29,16 @@ public class FundraiserStrategyDeleteService extends AbstractService<Authenticat
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 		int userAccountId;
 
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(id, userAccountId);
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null)
+			this.strategy = null;
+		else {
+			userAccountId = super.getRequest().getPrincipal().getAccountId();
+			this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(id, userAccountId);
+		}
 	}
 
 	@Override

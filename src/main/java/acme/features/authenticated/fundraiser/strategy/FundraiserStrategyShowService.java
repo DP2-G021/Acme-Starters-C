@@ -8,6 +8,7 @@ import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
+import acme.helpers.RequestDataHelper;
 import acme.realms.Fundraiser;
 
 @Service
@@ -25,13 +26,17 @@ public class FundraiserStrategyShowService extends AbstractService<Authenticated
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
+		Integer id;
 		int userAccountId;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(id, userAccountId);
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null)
+			this.strategy = null;
+		else {
+			userAccountId = super.getRequest().getPrincipal().getAccountId();
+			this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(id, userAccountId);
+		}
 		status = status && this.strategy != null;
 
 		super.setAuthorised(status);
@@ -39,12 +44,16 @@ public class FundraiserStrategyShowService extends AbstractService<Authenticated
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 		int userAccountId;
 
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(id, userAccountId);
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null)
+			this.strategy = null;
+		else {
+			userAccountId = super.getRequest().getPrincipal().getAccountId();
+			this.strategy = this.repository.findStrategyByIdAndFundraiserUserAccountId(id, userAccountId);
+		}
 	}
 
 	@Override
