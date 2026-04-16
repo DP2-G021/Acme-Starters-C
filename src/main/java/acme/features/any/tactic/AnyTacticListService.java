@@ -10,6 +10,7 @@ import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
 import acme.entities.strategies.Tactic;
+import acme.helpers.RequestDataHelper;
 
 @Service
 public class AnyTacticListService extends AbstractService<Any, Tactic> {
@@ -27,22 +28,29 @@ public class AnyTacticListService extends AbstractService<Any, Tactic> {
 	@Override
 	public void authorise() {
 		boolean status;
-		int strategyId;
+		Integer strategyId;
 		Strategy strategy;
 
-		strategyId = super.getRequest().getData("strategyId", int.class);
-		strategy = this.repository.findPublishedStrategyById(strategyId);
-		status = strategy != null;
+		strategyId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "strategyId");
+		if (strategyId == null)
+			status = false;
+		else {
+			strategy = this.repository.findPublishedStrategyById(strategyId);
+			status = strategy != null;
+		}
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int strategyId;
+		Integer strategyId;
 
-		strategyId = super.getRequest().getData("strategyId", int.class);
-		this.tactics = this.repository.findTacticsByPublishedStrategyId(strategyId);
+		strategyId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "strategyId");
+		if (strategyId == null)
+			this.tactics = null;
+		else
+			this.tactics = this.repository.findTacticsByPublishedStrategyId(strategyId);
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
+import acme.helpers.RequestDataHelper;
 
 @Service
 public class AnyStrategyShowService extends AbstractService<Any, Strategy> {
@@ -24,19 +25,29 @@ public class AnyStrategyShowService extends AbstractService<Any, Strategy> {
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.strategy = this.repository.findPublishedStrategyById(id);
-		status = this.strategy != null;
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null) {
+			this.strategy = null;
+			status = false;
+		} else {
+			this.strategy = this.repository.findPublishedStrategyById(id);
+			status = this.strategy != null;
+		}
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int id = super.getRequest().getData("id", int.class);
-		this.strategy = this.repository.findPublishedStrategyById(id);
+		Integer id;
+
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null)
+			this.strategy = null;
+		else
+			this.strategy = this.repository.findPublishedStrategyById(id);
 	}
 
 	@Override
