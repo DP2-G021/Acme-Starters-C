@@ -13,7 +13,7 @@ public interface AuditReportRepository extends AbstractRepository {
 	// CUMPLE CONSTRAINT (Soporte BD): "Audit reports cannot be published unless they have at least one audit section."
 	// Permite comprobar si existen secciones asociadas a este reporte en la base de datos.
 	@Query("select count(a) from AuditSection a where a.auditReport.id = :reportId")
-	int countByAuditReportId(@Param("reportId") int reportId);
+	Long countByAuditReportId(@Param("reportId") int reportId);
 
 	// CUMPLE CONSTRAINT (Soporte BD): "The number of hours of an audit report is the sum of the individual number of hours in its audit sections."
 	// Calcula la suma de las horas directamente mediante una consulta SQL agregada.

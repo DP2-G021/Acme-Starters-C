@@ -44,14 +44,22 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 
 		// CUMPLE CONSTRAINT: "Audit reports cannot be published unless they have at least one audit section."
 		// If the report is not in draft mode, it must have at least one section
-		if (auditReport.getDraftMode() != null && !auditReport.getDraftMode()) {
 
-			Integer auditSectionCount = this.repository.countByAuditReportId(auditReport.getId());
-			boolean hasAuditSections = auditSectionCount != null && auditSectionCount >= 1;
+		boolean hasAtLeastOneAuditSection;
+		if (auditReport.getDraftMode() == null || auditReport.getDraftMode())
+			// Si es borrador, no es obligatorio tener hitos aún
+			hasAtLeastOneAuditSection = true;
+		else {
+			// Si NO es borrador (se publica), hay que contar en la base de datos
+			Long milestonesCount = this.repository.countByAuditReportId(auditReport.getId());
 
-			super.state(context, hasAuditSections, "draftMode", "acme.validation.auditReport.auditSection.error");
-
+			if (milestonesCount != null && milestonesCount >= 1L)
+				hasAtLeastOneAuditSection = true;
+			else
+				hasAtLeastOneAuditSection = false;
 		}
+
+		super.state(context, hasAtLeastOneAuditSection, "*", "acme.validation.auditReport.auditSection.error");
 
 		// CUMPLE CONSTRAINT: "startMoment/endMoment must be a valid time interval in future wrt. the moment when an audit report is	published."
 		boolean validInterval = true;
