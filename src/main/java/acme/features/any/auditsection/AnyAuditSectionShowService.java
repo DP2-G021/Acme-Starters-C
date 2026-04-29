@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.auditreports.AuditSection;
+import acme.helpers.RequestDataHelper;
 
 @Service
 public class AnyAuditSectionShowService extends AbstractService<Any, AuditSection> {
@@ -24,22 +25,29 @@ public class AnyAuditSectionShowService extends AbstractService<Any, AuditSectio
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.auditSection = this.repository.findPublishedAuditSectionById(id);
-		status = this.auditSection != null;
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null) {
+			this.auditSection = null;
+			status = false;
+		} else {
+			this.auditSection = this.repository.findPublishedAuditSectionById(id);
+			status = this.auditSection != null;
+		}
 
 		super.setAuthorised(status);
 	}
-
 	@Override
 	public void load() {
-		int id;
-		id = super.getRequest().getData("id", int.class);
-		this.auditSection = this.repository.findPublishedAuditSectionById(id);
-	}
+		Integer id;
 
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null)
+			this.auditSection = null;
+		else
+			this.auditSection = this.repository.findPublishedAuditSectionById(id);
+	}
 	@Override
 	public void unbind() {
 		super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");

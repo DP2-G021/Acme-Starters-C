@@ -10,6 +10,7 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.auditreports.AuditSection;
 import acme.entities.auditreports.SectionKind;
+import acme.helpers.RequestDataHelper;
 import acme.realms.Auditor;
 
 @Service
@@ -28,13 +29,17 @@ public class AuditorAuditSectionShowService extends AbstractService<Authenticate
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
+		Integer id;
 		int userAccountId;
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class);
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		this.auditSection = this.repository.findAuditSectionByIdAndAuditorUserAccountId(id, userAccountId);
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null)
+			this.auditSection = null;
+		else {
+			userAccountId = super.getRequest().getPrincipal().getAccountId();
+			this.auditSection = this.repository.findAuditSectionByIdAndAuditorUserAccountId(id, userAccountId);
+		}
 		status = status && this.auditSection != null;
 
 		super.setAuthorised(status);
