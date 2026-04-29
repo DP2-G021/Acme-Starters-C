@@ -10,6 +10,7 @@ import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.auditreports.AuditReport;
 import acme.entities.auditreports.AuditSection;
+import acme.helpers.RequestDataHelper;
 
 @Service
 public class AnyAuditSectionListService extends AbstractService<Any, AuditSection> {
@@ -27,21 +28,29 @@ public class AnyAuditSectionListService extends AbstractService<Any, AuditSectio
 	@Override
 	public void authorise() {
 		boolean status;
-		int auditReportId;
+		Integer auditReportId;
 		AuditReport auditReport;
 
-		auditReportId = super.getRequest().getData("auditreportId", int.class);
-		auditReport = this.repository.findPublishedAuditReportById(auditReportId);
-		status = auditReport != null;
+		auditReportId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "auditreportId");
+		if (auditReportId == null)
+			status = false;
+		else {
+			auditReport = this.repository.findPublishedAuditReportById(auditReportId);
+			status = auditReport != null;
+		}
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int id;
-		id = super.getRequest().getData("auditreportId", int.class);
-		this.auditSections = this.repository.findAuditSectionsByPublishedAuditReportId(id);
+		Integer auditReportId;
+
+		auditReportId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "auditreportId");
+		if (auditReportId == null)
+			this.auditSections = null;
+		else
+			this.auditSections = this.repository.findAuditSectionsByPublishedAuditReportId(auditReportId);
 	}
 
 	@Override

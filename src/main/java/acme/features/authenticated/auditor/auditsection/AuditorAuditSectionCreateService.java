@@ -11,6 +11,7 @@ import acme.client.services.AbstractService;
 import acme.entities.auditreports.AuditReport;
 import acme.entities.auditreports.AuditSection;
 import acme.entities.auditreports.SectionKind;
+import acme.helpers.RequestDataHelper;
 import acme.realms.Auditor;
 
 @Service
@@ -28,13 +29,16 @@ public class AuditorAuditSectionCreateService extends AbstractService<Authentica
 
 	@Override
 	public void load() {
-		int auditsectionId;
+		Integer auditreportId;
 		int userAccountId;
 		AuditReport auditReport;
 
-		auditsectionId = super.getRequest().getData("auditreportId", int.class);
+		auditreportId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "auditreportId");
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(auditsectionId, userAccountId);
+		if (auditreportId == null)
+			auditReport = null;
+		else
+			auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(auditreportId, userAccountId);
 
 		this.auditSection = super.newObject(AuditSection.class);
 		this.auditSection.setAuditReport(auditReport);

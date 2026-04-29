@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
+import acme.helpers.RequestDataHelper;
 import acme.realms.Auditor;
 
 @Service
@@ -24,20 +25,29 @@ public class AnyAuditorShowService extends AbstractService<Any, Auditor> {
 	@Override
 	public void authorise() {
 		boolean status;
-		int auditReportId;
+		Integer auditreportId;
 
-		auditReportId = super.getRequest().getData("auditreportId", int.class);
-		this.auditor = this.repository.findPublishedAuditorByAuditReportId(auditReportId);
-		status = this.auditor != null;
+		auditreportId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "auditreportId");
+		if (auditreportId == null) {
+			this.auditor = null;
+			status = false;
+		} else {
+			this.auditor = this.repository.findAuditorByPublishedAuditReportId(auditreportId);
+			status = this.auditor != null;
+		}
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int id;
-		id = super.getRequest().getData("auditreportId", int.class);
-		this.auditor = this.repository.findPublishedAuditorByAuditReportId(id);
+		Integer auditreportId;
+
+		auditreportId = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "auditreportId");
+		if (auditreportId == null)
+			this.auditor = null;
+		else
+			this.auditor = this.repository.findAuditorByPublishedAuditReportId(auditreportId);
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.auditreports.AuditReport;
+import acme.helpers.RequestDataHelper;
 
 @Service
 public class AnyAuditReportsShowService extends AbstractService<Any, AuditReport> {
@@ -24,19 +25,27 @@ public class AnyAuditReportsShowService extends AbstractService<Any, AuditReport
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.auditReport = this.repository.findPublishedAuditReportBy(id);
-		status = this.auditReport != null;
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null) {
+			this.auditReport = null;
+			status = false;
+		} else {
+			this.auditReport = this.repository.findPublishedAuditReportBy(id);
+			status = this.auditReport != null;
+		}
 
 		super.setAuthorised(status);
 	}
-
 	@Override
 	public void load() {
-		int id = super.getRequest().getData("id", int.class);
-		this.auditReport = this.repository.findPublishedAuditReportBy(id);
+		Integer id;
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null)
+			this.auditReport = null;
+		else
+			this.auditReport = this.repository.findPublishedAuditReportBy(id);
 	}
 
 	@Override

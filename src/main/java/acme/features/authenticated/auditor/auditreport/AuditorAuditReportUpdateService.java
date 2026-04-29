@@ -8,7 +8,7 @@ import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.auditreports.AuditReport;
-import acme.realms.Auditor;
+import acme.helpers.RequestDataHelper;
 
 @Service
 public class AuditorAuditReportUpdateService extends AbstractService<Authenticated, AuditReport> {
@@ -19,25 +19,22 @@ public class AuditorAuditReportUpdateService extends AbstractService<Authenticat
 	protected AuditorAuditReportRepository	repository;
 
 	private AuditReport						auditReport;
-	private Auditor							auditor;
 
 	// AbstractService interface ----------------------------------------------
 
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 		int userAccountId;
 
-		id = super.getRequest().getData("id", int.class);
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-
-		this.auditor = this.repository.findAuditorByUserAccountId(userAccountId);
-
-		if (this.auditor == null)
+		id = RequestDataHelper.getNaturalIntegerParameter(super.getRequest(), "id");
+		if (id == null)
 			this.auditReport = null;
-		else
+		else {
+			userAccountId = super.getRequest().getPrincipal().getAccountId();
 			this.auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(id, userAccountId);
+		}
 	}
 
 	@Override
