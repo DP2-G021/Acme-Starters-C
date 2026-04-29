@@ -19,7 +19,6 @@ public class AuditorAuditReportPublishService extends AbstractService<Authentica
 	protected AuditorAuditReportRepository	repository;
 
 	private AuditReport						auditReport;
-	private Auditor							auditor;
 
 	// AbstractService interface -------------------------------------------
 
@@ -31,20 +30,15 @@ public class AuditorAuditReportPublishService extends AbstractService<Authentica
 
 		id = super.getRequest().getData("id", int.class);
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
-
-		this.auditor = this.repository.findAuditorByUserAccountId(userAccountId);
-
-		if (this.auditor == null)
-			this.auditReport = null;
-		else
-			this.auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(id, userAccountId);
+		this.auditReport = this.repository.findAuditReportByIdAndAuditorUserAccountId(id, userAccountId);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.auditReport != null && this.auditReport.getDraftMode();
+		status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class);
+		status = status & this.auditReport != null && this.auditReport.getDraftMode();
 
 		super.setAuthorised(status);
 	}
@@ -74,7 +68,7 @@ public class AuditorAuditReportPublishService extends AbstractService<Authentica
 	public void unbind() {
 		Tuple tuple;
 
-		tuple = super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "hours");
+		tuple = super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "hours");
 		tuple.put("auditReportId", this.auditReport.getId());
 		tuple.put("draftModeDisplay", AuditorAuditReportI18nHelper.draftModeDisplay(this.auditReport.getDraftMode()));
 	}
